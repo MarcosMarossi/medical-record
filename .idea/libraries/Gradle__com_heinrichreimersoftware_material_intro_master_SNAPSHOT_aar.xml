@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.heinrichreimersoftware:material-intro:master-SNAPSHOT@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef62d28d117ceb68d140009c6b8d6bca/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef62d28d117ceb68d140009c6b8d6bca/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef62d28d117ceb68d140009c6b8d6bca/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.heinrichreimersoftware/material-intro/master-SNAPSHOT/f5d683de5da74e57579ee2cc4c88917d45daf79/material-intro-master-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

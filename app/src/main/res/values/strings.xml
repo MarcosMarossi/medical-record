@@ -43,8 +43,6 @@
     <string name="tit_agendamento">Faça o seu agendamento</string>
     <string name="desc_agendamento">Basta navegar entre as telas e preencher as informações necessárias!</string>
     <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados \npara agendar sua consulta</string>
-    
-
 
 
     <string-array name="consultorios">

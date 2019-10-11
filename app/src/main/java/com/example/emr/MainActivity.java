@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import retrofit2.Retrofit;
+
 public class MainActivity extends AppCompatActivity {
 
     Spinner idioma;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
                 // Fazer toda a lógica do idioma assim que estiver tudo pronto
             }
         };
+
+        startActivity(new Intent (this, RetrofitTestsActivity.class));
     }
     public void abrirTelaLogin(View v){
         startActivity(new Intent(this,LoginActivity.class));

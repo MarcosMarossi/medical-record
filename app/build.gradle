@@ -36,4 +36,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.heinrichreimersoftware:material-intro:1.6'
     implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+
 }

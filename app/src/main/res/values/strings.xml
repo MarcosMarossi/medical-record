@@ -74,7 +74,19 @@
     <string name="setembro">Setembro</string>
     <string name="outubro">Outubro</string>
     <string name="novembro">Novembro</string>
-    <string name="dezembro">Dezembro</string>
+
+
+    // Histórico
+
+    <string name="historico">Histórico</string>
+
+    // Avisos
+
+    <string name="avisos_titulo">Avisos</string>
+
+
+
+
 
 
     // API Calendario Semanas
@@ -85,6 +97,12 @@
     <string name="sex">Sex</string>
     <string name="sab">Sab</string>
     <string name="dom">Dom</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim">Sim</string>
+    <string name="sair_nao">Não</string>
+    <string name="sair_titulo">Tem certeza que deseja sair?</string>
 
 
 </resources>

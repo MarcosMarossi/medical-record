@@ -11,14 +11,14 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
-public class Calendar extends AppCompatActivity {
+public class Sl_02 extends AppCompatActivity {
 
     private MaterialCalendarView calendarioAgendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_agendar_cal);
+        setContentView(R.layout.act_sl01);
 
         getSupportActionBar().hide();
 
@@ -45,11 +45,11 @@ public class Calendar extends AppCompatActivity {
     }
 
     public void avancar(View view){
-        Intent intent = new Intent(Calendar.this,Ultimo.class);
+        Intent intent = new Intent(Sl_02.this, Sl_03.class);
         startActivity(intent);
     }
     public void voltar(View view){
-        Intent intent = new Intent(Calendar.this,Agendar.class);
+        Intent intent = new Intent(Sl_02.this, Sl_01.class);
         startActivity(intent);
     }
 }

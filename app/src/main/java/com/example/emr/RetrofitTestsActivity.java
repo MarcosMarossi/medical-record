@@ -40,6 +40,7 @@ public class RetrofitTestsActivity extends AppCompatActivity {
 
                 Call<List<CID>> call = new RetrofitConfig().getCIDService().buscarCid(edtCid.getText().toString().toUpperCase());
                 call.enqueue(new Callback<List<CID>>() {
+
                     @Override
                     public void onResponse(Call<List<CID>> call, Response<List<CID>> response) {
                         List<CID> cid = response.body();

@@ -1,39 +1,36 @@
 package com.example.emr.Slide;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.emr.MenuActivity;
 import com.example.emr.R;
 
-public class Agendar extends AppCompatActivity {
+public class Sl_03 extends AppCompatActivity {
 
     Spinner hospitais;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_agendar_info);
+        setContentView(R.layout.act_sl03);
 
         getSupportActionBar().hide();
-/*
+
         hospitais = findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.consultorios, android.R.layout.simple_spinner_item);
         hospitais.setAdapter(adapter);
-*/
-    }
 
+        //System.out.println(adapter.getAutofillOptions());
 
-    public void abrirCalendario(View view){
-        Intent cal = new Intent(Agendar.this, Calendar.class);
-        startActivity(cal);
     }
 
     public void voltarMenu(View v){
-        Intent intent = new Intent(Agendar.this, MenuActivity.class);
+        Intent intent = new Intent(Sl_03.this, MenuActivity.class);
         startActivity(intent);
     }
 }

@@ -1,7 +1,6 @@
 package com.example.emr.Historico;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +8,9 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.emr.R;
-import com.example.emr.Slide.Agendar;
-import com.example.emr.Slide.Calendar;
+import com.example.emr.Slide.Sl_01;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 public class CalendarioActivity extends AppCompatActivity {
@@ -62,7 +59,7 @@ public class CalendarioActivity extends AppCompatActivity {
         });  */
     }
     private void abrirAgendar(){
-        Intent intent = new Intent(CalendarioActivity.this, Agendar.class);
+        Intent intent = new Intent(CalendarioActivity.this, Sl_01.class);
         startActivity(intent);
     }
 }

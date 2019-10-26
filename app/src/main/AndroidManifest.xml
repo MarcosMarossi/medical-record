@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.emr">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,12 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".RetrofitTestsActivity"></activity>
-        <activity android:name=".Historico.CalendarioActivity" />
-        <activity android:name=".Slide.Ultimo" />
-        <activity android:name=".Slide.Calendar" />
-        <activity android:name=".AgendarActivity2" />
-        <activity android:name=".Slide.Agendar" />
+        <activity
+
+            android:name=".Avisos.AvisosActivity"
+            android:label="@string/avisos_titulo"
+            android:parentActivityName=".MenuActivity"
+
+            />
+
+        <activity android:name=".RetrofitTestsActivity" />
+        <activity
+            android:name=".Historico.CalendarioActivity"
+            android:label="@string/historico"
+            android:parentActivityName=".MenuActivity" />
+        <activity android:name=".Slide.Sl_03" />
+        <activity android:name=".Slide.Sl_02" />
+        <activity android:name=".Slide.Sl_01" />
         <activity android:name=".MenuActivity" />
         <activity
             android:name=".RecuperarActivity"

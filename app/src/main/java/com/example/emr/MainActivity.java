@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        startActivity(new Intent (this, RetrofitTestsActivity.class));
     }
     public void abrirTelaLogin(View v){
         startActivity(new Intent(this,LoginActivity.class));

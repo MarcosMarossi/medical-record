@@ -8,8 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import retrofit2.Retrofit;
-
 public class MainActivity extends AppCompatActivity {
 
     Spinner idioma;
@@ -17,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_principal);
+        setContentView(R.layout.act_main);
 
         idioma = findViewById(R.id.spinIdioma);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.idioma,android.R.layout.simple_spinner_item);
@@ -35,6 +33,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,LoginActivity.class));
     }
     public void abrirTelaCadastro(View v){
-        startActivity(new Intent(this,CadastrarActivity.class));
+        startActivity(new Intent(this, RefactorActivity.class));
     }
 }

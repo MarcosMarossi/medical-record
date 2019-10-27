@@ -11,29 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".Doctor.ValidationActivity"></activity>
+        <activity android:name=".Doctor.MonitoringActivity" />
+        <activity android:name=".Doctor.WarningsActivity" />
+        <activity android:name=".Doctor.QueryActivity" />
+        <activity android:name=".Nurse.MenuNurActivity" />
+        <activity android:name=".Doctor.MenuDocActivity" />
         <activity
-
-            android:name=".Avisos.AvisosActivity"
+            android:name=".User.WarningsActivity"
             android:label="@string/avisos_titulo"
-            android:parentActivityName=".MenuActivity"
-
-            />
-
-        <activity android:name=".RetrofitTestsActivity" />
+            android:parentActivityName=".User.MenuUsrActivity" />
+        <activity android:name=".Configuracoes.RetrofitTestsActivity" />
         <activity
-            android:name=".Historico.CalendarioActivity"
+            android:name=".User.CalendarActivity"
             android:label="@string/historico"
-            android:parentActivityName=".MenuActivity" />
-        <activity android:name=".Slide.Sl_03" />
-        <activity android:name=".Slide.Sl_02" />
-        <activity android:name=".Slide.Sl_01" />
-        <activity android:name=".MenuActivity" />
+            android:parentActivityName=".User.MenuUsrActivity" />
+        <activity android:name=".User.Slide.SlideUltimate" />
+        <activity android:name=".User.Slide.SlideSecond" />
+        <activity android:name=".User.Slide.SlideInitial" />
+        <activity android:name=".User.MenuUsrActivity" />
         <activity
-            android:name=".RecuperarActivity"
+            android:name=".RecoverActivity"
             android:label="@string/titulorecuperar"
             android:parentActivityName=".LoginActivity" />
         <activity
-            android:name=".CadastrarActivity"
+            android:name=".RefactorActivity"
             android:label="@string/titulo_cadastrar"
             android:parentActivityName=".LoginActivity" />
         <activity

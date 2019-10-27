@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.emr.User.MenuUsrActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -32,12 +34,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirMenuPrincipal(View view){
-        Intent intent = new Intent(this,MenuActivity.class);
+        Intent intent = new Intent(this, MenuUsrActivity.class);
         startActivity(intent);
     }
 
     public void abrirRecuperar(View view){
-        Intent intent = new Intent(this, RecuperarActivity.class);
+        Intent intent = new Intent(this, RecoverActivity.class);
         startActivity(intent);
     }
 

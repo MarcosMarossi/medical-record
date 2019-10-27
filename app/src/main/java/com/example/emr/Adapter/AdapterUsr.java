@@ -28,7 +28,7 @@ public class AdapterUsr extends BaseAdapter {
     @Override
     public View getView(int i, View convertView, ViewGroup parent) {
 
-        final View view = inflater.inflate(R.layout.element_list_usr,null);
+        final View view = inflater.inflate(R.layout.list_usr,null);
 
         TextView titulo = view.findViewById(R.id.txtTitulo);
         TextView descricao = view.findViewById(R.id.txtDescricao);

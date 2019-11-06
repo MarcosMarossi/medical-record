@@ -120,7 +120,6 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/borda_redonda_vermelho"
             android:fontFamily="@font/ubuntu"
-            android:onClick="abrirMenuPrincipal"
             android:text="@string/btnEntrar"
             android:textColor="@android:color/background_light" />
 

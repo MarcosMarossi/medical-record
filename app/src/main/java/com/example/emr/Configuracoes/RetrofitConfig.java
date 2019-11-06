@@ -1,6 +1,6 @@
 package com.example.emr.Configuracoes;
 
-import com.example.emr.Services.CIDService;
+import com.example.emr.Services.DataService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -15,7 +15,7 @@ public class RetrofitConfig {
     }
 
 
-    public CIDService getCIDService(){
-        return  this.retrofit.create(CIDService.class);
+    public DataService getCIDService(){
+        return  this.retrofit.create(DataService.class);
     }
 }

@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.emr.Adapter.AdapterUsr;
+import com.example.emr.LoginActivity;
 import com.example.emr.R;
 import com.example.emr.User.Slide.SlideInitial;
 
@@ -79,6 +80,8 @@ public class MenuUsrActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 finish();
                 System.exit(0);
+                Intent intent = new Intent(MenuUsrActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 

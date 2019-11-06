@@ -8,13 +8,13 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
 
-public interface CIDService {
+public interface DataService {
 
     // @Headers({"Content-Type = application/json","x-access-token = fooBar123" })
     @POST("auth/jwt/login")
     Call<User> acessarLogin(@Body User token);
 
-    @GET("helo")
+    @GET("hello")
     Call<User> pegarLogin(@Header("Content-Type") User token);
 
 }

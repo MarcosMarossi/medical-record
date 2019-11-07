@@ -55,11 +55,11 @@
     </string-array>
 
     <string-array name="idioma">
-        <item>BR</item>
+        <item>PT-BR</item>
         <item>EN</item>
         <item>ES</item>
         <item>FR</item>
-        <item>GN</item>
+        <item>HU</item>
     </string-array>
 
     // API Calendario Meses

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     Profile = response.body().getProfile();
                     if (Profile.equals("patient") && !getToken.equals("")) {
                         menuPaciente();
-                    } else if (Profile.equals("admin") && !getToken.equals("")) {
+                    } else if (Profile.equals("medic") && !getToken.equals("")) {
                         menuMedico();
                     } else if (Profile.equals("nurse") && !getToken.equals("")) {
                         menuEnfermeira();

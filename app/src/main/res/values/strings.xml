@@ -99,6 +99,13 @@
     <string name="sair_sim">Sim</string>
     <string name="sair_nao">Não</string>
     <string name="sair_titulo">Tem certeza que deseja sair?</string>
+    <string name="login_errado">Usuário com este e-mail não encontrado.</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Monitoramento</string>
+    <string name="titulo_validar">Validação</string>
+    <string name="titulo_avisos">Meus Avisos</string>
+    <string name="titulo_consultas">Consultas</string>
 
 
 </resources>

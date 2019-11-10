@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.emr.Adapter.AdapterUsr;
+import com.example.emr.Adapter.Adaptador;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.R;
@@ -41,7 +41,7 @@ public class MenuUsrActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         lista = findViewById(R.id.listUser);
-        lista.setAdapter(new AdapterUsr(this, dados, dadosImg));
+        lista.setAdapter(new Adaptador(this, dados, dadosImg));
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

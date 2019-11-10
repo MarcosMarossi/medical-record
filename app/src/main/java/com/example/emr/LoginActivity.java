@@ -1,7 +1,9 @@
 package com.example.emr;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import com.example.emr.Services.DataService;
 import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.Nurse.MenuNurActivity;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,6 +76,9 @@ public class LoginActivity extends AppCompatActivity {
 
                         User user = response.body();
                         getToken = response.body().getToken();
+                        Toast.makeText(LoginActivity.this, getToken, Toast.LENGTH_SHORT).show();
+
+
 
                         if(chboxSalvar.isChecked()){
                             editor.putString("email",email);
@@ -107,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
                         }
+
                     }
 
                     @Override
@@ -126,7 +133,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void fechar(View v) {
-        finish();
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 
     public void menuPaciente() {

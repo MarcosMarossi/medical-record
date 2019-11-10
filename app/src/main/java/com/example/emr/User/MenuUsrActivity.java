@@ -2,6 +2,7 @@ package com.example.emr.User;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import com.example.emr.User.Slide.SlideInitial;
 public class MenuUsrActivity extends AppCompatActivity {
 
     ListView lista;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     String[][] dados = {
             {"Agendar", "Escolha o melhor dia para você!"},
@@ -33,6 +36,9 @@ public class MenuUsrActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_menu_usr);
+
+        sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         lista = findViewById(R.id.listUser);
         lista.setAdapter(new AdapterUsr(this, dados, dadosImg));
@@ -80,7 +86,9 @@ public class MenuUsrActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 User user = new User();
-                user.setToken(null);
+                user.setToken("");
+                editor.putString("token",user.getToken());
+                editor.commit();
                 Intent intent = new Intent(MenuUsrActivity.this, LoginActivity.class);
                 startActivity(intent);
 

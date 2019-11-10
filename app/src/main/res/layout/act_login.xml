@@ -43,7 +43,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/background_light"
-        android:textColorHint="#CCCCCC"
+        android:textColorHint="#000000"
         app:helperTextEnabled="true"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
@@ -61,9 +61,9 @@
             android:drawablePadding="10dp"
             android:fontFamily="@font/ubuntu"
             android:hint="@string/email"
-            android:textColor="#CCCCCC"
+            android:textColor="#000000"
             android:textColorHighlight="@android:color/background_dark"
-            android:textColorHint="@android:color/background_dark"
+            android:textColorHint="#000000"
             android:textColorLink="@android:color/background_dark"
             android:textCursorDrawable="@android:color/background_dark" />
     </android.support.design.widget.TextInputLayout>
@@ -73,7 +73,7 @@
         android:layout_width="181dp"
         android:layout_height="26dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/ubuntu"
         android:onClick="abrirRecuperar"
@@ -98,12 +98,13 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="350dp"
-        android:layout_height="128dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
@@ -121,7 +122,8 @@
             android:background="@drawable/borda_redonda_vermelho"
             android:fontFamily="@font/ubuntu"
             android:text="@string/btnEntrar"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnSair"
@@ -132,7 +134,8 @@
             android:fontFamily="@font/ubuntu"
             android:onClick="fechar"
             android:text="@string/btnSair"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <ImageView
@@ -177,6 +180,8 @@
         android:ems="10"
         android:hint="@string/senha"
         android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNome" />

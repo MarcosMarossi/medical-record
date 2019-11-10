@@ -72,18 +72,19 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<User> call, Response<User> response) {
 
                         User user = response.body();
+                        getToken = response.body().getToken();
 
                         if(chboxSalvar.isChecked()){
                             editor.putString("email",email);
                             editor.putString("pass",senha);
-                            editor.putString("token",user.getToken());
+                            editor.putString("token",getToken);
                             editor.commit();
                         }
 
                         if (user.getToken() != null) {
 
                             DataService service = retrofit.create(DataService.class);
-                            Call<User> GET = service.pegarToken(user.getToken());
+                            Call<User> GET = service.pegarToken(getToken);
                             GET.enqueue(new Callback<User>() {
                                 @Override
                                 public void onResponse(Call<User> call, Response<User> response) {

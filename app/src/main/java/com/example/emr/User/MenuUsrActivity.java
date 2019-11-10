@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.emr.Adapter.AdapterUsr;
 import com.example.emr.LoginActivity;
+import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.User.Slide.SlideInitial;
 
@@ -78,10 +79,11 @@ public class MenuUsrActivity extends AppCompatActivity {
         dialog.setPositiveButton(R.string.sair_sim, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
-                System.exit(0);
+                User user = new User();
+                user.setToken(null);
                 Intent intent = new Intent(MenuUsrActivity.this, LoginActivity.class);
                 startActivity(intent);
+
             }
         });
 

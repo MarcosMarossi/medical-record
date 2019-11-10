@@ -28,7 +28,7 @@ public class MenuDocActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_menu_usr);
+        setContentView(R.layout.act_menu_doc);
 
         lista = findViewById(R.id.listDoctor);
         lista.setAdapter(new AdapterDoctor(this, dados, dadosImg));

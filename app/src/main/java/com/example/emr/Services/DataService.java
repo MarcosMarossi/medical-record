@@ -5,6 +5,7 @@ import com.example.emr.Models.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
 
@@ -14,7 +15,7 @@ public interface DataService {
     @POST("auth/jwt/login")
     Call<User> acessarLogin(@Body User token);
 
-    @GET("hello")
-    Call<User> pegarLogin(@Header("Content-Type") User token);
 
+    @GET("auth/jwt/me")
+    Call<User> pegarToken(@Header("x-access-token") String Token);
 }

@@ -7,7 +7,7 @@
     <string name="nome">Vida Saudável</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Bem-vindo(a) ao Vida Saudável, o seu novo aplicativo de acompanhamento e agendamento médico!</string>
+    <string name="explicacao_app">Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnCadastrar">Cadastrar</string>
     <string name="Idioma">Idioma</string>
@@ -42,7 +42,7 @@
     <string name="desc_calendario">Selecione uma data de sua preferência</string>
     <string name="tit_agendamento">Faça o seu agendamento</string>
     <string name="desc_agendamento">Basta navegar entre as telas e preencher as informações necessárias!</string>
-    <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados \npara agendar sua consulta</string>
+    <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
 
 
     <string-array name="consultorios">
@@ -60,6 +60,7 @@
         <item>ES</item>
         <item>FR</item>
         <item>HU</item>
+        <item>DE</item>
     </string-array>
 
     // API Calendario Meses
@@ -74,6 +75,7 @@
     <string name="setembro">Setembro</string>
     <string name="outubro">Outubro</string>
     <string name="novembro">Novembro</string>
+    <string name="dezembro">Dezembro</string>
 
 
     // Histórico
@@ -99,7 +101,6 @@
     <string name="sair_sim">Sim</string>
     <string name="sair_nao">Não</string>
     <string name="sair_titulo">Tem certeza que deseja sair?</string>
-    <string name="login_errado">Usuário com este e-mail não encontrado.</string>
 
     // Enfermeira e Médico
     <string name="titulo_monitorar">Monitoramento</string>

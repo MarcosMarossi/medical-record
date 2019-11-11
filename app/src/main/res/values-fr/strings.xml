@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vie Saine </string>
+    <string name="titulo_login">Accéder à mon compte</string>
+    <string name="titulo_cadastrar">Enregistrer un compte</string>
+
+    //Nome_Título
+    <string name="nome">Vie Saine</string>
+
+    //Textos_MainActivity
+    <string name="explicacao_app">Bienvenue sur Control Health, votre nouvelle application de suivi médical. Nous avons également un système de planification efficace!</string>
+    <string name="btnEntrar">Connecter</string>
+    <string name="btnCadastrar">S'inscrire</string>
+    <string name="Idioma">Langue</string>
+
+    //Textos_CadastroActivity CPF=Carte Nationale d'Identité-CNI na França
+    <string name="informardados">Entrez vos coordonnées</string>
+    <string name="verificarinfo">Nous vérifierons vos informations!</string>
+    <string name="nome_completo">Nom complet</string>
+    <string name="cpf_padrao">CPF</string>
+    <string name="email">Email</string>
+    <string name="senha">Mot de passe</string>
+    <string name="btnLimpar">Effacer les données</string>
+
+
+    //Textos_Login
+    <string name="dadosacesso">Entrez vos identifiants</string>
+    <string name="btnSair">Sortir</string>
+    <string name="esqueceu">Mot de passe oublié?</string>
+    <string name="lembrar">Rappelle moi</string>
+    <string name="hint_senha">Mot de passe</string>
+    <string name="hint_login">Nom</string>
+
+    //Textos_Recuperar Senha
+    <string name="titulorecuperar">Récupérer le mot de passe</string>
+    <string name="descricao">Bienvenue, nous utilisons le courrier électronique comme méthode de récupération du mot de passe. Par conséquent, après la soumission, vérifiez votre mot de passe temporaire.</string>
+    <string name="btnEnviar">Soumettre</string>
+
+
+    //Agendar
+    <string name="hora">Horaire</string>
+    <string name="btnAgendar">Programmer uni date</string>
+    <string name="desc_calendario">Sélectionnez une date que vous préférez</string>
+    <string name="tit_agendamento">Prenez rendez-vous</string>
+    <string name="desc_agendamento">Il suffit de naviguer entre les écrans et de renseigner les informations requises!</string>
+    <string name="tit_final_agendamento">Il manque juste! Remplissez les dernières données pour planifier votre rendez-vous</string>
+
+
+    <string-array name="consultorios">
+        <item>Sélectionnez un bureau</item>
+        <item>HAOC Indaiatuba</item>
+        <item>Unimed Campinas</item>
+        <item>Unimed Monte Mor</item>
+        <item>Santa Casa Itu</item>
+        <item>Santa Casa Salto</item>
+    </string-array>
+
+    <string-array name="idioma">
+        <item>PT-BR</item>
+        <item>EN</item>
+        <item>ES</item>
+        <item>FR</item>
+        <item>HU</item>
+        <item>DE</item>
+
+
+    </string-array>
+
+    // API Calendario Meses
+    <string name="janeiro">Janvier</string>
+    <string name="fevereiro">Février</string>
+    <string name="marco">Mars</string>
+    <string name="abril">Avril</string>
+    <string name="maio">Mai</string>
+    <string name="junho">Juin</string>
+    <string name="julho">Juillet</string>
+    <string name="agosto">Août</string>
+    <string name="setembro">Septembre</string>
+    <string name="outubro">Octobre</string>
+    <string name="novembro">Novembre</string>
+    <string name="dezembro">Décembre</string>
+
+
+    // Histórico
+
+    <string name="historico">Chronologique</string>
+
+    // Avisos
+
+    <string name="avisos_titulo">Avertissements</string>
+
+
+    // API Calendario Semanas
+    <string name="seg">Lun</string>
+    <string name="ter">Mar</string>
+    <string name="qua">Mer</string>
+    <string name="qui">Jeu</string>
+    <string name="sex">Ven</string>
+    <string name="sab">Sab</string>
+    <string name="dom">Dim</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim">Oui</string>
+    <string name="sair_nao">Non</string>
+    <string name="sair_titulo">Êtes-vous sûr de vouloir partir?</string>
+
+
+</resources>

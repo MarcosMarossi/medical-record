@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Egészséges Élet</string>
+    <string name="titulo_login">Belépés</string>
+    <string name="titulo_cadastrar">Fiók létrehozása</string>
+
+    //Nome_Título
+    <string name="nome">Egészséges Élet</string>
+
+    //Textos_MainActivity
+    <string name="explicacao_app">Üdvözöljük a Control Health, az új orvosi nyomkövető alkalmazásban. Hatékony ütemezési rendszerünk is van!</string>
+    <string name="btnEntrar">Bejelentkezés</string>
+    <string name="btnCadastrar">Registrácio</string>
+    <string name="Idioma">Nyelv</string>
+
+    //Textos_CadastroActivity
+    <string name="informardados">Személyes adatok</string>
+    <string name="verificarinfo">Ellenőrizni fogjuk az Ön adatait!</string>
+    <string name="nome_completo">Teljes név</string>
+    <string name="cpf_padrao">CPF</string>
+    <string name="email">E-mail címe</string>
+    <string name="senha">Jelszó</string>
+    <string name="btnLimpar">Törölje  ki az adatokat</string>
+
+
+    //Textos_Login
+    <string name="dadosacesso">Irja be bejelentkezési adatait</string>
+    <string name="btnSair">Kilépni</string>
+    <string name="esqueceu">Elfelejtette a jelszavát?</string>
+    <string name="lembrar">Emlékezzen a jelszóra</string>
+    <string name="hint_senha">Jelszó</string>
+    <string name="hint_login">Felhasználónév</string>
+
+    //Textos_Recuperar Senha
+    <string name="titulorecuperar">Jelszó helyreállítása</string>
+    <string name="descricao">Üdvözöljük, e-mailt használunk jelszó-helyreállítási módszerként. Tehát a beküldés után ellenőrizze az ideiglenes jelszavát.</string>
+    <string name="btnEnviar">Küldés</string>
+
+
+    //Agendar
+    <string name="hora">Konzultációs idő</string>
+    <string name="btnAgendar">Ütemterv</string>
+    <string name="desc_calendario">válassza ki a preferencia dátumát</string>
+    <string name="tit_agendamento">Készítsd el az ütemtervet</string>
+    <string name="desc_agendamento">Csak navigáljon a képernyők között, és töltse ki a szükséges információkat!</string>
+    <string name="tit_final_agendamento">Még egy perc! Töltse ki a utolsó adatokat a találkozó ütemezéséhez</string>
+
+
+    <string-array name="orvosi rendelők">
+        <item>Válasszon egy orvosi rendelőt</item>
+        <item>HAOC Indaiatuba</item>
+        <item>Unimed Campinas</item>
+        <item>Unimed Monte Mor</item>
+        <item>Santa Casa Itu</item>
+        <item>Santa Casa Salto</item>
+    </string-array>
+
+    <string-array name="idioma">
+        <item>PT-BR</item>
+        <item>EN</item>
+        <item>ES</item>
+        <item>FR</item>
+        <item>HU</item>
+        <item>DE</item>
+    </string-array>
+
+    // API Calendário Meses
+    <string name="janeiro">Január</string>
+    <string name="fevereiro">Február</string>
+    <string name="marco">Március</string>
+    <string name="abril">Április</string>
+    <string name="maio">Május</string>
+    <string name="junho">Június</string>
+    <string name="julho">Július</string>
+    <string name="agosto">Augusztus</string>
+    <string name="setembro">Szeptember</string>
+    <string name="outubro">Oktober</string>
+    <string name="novembro">November</string>
+    <string name="dezembro">December</string>
+
+
+    // Histórico
+
+    <string name="historico">Kórtörténet</string>
+
+    // Avisos
+
+    <string name="avisos_titulo">Hírdetések</string>
+
+
+    // API Calendario Semanas
+    <string name="seg">HétfÖ</string>
+    <string name="ter">Kedd</string>
+    <string name="qua">Szerda</string>
+    <string name="qui">Csütörtök</string>
+    <string name="sex">Péntek</string>
+    <string name="sab">Szombat</string>
+    <string name="dom">Vasárnap</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim">Igen</string>
+    <string name="sair_nao">Nem</string>
+    <string name="sair_titulo">Biztos benne, hogy ki akar menni?</string>
+
+
+</resources>

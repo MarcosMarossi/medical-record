@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_tempo_24dp"
         android:drawablePadding="10dp"
@@ -21,67 +21,79 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="56dp"
         android:gravity="center"
         android:text="@string/tit_final_agendamento"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="60dp"
+        android:id="@+id/imgValidar"
+        android:layout_width="30dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:onClick="voltarMenu"
+        android:onClick="validar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:srcCompat="@drawable/check" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCategoria2"
+        app:srcCompat="@drawable/checked" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="60dp"
+        android:layout_width="30dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:onClick="voltarMenu"
+        android:layout_marginTop="24dp"
+        android:onClick="voltar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:srcCompat="@drawable/left" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCategoria2"
+        app:srcCompat="@drawable/back" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.335"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:srcCompat="@drawable/address" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avisos" />
+
+    <Spinner
+        android:id="@+id/spnCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Spinner
+        android:id="@+id/spnCategoria2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnCategoria" />
 
 </android.support.constraint.ConstraintLayout>

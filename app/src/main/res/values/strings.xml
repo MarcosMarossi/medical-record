@@ -44,16 +44,6 @@
     <string name="desc_agendamento">Basta navegar entre as telas e preencher as informações necessárias!</string>
     <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados \npara agendar sua consulta</string>
 
-
-    <string-array name="consultorios">
-        <item>Selecione um consultório</item>
-        <item>HAOC Indaiatuba</item>
-        <item>Unimed Campinas</item>
-        <item>Unimed Monte Mor</item>
-        <item>Santa Casa Itu</item>
-        <item>Santa Casa Salto</item>
-    </string-array>
-
     <string-array name="idioma">
         <item>PT-BR</item>
         <item>EN</item>
@@ -108,6 +98,25 @@
     <string name="titulo_validar">Validação</string>
     <string name="titulo_avisos">Meus Avisos</string>
     <string name="titulo_consultas">Consultas</string>
+
+
+    <string-array name="categorias">
+        <item>Selecione uma categoria</item>
+        <item>Clinico Geral</item>
+        <item>Geriatria</item>
+        <item>Cardiologia</item>
+        <item>Dermatologia</item>
+        <item>Pediatria</item>
+        <item>Radiologia</item>
+    </string-array>
+
+    <string-array name="medicos">
+        <item>Selecione um médico(a)</item>
+        <item>Medico</item>
+    </string-array>
+
+
+
 
 
 </resources>

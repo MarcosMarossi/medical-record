@@ -31,14 +31,13 @@
             android:layout_marginTop="44dp"
             android:text="@string/desc_calendario"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="60dp"
+            android:layout_width="30dp"
             android:layout_height="60dp"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
@@ -46,11 +45,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calHistorico"
-            app:srcCompat="@drawable/left" />
+            app:srcCompat="@drawable/back" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="60dp"
+            android:layout_width="30dp"
             android:layout_height="60dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
@@ -58,6 +57,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calHistorico"
-            app:srcCompat="@drawable/right" />
+            app:srcCompat="@drawable/next" />
 
     </android.support.constraint.ConstraintLayout></ScrollView>

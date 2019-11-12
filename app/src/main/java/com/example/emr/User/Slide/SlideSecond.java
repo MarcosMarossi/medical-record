@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.emr.Models.Date;
 import com.example.emr.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -14,6 +17,7 @@ import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 public class SlideSecond extends AppCompatActivity {
 
     private MaterialCalendarView calendarioAgendar;
+    private ImageView guardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +41,25 @@ public class SlideSecond extends AppCompatActivity {
         //recupera as datas selecionadas
         calendarioAgendar.setOnMonthChangedListener(new OnMonthChangedListener() {
             @Override
-            public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
-                Log.i("data: ", "valor: " + (date.getMonth() + 1) + "/" + date.getYear());
+            public void onMonthChanged(MaterialCalendarView widget, final CalendarDay date) {
+
+                guardar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Date data = new Date();
+                        data.setDay(Integer.toString(date.getDay()));
+                        data.setMonth(Integer.toString(date.getMonth())+1);
+                        data.setYear(Integer.toString(date.getYear()));
+
+                        Toast.makeText(SlideSecond.this, data.getMonth(), Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
+
+
+
+
             }
         });
 

@@ -5,14 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.emr.Models.Date;
 import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.R;
 
 public class SlideUltimate extends AppCompatActivity {
 
-    Spinner hospitais;
+    Spinner hospitais,medicos;
+    ImageView validar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +24,41 @@ public class SlideUltimate extends AppCompatActivity {
         setContentView(R.layout.act_slide03);
 
         getSupportActionBar().hide();
+        hospitais = findViewById(R.id.spnCategoria);
+        ArrayAdapter adapterCat = ArrayAdapter.createFromResource(this,R.array.categorias, android.R.layout.simple_spinner_dropdown_item);
+        hospitais.setAdapter(adapterCat);
 
-        hospitais = findViewById(R.id.spinner);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.consultorios, android.R.layout.simple_spinner_item);
-        hospitais.setAdapter(adapter);
+        medicos = findViewById(R.id.spnCategoria2);
+        ArrayAdapter adapterDoc = ArrayAdapter.createFromResource(this,R.array.medicos, android.R.layout.simple_spinner_dropdown_item);
+        medicos.setAdapter(adapterDoc);
 
-        //System.out.println(adapter.getAutofillOptions());
+        validar = findViewById(R.id.imgValidar);
+
+        validar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date data = new Date();
+
+                String dia = data.getDay();
+                String mes = data.getMonth();
+                String ano = data.getYear();
+
+                Toast.makeText(SlideUltimate.this, dia+mes+ano, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
 
     }
 
-    public void voltarMenu(View v){
+    public void voltar(View v){
+        Intent intent = new Intent(SlideUltimate.this, SlideSecond.class);
+        startActivity(intent);
+    }
+
+    public void validar(View v){
         Intent intent = new Intent(SlideUltimate.this, MenuUsrActivity.class);
         startActivity(intent);
     }

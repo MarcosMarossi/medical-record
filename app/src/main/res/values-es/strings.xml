@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vida Saludable</string>
+    <string name="titulo_login">Acceda a mi cuenta</string>
+    <string name="titulo_cadastrar">Registrar una cuenta</string>
+
+    //Nome_Título
+    <string name="nome">Vida Saludable</string>
+
+    //Textos_MainActivity
+    <string name="explicacao_app">Bienvenido a Control Health, su nueva aplicación de seguimiento médico. ¡También tenemos un eficiente sistema de programación!</string>
+    <string name="btnEntrar">Iniciar sesión</string>
+    <string name="btnCadastrar">Registrar</string>
+    <string name="Idioma">Idioma</string>
+
+    //Textos_CadastroActivity
+    <string name="informardados">Ingrese sus datos</string>
+    <string name="verificarinfo">¡Verificaremos su información!</string>
+    <string name="nome_completo">Nombre completo</string>
+    <string name="cpf_padrao">CPF</string>
+    <string name="email">Correo electrónico</string>
+    <string name="senha">Contraseña</string>
+    <string name="btnLimpar">Borrar datos</string>
+
+
+    //Textos_Login
+    <string name="dadosacesso">Ingrese sus datos de inicio de sesión</string>
+    <string name="btnSair">Dejar</string>
+    <string name="esqueceu">¿Olvido la contraseña?</string>
+    <string name="lembrar">Recuérdame</string>
+    <string name="hint_senha">Contraseña</string>
+    <string name="hint_login">Nombre</string>
+
+    //Textos_Recuperar Senha
+    <string name="titulorecuperar">Recuperar contraseña</string>
+    <string name="descricao">Bienvenido, usamos el correo electrónico como método de recuperación de contraseña. Por lo tanto, después de enviar, verifique su contraseña temporal.</string>
+    <string name="btnEnviar">Enviar</string>
+
+
+    //Agendar
+    <string name="hora">Horario</string>
+    <string name="btnAgendar">Programar una hora</string>
+    <string name="desc_calendario">Selecciona una fecha que prefieras</string>
+    <string name="tit_agendamento">Haga su cita</string>
+    <string name="desc_agendamento">¡Sólo tiene que navegar entre las pantallas y rellenar la información necesaria!</string>
+    <string name="tit_final_agendamento">¡Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
+
+
+    <string-array name="consultorios">
+        <item>Selecciona una oficina</item>
+        <item>HAOC Indaiatuba</item>
+        <item>Unimed Campinas</item>
+        <item>Unimed Monte Mor</item>
+        <item>Santa Casa Itu</item>
+        <item>Santa Casa Salto</item>
+    </string-array>
+
+    <string-array name="idioma">
+        <item>PT-BR</item>
+        <item>EN</item>
+        <item>ES</item>
+        <item>FR</item>
+        <item>HU</item>
+        <item>DE</item>
+    </string-array>
+
+    // API Calendario Meses
+    <string name="janeiro">Enero</string>
+    <string name="fevereiro">Febrero</string>
+    <string name="marco">Marzo</string>
+    <string name="abril">Abril</string>
+    <string name="maio">Mayo</string>
+    <string name="junho">Junio</string>
+    <string name="julho">Julio  </string>
+    <string name="agosto">Agosto</string>
+    <string name="setembro">Septiembre</string>
+    <string name="outubro">Octubre</string>
+    <string name="novembro">Noviembre</string>
+    <string name="dezembro">Diciembre</string>
+
+
+    // Histórico
+
+    <string name="historico">Historia</string>
+
+    // Avisos
+
+    <string name="avisos_titulo">Advertencias</string>
+
+
+    // API Calendario Semanas
+    <string name="seg">Lun</string>
+    <string name="ter">Mar</string>
+    <string name="qua">Mie</string>
+    <string name="qui">Jue</string>
+    <string name="sex">Vie</string>
+    <string name="sab">Sab</string>
+    <string name="dom">Dom</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim">Si</string>
+    <string name="sair_nao">No</string>
+    <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
+
+
+</resources>

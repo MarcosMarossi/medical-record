@@ -60,6 +60,7 @@
         <item>ES</item>
         <item>FR</item>
         <item>HU</item>
+        <item>ALE</item>
     </string-array>
 
     // API Calendario Meses
@@ -74,6 +75,7 @@
     <string name="setembro">Setembro</string>
     <string name="outubro">Outubro</string>
     <string name="novembro">Novembro</string>
+    <string name="dezembro">Dezembro</string>
 
 
     // Histórico

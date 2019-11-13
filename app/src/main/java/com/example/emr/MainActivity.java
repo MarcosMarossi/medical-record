@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -39,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
     String Token, getToken, Profile;
     SharedPreferences sharedPreferences;
+    private Button btnAux;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mudarIdioma();
         setContentView(R.layout.act_main);
 
         retrofit = new Retrofit.Builder()
@@ -80,31 +83,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         initList();
         idioma = findViewById(R.id.spinIdioma);
 
         adapterCountry = new AdapterCountry(this, countryList);
         idioma.setAdapter(adapterCountry);
-        /**ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.idioma,android.R.layout.simple_spinner_item);
-         idioma.setAdapter(adapter);
 
-         AdapterView.OnItemClickListener escolhaIdioma = new AdapterView.OnItemClickListener() {
-        @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // Fazer toda a lógica do idioma assim que estiver tudo pronto
-        }
-        };**/
         idioma.setSelected(false);
-        idioma.setSelection(0, true);
+        idioma.setSelection(getLanguage(), true);
+
 
         idioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 CountryItem clickedItem = (CountryItem) parent.getItemAtPosition(position);
-                String clickedCountryName = clickedItem.getCountryName();
-                Toast.makeText(MainActivity.this, clickedCountryName + " selected", Toast.LENGTH_LONG).show();
-                if (clickedCountryName.equals("USA")) {
-                    idiomaHU();
-                }
+                String clickedCountryName = clickedItem.getCountryName().toLowerCase();
+                // Toast.makeText(MainActivity.this, clickedCountryName + " selected", Toast.LENGTH_LONG).show();
+                alteraridioma(clickedCountryName);
             }
 
             @Override
@@ -112,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
     }
 
@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         countryList.add(new CountryItem("USA", R.drawable.usa3));
         countryList.add(new CountryItem("ES", R.drawable.spain));
         countryList.add(new CountryItem("FR", R.drawable.french));
+        countryList.add(new CountryItem("ALE", R.drawable.germany));
         countryList.add(new CountryItem("HU", R.drawable.hungary));
 
     }
@@ -133,8 +134,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, RefactorActivity.class));
     }
 
-    public void idiomaHU() {
-        Locale idioma = new Locale("hu");
+    public void mudarIdioma()
+    {
+        SharedPreferences dados = getSharedPreferences("emr-language", MODE_PRIVATE);
+        String lang = dados.getString("idioma", getResources().getConfiguration().locale.getLanguage());
+
+        Locale idioma = new Locale(lang);
         Locale.setDefault(idioma);
 
         Context context = this;
@@ -143,12 +148,63 @@ public class MainActivity extends AppCompatActivity {
 
         config.setLocale(idioma);
         res.updateConfiguration(config, res.getDisplayMetrics());
+        //finish();
+        //startActivity(new Intent(this,MainActivity.class));
+
+    }
+
+    public void alteraridioma(String idioma) {
+
+        Locale locale;
+        if(idioma.equals("pt-br"))
+            locale = new Locale("pt");
+        else if(idioma.equals("usa"))
+            locale = new Locale("en");
+        else if(idioma.equals("ale"))
+            locale = new Locale("de");
+        else
+            locale = new Locale(idioma);
+
+
+
+        Locale.setDefault(locale);
+
+        Context context = this;
+        Resources res = context.getResources();
+        Configuration config = new Configuration(res.getConfiguration());
+
+        config.setLocale(locale);
+        res.updateConfiguration(config, res.getDisplayMetrics());
 
         SharedPreferences.Editor dados = getSharedPreferences("emr-language", MODE_PRIVATE).edit();
-        dados.putString("idioma", "en");
+        dados.putString("idioma", getResources().getConfiguration().locale.getLanguage());
         dados.commit();
 
-        recreate();
+        finish();
+        startActivity(new Intent(this,MainActivity.class));
+    }
+
+
+    public int getLanguage(){
+        SharedPreferences dados = getSharedPreferences("emr-language",MODE_PRIVATE);
+        String result = dados.getString("idioma","");
+        // Toast.makeText(MainActivity.this,result+"",Toast.LENGTH_LONG).show();
+        switch(result){
+            case "pt":
+                return 0;
+            case "en":
+                return 1;
+            case "es":
+                return 2;
+            case "fr":
+                return 3;
+            case "de":
+                return 4;
+            case "hu":
+                return 5;
+
+        }
+        return 1;
     }
 
     public void menuPaciente() {

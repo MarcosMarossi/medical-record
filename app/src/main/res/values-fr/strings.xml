@@ -10,7 +10,11 @@
     //Textos_MainActivity
     <string name="explicacao_app">Bienvenue sur Control Health, votre nouvelle application de suivi médical. Nous avons également un système de planification efficace!</string>
     <string name="btnEntrar">Connecter</string>
+<<<<<<< HEAD
     <string name="btnCadastrar">S'inscrire</string>
+=======
+    <string name="btnCadastrar">S\'inscrire</string>
+>>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     <string name="Idioma">Langue</string>
 
     //Textos_CadastroActivity CPF=Carte Nationale d'Identité-CNI na França
@@ -62,7 +66,10 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
+<<<<<<< HEAD
         <item>IT</item>
+=======
+>>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
 
 
     </string-array>

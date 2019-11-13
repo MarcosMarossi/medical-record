@@ -62,8 +62,11 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
+<<<<<<< HEAD
         <item>IT</item>
 
+=======
+>>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses
@@ -103,8 +106,12 @@
     // Menu Sair Usuário
     <string name="sair_sim">Si</string>
     <string name="sair_nao">No</string>
+<<<<<<< HEAD
     <string name="sair_titulo">¿Estás seguro de que quieres irte?
 </string>
+=======
+    <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
+>>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
 
 
 </resources>

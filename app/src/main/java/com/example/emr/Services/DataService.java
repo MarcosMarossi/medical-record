@@ -18,4 +18,7 @@ public interface DataService {
 
     @GET("auth/jwt/me")
     Call<User> pegarToken(@Header("x-access-token") String Token);
+
+    @POST("auth/jwt/register")
+    Call<User> registrarUsuario(@Body User register);
 }

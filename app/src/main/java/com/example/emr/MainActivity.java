@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
     String Token, getToken, Profile;
     SharedPreferences sharedPreferences;
-    private Button btnAux;
 
 
     @Override

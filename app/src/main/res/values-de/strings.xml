@@ -47,14 +47,14 @@
     <string name="tit_final_agendamento">Fehlt nur! Geben Sie die neuesten Daten ein, um Ihren Termin zu planen</string>
 
 
-    <string-array name="consultorios">
+    <!--<string-array name="consultorios">
         <item>Wählen Sie ein Büro</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -63,11 +63,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses

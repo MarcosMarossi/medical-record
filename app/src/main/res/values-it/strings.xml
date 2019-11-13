@@ -33,7 +33,7 @@
 
     //Textos_Recuperar Senha
     <string name="titulorecuperar">Recupera password</string>
-    <string name="descricao">Benvenuto, usiamo l'e-mail come metodo di recupero della password. Pertanto, dopo l'invio, controlla la password temporanea.</string>
+    <string name="descricao">Benvenuto, usiamo l\'e-mail come metodo di recupero della password. Pertanto, dopo l\'invio, controlla la password temporanea.</string>
     <string name="btnEnviar">Inviare</string>
 
 
@@ -46,14 +46,14 @@
     <string name="tit_final_agendamento">Non è passato molto tempo! Inserisci le informazioni più recenti per fissare il tuo appuntamento</string>
 
 
-    <string-array name="consultorios">
+    <!--<string-array name="consultorios">
         <item>Seleziona un ufficio</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>

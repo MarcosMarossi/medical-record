@@ -46,14 +46,14 @@
     <string name="tit_final_agendamento">¡Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
 
 
-    <string-array name="consultorios">
+  <!--  <string-array name="consultorios">
         <item>Selecciona una oficina</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -62,11 +62,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses
@@ -106,12 +102,7 @@
     // Menu Sair Usuário
     <string name="sair_sim">Si</string>
     <string name="sair_nao">No</string>
-<<<<<<< HEAD
-    <string name="sair_titulo">¿Estás seguro de que quieres irte?
-</string>
-=======
     <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
 
 
 </resources>

@@ -46,18 +46,14 @@
     <string name="tit_final_agendamento">Még egy perc! Töltse ki a utolsó adatokat a találkozó ütemezéséhez</string>
 
 
-<<<<<<< HEAD
-    <string-array name="orvosi rendelők">
-=======
-    <string-array name="consultorios">
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
+    <!--<string-array name="consultorios">
         <item>Válasszon egy orvosi rendelőt</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -66,11 +62,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendário Meses

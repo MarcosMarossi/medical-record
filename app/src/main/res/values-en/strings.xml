@@ -45,18 +45,14 @@
     <string name="tit_final_agendamento">Very little is missing! Fill in the last data to schedule your appointment</string>
 
 
-    <string-array name="consultorios">
-<<<<<<< HEAD
-        <item>Select a doctor's office</item>
-=======
+    <!--<string-array name="consultorios">
         <item>Select a doctor\'s office</item>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -65,11 +61,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses

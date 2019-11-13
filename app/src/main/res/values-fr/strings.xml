@@ -10,11 +10,7 @@
     //Textos_MainActivity
     <string name="explicacao_app">Bienvenue sur Control Health, votre nouvelle application de suivi médical. Nous avons également un système de planification efficace!</string>
     <string name="btnEntrar">Connecter</string>
-<<<<<<< HEAD
-    <string name="btnCadastrar">S'inscrire</string>
-=======
     <string name="btnCadastrar">S\'inscrire</string>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     <string name="Idioma">Langue</string>
 
     //Textos_CadastroActivity CPF=Carte Nationale d'Identité-CNI na França
@@ -50,14 +46,14 @@
     <string name="tit_final_agendamento">Il manque juste! Remplissez les dernières données pour planifier votre rendez-vous</string>
 
 
-    <string-array name="consultorios">
+    <!--<string-array name="consultorios">
         <item>Sélectionnez un bureau</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -66,10 +62,8 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
+
 
 
     </string-array>

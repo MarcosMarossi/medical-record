@@ -115,6 +115,27 @@
         <item>Medico</item>
     </string-array>
 
+    // Verificar
+
+    <string name="tit_agendar">Agendar</string>
+    <string name="tit_avisos">Avisos</string>
+    <string name="tit_historico">Histórico</string>
+    <string name="tit_sair">Sair</string>
+    <string name="tit_monitoramento">Monitoramento</string>
+    <string name="tit_validacao">Validações</string>
+    <string name="tit_consulta">Consultas</string>
+    <string name="tit_criar_avisos">Criar Avisos</string>
+
+    <string name="desc_agendar">Escolha o melhor dia para você!</string>
+    <string name="desc_avisos">Mural de avisos do aplicativo.</string>
+    <string name="desc_historico">Consulte seus agendamentos.</string>
+    <string name="desc_sair">Deseja sair do aplicativo?</string>
+    <string name="desc_monitoramento">Monitore internações.</string>
+    <string name="desc_validacao">Validações das enfermeiras.</string>
+    <string name="desc_consultas">Veja quem serão seus pacientes!</string>
+    <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
+    <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
+
 
 
 

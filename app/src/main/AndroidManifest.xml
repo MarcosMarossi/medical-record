@@ -66,7 +66,7 @@
             android:parentActivityName=".LoginActivity" />
 
         <activity
-            android:name=".RefactorActivity"
+            android:name=".RegisterActivity"
             android:label="@string/titulo_cadastrar"
             android:parentActivityName=".LoginActivity" />
 

@@ -37,13 +37,9 @@ public class SlideUltimate extends AppCompatActivity {
         validar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Date data = new Date();
-
-                String dia = data.getDay();
-                String mes = data.getMonth();
-                String ano = data.getYear();
-
-                Toast.makeText(SlideUltimate.this, dia+mes+ano, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SlideUltimate.this, data.getMonth() + data.getYear(), Toast.LENGTH_SHORT).show();
 
             }
         });

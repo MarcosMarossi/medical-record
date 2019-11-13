@@ -26,48 +26,51 @@ public class SlideSecond extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        guardar = findViewById(R.id.imgAvancar);
 
-        calendarioAgendar = findViewById(R.id.calAgendar);
-        calendarioAgendar.state().edit()
-                .setMaximumDate(CalendarDay.from(2019,1,1))
-                .setMaximumDate(CalendarDay.from(2020,6,1))
-                .commit();
-        CharSequence meses[] = {"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"};
-        calendarioAgendar.setTitleMonths(meses);
 
-        CharSequence dias[] = {"Seg","Ter","Qua","Qui","Sex","Sab","Dom"};
-        calendarioAgendar.setWeekDayLabels(dias);
-
-        //recupera as datas selecionadas
-        calendarioAgendar.setOnMonthChangedListener(new OnMonthChangedListener() {
+        guardar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onMonthChanged(MaterialCalendarView widget, final CalendarDay date) {
+            public void onClick(View v) {
+                calendarioAgendar = findViewById(R.id.calAgendar);
+                calendarioAgendar.state().edit()
+                        .setMaximumDate(CalendarDay.from(2019,1,1))
+                        .setMaximumDate(CalendarDay.from(2020,6,1))
+                        .commit();
+                CharSequence meses[] = {"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"};
+                calendarioAgendar.setTitleMonths(meses);
 
-                guardar.setOnClickListener(new View.OnClickListener() {
+                CharSequence dias[] = {"Seg","Ter","Qua","Qui","Sex","Sab","Dom"};
+                calendarioAgendar.setWeekDayLabels(dias);
+
+                //recupera as datas selecionadas
+                calendarioAgendar.setOnMonthChangedListener(new OnMonthChangedListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onMonthChanged(MaterialCalendarView widget, final CalendarDay date) {
+
                         Date data = new Date();
+
                         data.setDay(Integer.toString(date.getDay()));
-                        data.setMonth(Integer.toString(date.getMonth())+1);
+                        data.setMonth(Integer.toString(date.getMonth()+1));
                         data.setYear(Integer.toString(date.getYear()));
 
-                        Toast.makeText(SlideSecond.this, data.getMonth(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SlideSecond.this, "Month: " + data.getMonth() + "Year: " + data.getYear(), Toast.LENGTH_SHORT).show();
 
+                        Intent intent = new Intent(SlideSecond.this, SlideUltimate.class);
+                        startActivity(intent);
 
                     }
                 });
-
-
-
-
             }
         });
 
     }
 
     public void avancar(View view){
-        Intent intent = new Intent(SlideSecond.this, SlideUltimate.class);
-        startActivity(intent);
+
+
+
+
     }
     public void voltar(View view){
         Intent intent = new Intent(SlideSecond.this, SlideInitial.class);

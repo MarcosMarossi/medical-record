@@ -6,6 +6,7 @@ public class User {
     private String password;
     private String token;
     private String email;
+    private String cpf;
     private String message;
     private String profile;
 
@@ -41,6 +42,14 @@ public class User {
         this.email = email;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getMessage() {
         return message;
     }
@@ -64,6 +73,13 @@ public class User {
 
     public User(){
 
+    }
+
+    public User(String name, String cpf, String email, String password) {
+        this.name = name;
+        this.cpf = cpf;
+        this.email = email;
+        this.password = password;
     }
 
 }

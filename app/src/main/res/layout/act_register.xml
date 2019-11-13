@@ -42,7 +42,7 @@
             android:layout_width="350dp"
             android:layout_height="51dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/cpf_padrao"
@@ -66,7 +66,7 @@
             android:layout_width="350dp"
             android:layout_height="51dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/email"
@@ -81,7 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_email_24dp"
-                android:drawablePadding="10dp" />
+                android:drawablePadding="10dp"
+                android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -89,7 +90,7 @@
             android:layout_width="348dp"
             android:layout_height="53dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/senha"
@@ -104,40 +105,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_senha_24dp"
-                android:drawablePadding="10dp" />
+                android:drawablePadding="10dp"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="284dp"
+                android:text="@string/verificarinfo"
+                android:textSize="18sp" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
+            android:id="@+id/btnCadastrar"
+            android:layout_width="170dp"
             android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="236dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="220dp"
             android:background="@drawable/borda_redonda_vermelho"
             android:text="@string/btnCadastrar"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.976"
-            app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/inputSenha"
-            app:layout_constraintVertical_bias="0.555" />
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/borda_redonda_azul"
             android:hint="@string/btnLimpar"
             android:onClick="limparCampos"
             android:text="@string/btnLimpar"
             android:textColor="@android:color/background_light"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <TextView
             android:id="@+id/textView"
@@ -164,6 +170,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="A senha deve conter números e letras!"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.304"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputSenha" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

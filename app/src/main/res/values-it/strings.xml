@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vita Sana</string>
+    <string name="titulo_login">Accedi al mio account</string>
+    <string name="titulo_cadastrar">Registra un account</string>
+
+    //Nome_Título
+    <string name="nome">Vita Sana</string>
+
+    //Textos_MainActivity
+    <string name="explicacao_app">Benvenuto in Control Health, la tua nuova app di monitoraggio medico. Abbiamo anche un efficiente sistema di programmazione!</string>
+    <string name="btnEntrar">Accedi</string>
+    <string name="btnCadastrar">Registrazione</string>
+    <string name="Idioma">Lingua</string>
+
+    //Textos_CadastroActivity
+    <string name="informardados">Inserisci i tuoi dati</string>
+    <string name="verificarinfo">Verificheremo le tue informazioni!</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="cpf_padrao">CPF</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Password</string>
+    <string name="btnLimpar">Cancella dati</string>
+
+
+    //Textos_Login
+    <string name="dadosacesso">Inserisci i tuoi dati di accesso</string>
+    <string name="btnSair">Congedo</string>
+    <string name="esqueceu">Hai dimenticato la password?</string>
+    <string name="lembrar">Ricordamelo</string>
+    <string name="hint_senha">Password</string>
+    <string name="hint_login">Nome</string>
+
+    //Textos_Recuperar Senha
+    <string name="titulorecuperar">Recupera password</string>
+    <string name="descricao">Benvenuto, usiamo l\'e-mail come metodo di recupero della password. Pertanto, dopo l\'invio, controlla la password temporanea.</string>
+    <string name="btnEnviar">Inviare</string>
+
+
+    //Agendar
+    <string name="hora">Orario</string>
+    <string name="btnAgendar">Programma</string>
+    <string name="desc_calendario">Seleziona una data a tua scelta</string>
+    <string name="tit_agendamento">Prendi il tuo appuntamento</string>
+    <string name="desc_agendamento">Basta navigare tra le schermate e inserire le informazioni necessarie!</string>
+    <string name="tit_final_agendamento">Non è passato molto tempo! Inserisci le informazioni più recenti per fissare il tuo appuntamento</string>
+
+
+    <!--<string-array name="consultorios">
+        <item>Seleziona un ufficio</item>
+        <item>HAOC Indaiatuba</item>
+        <item>Unimed Campinas</item>
+        <item>Unimed Monte Mor</item>
+        <item>Santa Casa Itu</item>
+        <item>Santa Casa Salto</item>
+    </string-array>-->
+
+    <string-array name="idioma">
+        <item>PT-BR</item>
+        <item>EN</item>
+        <item>ES</item>
+        <item>FR</item>
+        <item>HU</item>
+        <item>DE</item>
+        <item>IT</item>
+
+
+    </string-array>
+
+    // API Calendario Meses
+    <string name="janeiro">Gennaio</string>
+    <string name="fevereiro">Febbraio</string>
+    <string name="marco">Marzo</string>
+    <string name="abril">Aprile</string>
+    <string name="maio">Maggio</string>
+    <string name="junho">Giugno</string>
+    <string name="julho">Luglio</string>
+    <string name="agosto">Agosto</string>
+    <string name="setembro">Settembre</string>
+    <string name="outubro">Ottobre</string>
+    <string name="novembro">Novembre</string>
+    <string name="dezembro">Dicembre</string>
+
+
+    // Histórico
+
+    <string name="historico">Storia</string>
+
+    // Avisos
+
+    <string name="avisos_titulo">Avvisi</string>
+
+
+    // API Calendario Semanas
+    <string name="seg">Lun</string>
+    <string name="ter">Mar</string>
+    <string name="qua">Mer</string>
+    <string name="qui">Fat </string>
+    <string name="sex">Ven</string>
+    <string name="sab">Sab</string>
+    <string name="dom">Dom</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim">Sì </string>
+    <string name="sair_nao">No</string>
+    <string name="sair_titulo">Sei sicuro di voler partire?</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Monitoraggio</string>
+    <string name="titulo_validar">Convalida</string>
+    <string name="titulo_avisos">I miei avvertimenti</string>
+    <string name="titulo_consultas">Consultazioni</string>
+
+
+</resources>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" >Vida Saudável</string>
+    <string name="titulo_login" >Acessar minha conta</string>
+    <string name="titulo_cadastrar" >Cadastrar uma conta</string>
+
+    //Nome_Título
+    <string name="nome" >Vida Saudável</string>
+
+    //Textos_MainActivity
+    <string name="explicacao_app" >Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
+    <string name="btnEntrar" >Entrar</string>
+    <string name="btnCadastrar" >Cadastrar</string>
+    <string name="Idioma" >Idioma</string>
+
+    //Textos_CadastroActivity
+    <string name="informardados" >Informe seus dados</string>
+    <string name="verificarinfo" >Verificaremos suas informações!</string>
+    <string name="nome_completo" >Nome completo</string>
+    <string name="cpf_padrao" >CPF</string>
+    <string name="email" >E-mail</string>
+    <string name="senha" >Senha</string>
+    <string name="btnLimpar" >Limpar Dados</string>
+
+
+    //Textos_Login
+    <string name="dadosacesso" >Informe seus dados de acesso</string>
+    <string name="btnSair" >Sair</string>
+    <string name="esqueceu" >Esqueceu a senha?</string>
+    <string name="lembrar" >Lembrar-me</string>
+    <string name="hint_senha" >Senha</string>
+    <string name="hint_login" >Nome</string>
+
+    //Textos_Recuperar Senha
+    <string name="titulorecuperar" >Recuperar Senha</string>
+    <string name="descricao" >Bem-vindo, utilizamos o e-mail como método de recuperação de senha. Por isso, após enviar confira sua senha temporária.</string>
+    <string name="btnEnviar" >Enviar</string>
+
+
+    //Agendar
+    <string name="hora" >Horário</string>
+    <string name="btnAgendar" >Agendar</string>
+    <string name="desc_calendario" >Selecione uma data de sua preferência</string>
+    <string name="tit_agendamento" >Faça o seu agendamento</string>
+    <string name="desc_agendamento" >Basta navegar entre as telas e preencher as informações necessárias!</string>
+    <string name="tit_final_agendamento" >Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
+
+    <string-array name="idioma">
+        <item>PT-BR</item>
+        <item>EN</item>
+        <item>ES</item>
+        <item>FR</item>
+        <item>HU</item>
+        <item>DE</item>
+        <item>IT</item>
+
+
+    </string-array>
+
+    <!--
+   /** <string name="janeiro" >Janeiro</string>
+    <string name="fevereiro" >Fevereiro</string>
+    <string name="marco" >Março</string>
+    <string name="abril" >Abril</string>
+    <string name="maio" >Maio</string>
+    <string name="junho" >Junho</string>
+    <string name="julho" >Julho</string>
+    <string name="agosto" >Agosto</string>
+    <string name="setembro" >Setembro</string>
+    <string name="outubro" >Outubro</string>
+    <string name="novembro" >Novembro</string>
+    <string name="dezembro" >Dezembro</string>-->
+
+
+
+    // API Calendario Meses
+    <string name="janeiro">Janeiro</string>
+    <string name="fevereiro">Fevereiro</string>
+    <string name="marco">Março</string>
+    <string name="abril">Abril</string>
+    <string name="maio">Maio</string>
+    <string name="junho">Junho</string>
+    <string name="julho">Julho</string>
+    <string name="agosto">Agosto</string>
+    <string name="setembro">Setembro</string>
+    <string name="outubro">Outubro</string>
+    <string name="novembro">Novembro</string>
+    <string name="dezembro">Dezembro</string>
+
+
+
+    // Histórico
+
+    <string name="historico" >Histórico</string>
+
+    // Avisos
+
+    <string name="avisos_titulo" >Avisos</string>
+
+
+    // API Calendario Semanas
+    <string name="seg" >Seg</string>
+    <string name="ter" >Ter</string>
+    <string name="qua" >Qua</string>
+    <string name="qui" >Qui</string>
+    <string name="sex" >Sex</string>
+    <string name="sab" >Sab</string>
+    <string name="dom" >Dom</string>
+
+
+    // Menu Sair Usuário
+    <string name="sair_sim" >Sim</string>
+    <string name="sair_nao" >Não</string>
+    <string name="sair_titulo" >Tem certeza que deseja sair?</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar" >Monitoramento</string>
+    <string name="titulo_validar" >Validação</string>
+    <string name="titulo_avisos" >Meus Avisos</string>
+    <string name="titulo_consultas" >Consultas</string>
+
+
+    <string-array name="categorias">
+        <item>Selecione uma categoria</item>
+        <item>Clinico Geral</item>
+        <item>Geriatria</item>
+        <item>Cardiologia</item>
+        <item>Dermatologia</item>
+        <item>Pediatria</item>
+        <item>Radiologia</item>
+    </string-array>
+
+    <string-array name="medicos">
+        <item>Selecione um médico(a)</item>
+        <item>Medico</item>
+    </string-array>
+
+
+
+
+
+</resources>
+

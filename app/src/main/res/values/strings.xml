@@ -43,6 +43,7 @@
     <string name="tit_agendamento">Faça o seu agendamento</string>
     <string name="desc_agendamento">Basta navegar entre as telas e preencher as informações necessárias!</string>
     <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
+<<<<<<< HEAD
 
 
     <!--<string-array name="consultorios">
@@ -53,6 +54,8 @@
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
     </string-array> -->
+=======
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -62,7 +65,10 @@
         <item>HU</item>
         <item>DE</item>
         <item>IT</item>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
     </string-array>
 
     // API Calendario Meses
@@ -109,6 +115,10 @@
     <string name="titulo_validar">Validação</string>
     <string name="titulo_avisos">Meus Avisos</string>
     <string name="titulo_consultas">Consultas</string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
     <string-array name="categorias">
         <item>Selecione uma categoria</item>
@@ -135,6 +145,10 @@
     <string name="tit_validacao">Validações</string>
     <string name="tit_consulta">Consultas</string>
     <string name="tit_criar_avisos">Criar Avisos</string>
+<<<<<<< HEAD
+=======
+    <string name="tit_qr_code">Qr Code</string>
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
     <string name="desc_agendar">Escolha o melhor dia para você!</string>
     <string name="desc_avisos">Mural de avisos do aplicativo.</string>
@@ -145,7 +159,11 @@
     <string name="desc_consultas">Veja quem serão seus pacientes!</string>
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
+<<<<<<< HEAD
 
+=======
+    <string name="desc_qr_code">Verifique o BPM do paciente.</string>
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
     // Agendamento
 
     <string name="erro_data">Por favor, insira uma data válida!</string>

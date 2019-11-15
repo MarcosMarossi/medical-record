@@ -3,6 +3,10 @@
     package="com.example.emr">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
+<<<<<<< HEAD
         <activity android:name=".User.Scheduling.Slide03Activity"></activity>
+=======
+        <activity android:name=".Nurse.QrCodeActivity"></activity>
+        <activity android:name=".User.Scheduling.Slide03Activity" />
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
         <activity android:name=".User.Scheduling.Slide02Activity" />
         <activity android:name=".User.Scheduling.Slide01Activity" />
         <activity

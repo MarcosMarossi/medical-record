@@ -45,14 +45,22 @@
     <string name="tit_final_agendamento">¡Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
 
 
+<<<<<<< HEAD
     <!--<string-array name="consultorios">
+=======
+  <!--  <string-array name="consultorios">
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
         <item>Selecciona una oficina</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
+<<<<<<< HEAD
     </string-array> -->
+=======
+    </string-array>-->
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -62,7 +70,10 @@
         <item>HU</item>
         <item>DE</item>
         <item>IT</item>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
     </string-array>
 
     // API Calendario Meses
@@ -103,6 +114,7 @@
     <string name="sair_sim">Si</string>
     <string name="sair_nao">No</string>
     <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
+<<<<<<< HEAD
 
     // Enfermeira e Médico
     <string name="titulo_monitorar">Monitoreo</string>
@@ -150,6 +162,8 @@
 
     <string name="erro_data">Por favor, introduzca una fecha válida!</string>
 
+=======
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
 
 </resources>

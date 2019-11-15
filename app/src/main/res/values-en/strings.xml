@@ -46,13 +46,21 @@
 
 
     <!--<string-array name="consultorios">
+<<<<<<< HEAD
         <item>Select a doctor's office</item>
+=======
+        <item>Select a doctor\'s office</item>
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
+<<<<<<< HEAD
     </string-array> -->
+=======
+    </string-array>-->
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -62,7 +70,10 @@
         <item>HU</item>
         <item>DE</item>
         <item>IT</item>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fde846a9d6168ec2923ba7a11b8e2d4aec723f45
     </string-array>
 
     // API Calendario Meses

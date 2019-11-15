@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="@color/colorPrimary"
+    android:background="#B66B6B"
+    android:backgroundTint="#B66B6B"
     tools:context=".User.SliderActivity">
 
 

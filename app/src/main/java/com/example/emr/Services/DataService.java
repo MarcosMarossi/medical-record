@@ -1,5 +1,6 @@
 package com.example.emr.Services;
 
+import com.example.emr.Models.Sheduling;
 import com.example.emr.Models.User;
 
 import retrofit2.Call;
@@ -21,4 +22,8 @@ public interface DataService {
 
     @POST("auth/jwt/register")
     Call<User> registrarUsuario(@Body User register);
+
+
+    @GET("/api/schedulling/:id")
+    Call<Sheduling> pegarId(@Body User register);
 }

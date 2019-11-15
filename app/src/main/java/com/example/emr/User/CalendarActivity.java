@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.emr.R;
+import com.example.emr.User.Scheduling.Slide01Activity;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
@@ -58,7 +59,7 @@ public class CalendarActivity extends AppCompatActivity {
         });  */
     }
     private void abrirAgendar(){
-        Intent intent = new Intent(CalendarActivity.this, SliderActivity.class);
+        Intent intent = new Intent(CalendarActivity.this, Slide01Activity.class);
         startActivity(intent);
     }
 

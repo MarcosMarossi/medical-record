@@ -48,7 +48,6 @@
             android:name=".User.CalendarActivity"
             android:label="@string/historico"
             android:parentActivityName=".User.MenuUsrActivity" />
-        <activity android:name=".User.SliderActivity" />
         <activity android:name=".User.MenuUsrActivity" />
         <activity
             android:name=".RecoverActivity"

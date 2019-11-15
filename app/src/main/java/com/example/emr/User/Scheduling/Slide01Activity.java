@@ -16,7 +16,7 @@ import com.example.emr.User.MenuUsrActivity;
 
 public class Slide01Activity extends AppCompatActivity {
 
-    ImageView iNext, iBack;
+    private ImageView iNext, iBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -136,5 +136,9 @@
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
 
+    // Agendamento
+
+    <string name="erro_data">Por favor, insira uma data válida!</string>
+
 
 </resources>

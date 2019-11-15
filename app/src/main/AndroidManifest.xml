@@ -15,7 +15,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
+<<<<<<< HEAD
         <activity android:name=".Nurse.QrCodeActivity"></activity>
+=======
+        <activity android:name=".User.Scheduling.Slide03Activity"></activity>
+        <activity android:name=".User.Scheduling.Slide02Activity" />
+        <activity android:name=".User.Scheduling.Slide01Activity" />
+>>>>>>> 3e1cb1131d08064351e9f3759d375ecdafd95662
         <activity
             android:name=".Nurse.ValidationActivity"
             android:label="@string/titulo_validar"
@@ -50,9 +56,13 @@
             android:name=".User.CalendarActivity"
             android:label="@string/historico"
             android:parentActivityName=".User.MenuUsrActivity" />
+<<<<<<< HEAD
         <activity android:name=".User.Slide.SlideUltimate" />
         <activity android:name=".User.Slide.SlideSecond" />
         <activity android:name=".User.Slide.SlideInitial" />
+=======
+        <activity android:name=".User.SliderActivity" />
+>>>>>>> 3e1cb1131d08064351e9f3759d375ecdafd95662
         <activity android:name=".User.MenuUsrActivity" />
         <activity
             android:name=".RecoverActivity"

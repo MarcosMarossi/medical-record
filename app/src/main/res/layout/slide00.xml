@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".User.Slide.SlideInitial">
+    android:backgroundTint="@color/colorPrimary"
+    tools:context=".User.SliderActivity">
 
 
     <TextView
@@ -16,7 +17,7 @@
         android:fontFamily="@font/ubuntu"
         android:gravity="center"
         android:text="@string/tit_agendamento"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,45 +34,43 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:gravity="center"
-        android:text="Basta navegar entre as telas e preencher as informações necessárias!"
-        android:textAlignment="inherit"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:text="Basta deslizar entre as telas e preencher as informações necessárias!"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="30dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="voltarMenu"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView3"
+        android:layout_width="199dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/export" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/relatorio" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="30dp"
+        android:id="@+id/iNext"
+        android:layout_width="40dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="abrirCalendario"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/next" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="199dp"
-        android:layout_height="167dp"
-        android:layout_marginTop="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/iBackMenu"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_relatorio" />
+        app:srcCompat="@drawable/export" />
 
 </android.support.constraint.ConstraintLayout>

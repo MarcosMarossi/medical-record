@@ -3,7 +3,6 @@ package com.example.emr.User;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,11 +12,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.emr.Adapter.Adaptador;
-import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
-import com.example.emr.R;
-import com.example.emr.User.Slide.SlideInitial;
+import com.example.emr.User.Scheduling.Slide01Activity;
 
 import static com.example.emr.R.*;
 
@@ -75,7 +72,7 @@ public class MenuUsrActivity extends AppCompatActivity {
     }
 
     private void abrirAgendar() {
-        Intent intent = new Intent(MenuUsrActivity.this, SlideInitial.class);
+        Intent intent = new Intent(getApplicationContext(), Slide01Activity.class);
         startActivity(intent);
     }
 

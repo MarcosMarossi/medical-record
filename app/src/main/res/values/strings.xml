@@ -1,48 +1,58 @@
 <resources>
-    <string name="app_name" translatable="false">Vida Saudável</string>
-    <string name="titulo_login" translatable="false">Acessar minha conta</string>
-    <string name="titulo_cadastrar" translatable="false">Cadastrar uma conta</string>
+    <string name="app_name">Vida Saudável</string>
+    <string name="titulo_login">Acessar minha conta</string>
+    <string name="titulo_cadastrar">Cadastrar uma conta</string>
 
     //Nome_Título
-    <string name="nome" translatable="false">Vida Saudável</string>
+    <string name="nome">Vida Saudável</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app" translatable="false">Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
-    <string name="btnEntrar" translatable="false">Entrar</string>
-    <string name="btnCadastrar" translatable="false">Cadastrar</string>
-    <string name="Idioma" translatable="false">Idioma</string>
+    <string name="explicacao_app">Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnCadastrar">Cadastrar</string>
+    <string name="Idioma">Idioma</string>
 
     //Textos_CadastroActivity
-    <string name="informardados" translatable="false">Informe seus dados</string>
-    <string name="verificarinfo" translatable="false">Verificaremos suas informações!</string>
-    <string name="nome_completo" translatable="false">Nome completo</string>
-    <string name="cpf_padrao" translatable="false">CPF</string>
-    <string name="email" translatable="false">E-mail</string>
-    <string name="senha" translatable="false">Senha</string>
-    <string name="btnLimpar" translatable="false">Limpar Dados</string>
+    <string name="informardados">Informe seus dados</string>
+    <string name="verificarinfo">Verificaremos suas informações!</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="cpf_padrao">CPF</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="btnLimpar">Limpar Dados</string>
 
 
     //Textos_Login
-    <string name="dadosacesso" translatable="false">Informe seus dados de acesso</string>
-    <string name="btnSair" translatable="false">Sair</string>
-    <string name="esqueceu" translatable="false">Esqueceu a senha?</string>
-    <string name="lembrar" translatable="false">Lembrar-me</string>
-    <string name="hint_senha" translatable="false">Senha</string>
-    <string name="hint_login" translatable="false">Nome</string>
+    <string name="dadosacesso">Informe seus dados de acesso</string>
+    <string name="btnSair">Sair</string>
+    <string name="esqueceu">Esqueceu a senha?</string>
+    <string name="lembrar">Lembrar-me</string>
+    <string name="hint_senha">Senha</string>
+    <string name="hint_login">Nome</string>
 
     //Textos_Recuperar Senha
-    <string name="titulorecuperar" translatable="false">Recuperar Senha</string>
-    <string name="descricao" translatable="false">Bem-vindo, utilizamos o e-mail como método de recuperação de senha. Por isso, após enviar confira sua senha temporária.</string>
-    <string name="btnEnviar" translatable="false">Enviar</string>
+    <string name="titulorecuperar">Recuperar Senha</string>
+    <string name="descricao">Bem-vindo, utilizamos o e-mail como método de recuperação de senha. Por isso, após enviar confira sua senha temporária.</string>
+    <string name="btnEnviar">Enviar</string>
 
 
     //Agendar
-    <string name="hora" translatable="false">Horário</string>
-    <string name="btnAgendar" translatable="false">Agendar</string>
-    <string name="desc_calendario" translatable="false">Selecione uma data de sua preferência</string>
-    <string name="tit_agendamento" translatable="false">Faça o seu agendamento</string>
-    <string name="desc_agendamento" translatable="false">Basta navegar entre as telas e preencher as informações necessárias!</string>
-    <string name="tit_final_agendamento" translatable="false">Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
+    <string name="hora">Horário</string>
+    <string name="btnAgendar">Agendar</string>
+    <string name="desc_calendario">Selecione uma data de sua preferência</string>
+    <string name="tit_agendamento">Faça o seu agendamento</string>
+    <string name="desc_agendamento">Basta navegar entre as telas e preencher as informações necessárias!</string>
+    <string name="tit_final_agendamento">Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
+
+
+    <!--<string-array name="consultorios">
+        <item>Selecione um consultório</item>
+        <item>HAOC Indaiatuba</item>
+        <item>Unimed Campinas</item>
+        <item>Unimed Monte Mor</item>
+        <item>Santa Casa Itu</item>
+        <item>Santa Casa Salto</item>
+    </string-array> -->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -50,28 +60,9 @@
         <item>ES</item>
         <item>FR</item>
         <item>HU</item>
-<<<<<<< HEAD
         <item>DE</item>
         <item>IT</item>
 
-
-    </string-array>
-
-    // API Calendario Meses
-    <string name="janeiro" translatable="false">Janeiro</string>
-    <string name="fevereiro" translatable="false">Fevereiro</string>
-    <string name="marco" translatable="false">Março</string>
-    <string name="abril" translatable="false">Abril</string>
-    <string name="maio" translatable="false">Maio</string>
-    <string name="junho" translatable="false">Junho</string>
-    <string name="julho" translatable="false">Julho</string>
-    <string name="agosto" translatable="false">Agosto</string>
-    <string name="setembro" translatable="false">Setembro</string>
-    <string name="outubro" translatable="false">Outubro</string>
-    <string name="novembro" translatable="false">Novembro</string>
-    <string name="dezembro" translatable="false">Dezembro</string>
-=======
-        <item>ALE</item>
     </string-array>
 
     // API Calendario Meses
@@ -87,39 +78,37 @@
     <string name="outubro">Outubro</string>
     <string name="novembro">Novembro</string>
     <string name="dezembro">Dezembro</string>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
 
 
     // Histórico
 
-    <string name="historico" translatable="false">Histórico</string>
+    <string name="historico">Histórico</string>
 
     // Avisos
 
-    <string name="avisos_titulo" translatable="false">Avisos</string>
+    <string name="avisos_titulo">Avisos</string>
 
 
     // API Calendario Semanas
-    <string name="seg" translatable="false">Seg</string>
-    <string name="ter" translatable="false">Ter</string>
-    <string name="qua" translatable="false">Qua</string>
-    <string name="qui" translatable="false">Qui</string>
-    <string name="sex" translatable="false">Sex</string>
-    <string name="sab" translatable="false">Sab</string>
-    <string name="dom" translatable="false">Dom</string>
+    <string name="seg">Seg</string>
+    <string name="ter">Ter</string>
+    <string name="qua">Qua</string>
+    <string name="qui">Qui</string>
+    <string name="sex">Sex</string>
+    <string name="sab">Sab</string>
+    <string name="dom">Dom</string>
 
 
     // Menu Sair Usuário
-    <string name="sair_sim" translatable="false">Sim</string>
-    <string name="sair_nao" translatable="false">Não</string>
-    <string name="sair_titulo" translatable="false">Tem certeza que deseja sair?</string>
+    <string name="sair_sim">Sim</string>
+    <string name="sair_nao">Não</string>
+    <string name="sair_titulo">Tem certeza que deseja sair?</string>
 
     // Enfermeira e Médico
-    <string name="titulo_monitorar" translatable="false">Monitoramento</string>
-    <string name="titulo_validar" translatable="false">Validação</string>
-    <string name="titulo_avisos" translatable="false">Meus Avisos</string>
-    <string name="titulo_consultas" translatable="false">Consultas</string>
-
+    <string name="titulo_monitorar">Monitoramento</string>
+    <string name="titulo_validar">Validação</string>
+    <string name="titulo_avisos">Meus Avisos</string>
+    <string name="titulo_consultas">Consultas</string>
 
     <string-array name="categorias">
         <item>Selecione uma categoria</item>
@@ -136,8 +125,30 @@
         <item>Medico</item>
     </string-array>
 
+    // Verificar
 
+    <string name="tit_agendar">Agendar</string>
+    <string name="tit_avisos">Avisos</string>
+    <string name="tit_historico">Histórico</string>
+    <string name="tit_sair">Sair</string>
+    <string name="tit_monitoramento">Monitoramento</string>
+    <string name="tit_validacao">Validações</string>
+    <string name="tit_consulta">Consultas</string>
+    <string name="tit_criar_avisos">Criar Avisos</string>
 
+    <string name="desc_agendar">Escolha o melhor dia para você!</string>
+    <string name="desc_avisos">Mural de avisos do aplicativo.</string>
+    <string name="desc_historico">Consulte seus agendamentos.</string>
+    <string name="desc_sair">Deseja sair do aplicativo?</string>
+    <string name="desc_monitoramento">Monitore internações.</string>
+    <string name="desc_validacao">Validações das enfermeiras.</string>
+    <string name="desc_consultas">Veja quem serão seus pacientes!</string>
+    <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
+    <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
+
+    // Agendamento
+
+    <string name="erro_data">Por favor, insira uma data válida!</string>
 
 
 </resources>

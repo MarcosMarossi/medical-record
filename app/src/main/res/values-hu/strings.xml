@@ -46,18 +46,14 @@
     <string name="tit_final_agendamento">Még egy perc! Töltse ki a utolsó adatokat a találkozó ütemezéséhez</string>
 
 
-<<<<<<< HEAD
-    <string-array name="orvosi rendelők">
-=======
-    <string-array name="consultorios">
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
+    <!--<string-array name="consultorios">
         <item>Válasszon egy orvosi rendelőt</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array>-->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -66,11 +62,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendário Meses
@@ -111,6 +103,52 @@
     <string name="sair_sim">Igen</string>
     <string name="sair_nao">Nem</string>
     <string name="sair_titulo">Biztos benne, hogy ki akar menni?</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Megfigyelés</string>
+    <string name="titulo_validar">Érvényesítés</string>
+    <string name="titulo_avisos">Hírdetéseim</string>
+    <string name="titulo_consultas">Konzultációk</string>
+
+    <string-array name="categorias">
+        <item>Válasszon egy kategóriát </item>
+        <item>Háziorvos</item>
+        <item>Gerontológia</item>
+        <item>Kardiológia</item>
+        <item>Bőrgyógyászat</item>
+        <item>Gyermekgyógyászat</item>
+        <item>Radiológia</item>
+    </string-array>
+
+    <string-array name="medicos">
+    <item>Válosszon egy orvost</item>
+    <item>Orvos</item>
+    </string-array>
+
+    // Verificar
+
+    <string name="tit_agendar">Ütemterv</string>
+    <string name="tit_avisos">Figyelmeztetések</string>
+    <string name="tit_historico">Történelem</string>
+    <string name="tit_sair">Szabadság</string>
+    <string name="tit_monitoramento">Megfigyelés</string>
+    <string name="tit_validacao">Érvényesítés</string>
+    <string name="tit_consulta">Konzultáció</string>
+    <string name="tit_criar_avisos">Hozzon létre figyelmeztetéseket</string>
+
+    <string name="desc_agendar">Válassza ki a legjobb napot az Ön számára!</string>
+    <string name="desc_avisos">App hirdetőtábla.</string>
+    <string name="desc_historico">Ellenőrizze az ütemezését.</string>
+    <string name="desc_sair">Kilép az alkalmazásból?</string>
+    <string name="desc_monitoramento">Figyelemmel kíséri a kórházi kezeléseket.</string>
+    <string name="desc_validacao">Az ápolók érvényesítése.</string>
+    <string name="desc_consultas">Nézze meg, ki lesz a beteg!</string>
+    <string name="desc_criar_avisos">Adjon meg figyelmeztetéseket a betegek számára.</string>
+    <string name="desc_validacao_enfermeira">A betegek érvényesítése.</string>
+
+    // Agendamento
+
+    <string name="erro_data">Kérjük, érvényes dátumot írjon be!</string>
 
 
 </resources>

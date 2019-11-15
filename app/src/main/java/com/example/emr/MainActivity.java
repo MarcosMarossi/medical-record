@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.emr.Adapter.AdapterCountry;
 import com.example.emr.Models.User;
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
     String Token, getToken, Profile;
     SharedPreferences sharedPreferences;
-    private Button btnAux;
 
 
     @Override
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void abrirTelaCadastro(View v) {
-        startActivity(new Intent(this, RefactorActivity.class));
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     public void mudarIdioma()

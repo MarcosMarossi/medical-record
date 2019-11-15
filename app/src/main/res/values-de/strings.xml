@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Gesundes Leben</string>
     <string name="titulo_login">Greifen Sie auf mein Konto zu</string>
@@ -47,14 +46,14 @@
     <string name="tit_final_agendamento">Fehlt nur! Geben Sie die neuesten Daten ein, um Ihren Termin zu planen</string>
 
 
-    <string-array name="consultorios">
+    <!--<string-array name="consultorios">
         <item>Wählen Sie ein Büro</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array> -->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -63,11 +62,7 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
-
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses
@@ -108,6 +103,53 @@
     <string name="sair_sim">Ja</string>
     <string name="sair_nao">Nein</string>
     <string name="sair_titulo">Bist du sicher, dass du gehen willst?</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Überwachung</string>
+    <string name="titulo_validar">Validierung</string>
+    <string name="titulo_avisos">Meine Warnungen</string>
+    <string name="titulo_consultas">Abfragen</string>
+
+    <string-array name="categorias">
+        <item>Wählen Sie eine Kategorie aus</item>
+        <item>Allgemeinarzt</item>
+        <item>Geriatrie</item>
+        <item>Kardiologie</item>
+        <item>Dermatologie</item>
+        <item>Pädiatrie</item>
+        <item>Radiologie</item>
+    </string-array>
+
+    <string-array name="medicos">
+    <item>Wählen Sie einen Arzt aus</item>
+    <item>Doktor</item>
+    </string-array>
+
+    // Verificar
+
+    <string name="tit_agendar">Zeitplan</string>
+    <string name="tit_avisos">Warnungen</string>
+    <string name="tit_historico">Geschichte</string>
+    <string name="tit_sair">Geh</string>
+    <string name="tit_monitoramento">Überwachung</string>
+    <string name="tit_validacao">Validierungen</string>
+    <string name="tit_consulta">Abfragen</string>
+    <string name="tit_criar_avisos">Erstellen Sie Warnungen</string>
+
+    <string name="desc_agendar">Wähle den besten Tag für dich!</string>
+    <string name="desc_avisos">App-Pinnwand.</string>
+    <string name="desc_historico">Überprüfen Sie Ihre Zeitpläne.</string>
+    <string name="desc_sair">Möchten Sie die Anwendung beenden?</string>
+    <string name="desc_monitoramento">Überwachen Sie Krankenhausaufenthalte.</string>
+    <string name="desc_validacao">Validierungen von Krankenschwestern.</string>
+    <string name="desc_consultas">Sehen Sie, wer Ihre Patienten sein werden!</string>
+    <string name="desc_criar_avisos">Geben Sie Warnungen für Patienten ein.</string>
+    <string name="desc_validacao_enfermeira">Validierungen von Patienten.</string>
+
+    // Agendamento
+
+    <string name="erro_data">Bitte geben Sie ein gültiges Datum ein!</string>
+
 
 
 </resources>

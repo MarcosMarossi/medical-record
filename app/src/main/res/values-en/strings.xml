@@ -45,18 +45,14 @@
     <string name="tit_final_agendamento">Very little is missing! Fill in the last data to schedule your appointment</string>
 
 
-    <string-array name="consultorios">
-<<<<<<< HEAD
+    <!--<string-array name="consultorios">
         <item>Select a doctor's office</item>
-=======
-        <item>Select a doctor\'s office</item>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array> -->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -65,11 +61,8 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
 
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses
@@ -111,6 +104,52 @@
     <string name="sair_nao">No</string>
     <string name="sair_titulo">Are you sure you want to quit?</string>
 
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Monitoring</string>
+    <string name="titulo_validar">Validation</string>
+    <string name="titulo_avisos">My warnings</string>
+    <string name="titulo_consultas">Appointment </string>
+
+    <string-array name="categorias">
+        <item>Select a category</item>
+        <item>General Physician</item>
+        <item>Geriatrics</item>
+        <item>Cardiology</item>
+        <item>Dermatology</item>
+        <item>Pediatrics</item>
+        <item>Radiology</item>
+    </string-array>
+
+    <string-array name="medicos">
+    <item>Select a doctor</item>
+    <item>Doctor</item>
+    </string-array>
+
+    // Verificar
+
+    <string name="tit_agendar">Schedule</string>
+    <string name="tit_avisos">Warnings</string>
+    <string name="tit_historico">Historic</string>
+    <string name="tit_sair">Log out</string>
+    <string name="tit_monitoramento">Monitoring</string>
+    <string name="tit_validacao">Validations</string>
+    <string name="tit_consulta">Appointments</string>
+    <string name="tit_criar_avisos">Create Warnings</string>
+
+    <string name="desc_agendar">Choose the best day for you!</string>
+    <string name="desc_avisos">App bulletin board.</string>
+    <string name="desc_historico">Check your schedules.</string>
+    <string name="desc_sair">Do you want to exit the app?</string>
+    <string name="desc_monitoramento">Monitor hospitalizations.</string>
+    <string name="desc_validacao">Validations of nurses.</string>
+    <string name="desc_consultas">See who your patients will be!</string>
+    <string name="desc_criar_avisos">Enter warnings to patients.</string>
+    <string name="desc_validacao_enfermeira">Validations of patients.</string>
+
+    // Agendamento
+
+    <string name="erro_data">Please enter a valid date!</string>
+
+
 
 </resources>
-

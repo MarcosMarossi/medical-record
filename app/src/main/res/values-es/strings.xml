@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Vida Saludable</string>
     <string name="titulo_login">Acceda a mi cuenta</string>
@@ -46,14 +45,14 @@
     <string name="tit_final_agendamento">¡Falta pouco! Preencha os últimos dados para agendar sua consulta</string>
 
 
-    <string-array name="consultorios">
+    <!--<string-array name="consultorios">
         <item>Selecciona una oficina</item>
         <item>HAOC Indaiatuba</item>
         <item>Unimed Campinas</item>
         <item>Unimed Monte Mor</item>
         <item>Santa Casa Itu</item>
         <item>Santa Casa Salto</item>
-    </string-array>
+    </string-array> -->
 
     <string-array name="idioma">
         <item>PT-BR</item>
@@ -62,11 +61,8 @@
         <item>FR</item>
         <item>HU</item>
         <item>DE</item>
-<<<<<<< HEAD
         <item>IT</item>
 
-=======
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
     </string-array>
 
     // API Calendario Meses
@@ -106,12 +102,54 @@
     // Menu Sair Usuário
     <string name="sair_sim">Si</string>
     <string name="sair_nao">No</string>
-<<<<<<< HEAD
-    <string name="sair_titulo">¿Estás seguro de que quieres irte?
-</string>
-=======
     <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
->>>>>>> 1af680f248882a33fa3c117b8edca161bcc0fdcd
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Monitoreo</string>
+    <string name="titulo_validar">Validación</string>
+    <string name="titulo_avisos">Mis advertencias</string>
+    <string name="titulo_consultas">Consultas</string>
+
+    <string-array name="categorias">
+        <item>Seleccione una categoria</item>
+        <item>Clínico General</item>
+        <item>Geriatría</item>
+        <item>Cardiología</item>
+        <item>Dermatologia</item>
+        <item>Pediatría</item>
+        <item>Radiología</item>
+    </string-array>
+
+    <string-array name="medicos">
+    <item>Selecciona un doctor</item>
+    <item>Doctor</item>
+    </string-array>
+
+    // Verificar
+
+    <string name="tit_agendar">Horario</string>
+    <string name="tit_avisos">Advertencias</string>
+    <string name="tit_historico">Historia</string>
+    <string name="tit_sair">Dejar</string>
+    <string name="tit_monitoramento">Monitoreo</string>
+    <string name="tit_validacao">Validaciones</string>
+    <string name="tit_consulta">Consultas</string>
+    <string name="tit_criar_avisos">Crear advertencias</string>
+
+    <string name="desc_agendar">¡Elige el mejor día para ti!</string>
+    <string name="desc_avisos">Tablón de anuncios de la aplicación.</string>
+    <string name="desc_historico">Revisa tus horarios.</string>
+    <string name="desc_sair">¿Quieres salir de la aplicación?</string>
+    <string name="desc_monitoramento">Monitorear hospitalizaciones.</string>
+    <string name="desc_validacao">Validaciones de enfermeras.</string>
+    <string name="desc_consultas">¡Vea quiénes serán sus pacientes!</string>
+    <string name="desc_criar_avisos">Ingrese advertencias a los pacientes.</string>
+    <string name="desc_validacao_enfermeira">Validaciones de pacientes.</string>
+
+    // Agendamento
+
+    <string name="erro_data">Por favor, introduzca una fecha válida!</string>
+
 
 
 </resources>

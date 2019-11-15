@@ -15,10 +15,10 @@ public class Adaptador extends BaseAdapter {
     private static LayoutInflater inflater = null;
 
     Context contexto;
-    String[][] dados;
+    int[][] dados;
     int[] dadosImg;
 
-    public Adaptador(Context contexto, String[][] dados, int[] dadosImg) {
+    public Adaptador(Context contexto, int[][] dados, int[] dadosImg) {
         this.contexto = contexto;
         this.dados = dados;
         this.dadosImg = dadosImg;

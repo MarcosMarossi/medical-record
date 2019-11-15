@@ -11,70 +11,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-
+        <activity android:name=".User.Scheduling.Slide03Activity"></activity>
+        <activity android:name=".User.Scheduling.Slide02Activity" />
+        <activity android:name=".User.Scheduling.Slide01Activity" />
         <activity
             android:name=".Nurse.ValidationActivity"
             android:label="@string/titulo_validar"
-            android:parentActivityName=".Nurse.MenuNurActivity"/>
-
+            android:parentActivityName=".Nurse.MenuNurActivity" />
         <activity
             android:name=".Nurse.MonitoringActivity"
             android:label="@string/titulo_monitorar"
-            android:parentActivityName=".Nurse.MenuNurActivity"/>
-
+            android:parentActivityName=".Nurse.MenuNurActivity" />
         <activity
             android:name=".Doctor.ValidationActivity"
             android:label="@string/titulo_validar"
-            android:parentActivityName=".Doctor.MenuDocActivity"/>
-
+            android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity
             android:name=".Doctor.MonitoringActivity"
             android:label="@string/titulo_monitorar"
-            android:parentActivityName=".Doctor.MenuDocActivity"/>
-
+            android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity
             android:name=".Doctor.WarningsActivity"
             android:label="@string/titulo_avisos"
-            android:parentActivityName=".Doctor.MenuDocActivity"/>
-
+            android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity
             android:name=".Doctor.QueryActivity"
             android:label="@string/titulo_consultas"
-            android:parentActivityName=".Doctor.MenuDocActivity"/>
-
+            android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity android:name=".Nurse.MenuNurActivity" />
         <activity android:name=".Doctor.MenuDocActivity" />
-
         <activity
             android:name=".User.WarningsActivity"
             android:label="@string/avisos_titulo"
             android:parentActivityName=".User.MenuUsrActivity" />
-
         <activity
             android:name=".User.CalendarActivity"
             android:label="@string/historico"
-            android:parentActivityName=".User.MenuUsrActivity"/>
-
-        <activity android:name=".User.Slide.SlideUltimate" />
-        <activity android:name=".User.Slide.SlideSecond" />
-        <activity android:name=".User.Slide.SlideInitial" />
+            android:parentActivityName=".User.MenuUsrActivity" />
         <activity android:name=".User.MenuUsrActivity" />
-
         <activity
             android:name=".RecoverActivity"
             android:label="@string/titulorecuperar"
             android:parentActivityName=".LoginActivity" />
-
         <activity
-            android:name=".RefactorActivity"
+            android:name=".RegisterActivity"
             android:label="@string/titulo_cadastrar"
             android:parentActivityName=".LoginActivity" />
-
         <activity
             android:name=".LoginActivity"
             android:label="@string/titulo_login"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Intro">

@@ -10,52 +10,56 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         tools:context=".User.Slide.SlideSecond">
 
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calAgendar"
-            android:layout_width="399dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="393dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:mcv_selectionColor="#00F"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            app:mcv_arrowColor="#000000"
+            app:mcv_selectionColor="#F44336"
             app:mcv_showOtherDates="all"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="@string/desc_calendario"
-            android:textSize="18sp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Escolha uma data"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="30dp"
+            android:id="@+id/iBack"
+            android:layout_width="40dp"
             android:layout_height="60dp"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="voltar"
+            android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calHistorico"
             app:srcCompat="@drawable/back" />
 
         <ImageView
-            android:id="@+id/imgAvancar"
-            android:layout_width="30dp"
+            android:id="@+id/iNext"
+            android:layout_width="40dp"
             android:layout_height="60dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
+            android:src="@drawable/next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calHistorico"
-            app:srcCompat="@drawable/next" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout></ScrollView>

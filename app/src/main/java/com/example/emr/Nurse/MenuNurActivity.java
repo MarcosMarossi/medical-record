@@ -24,10 +24,11 @@ public class MenuNurActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
-    String[][] dados = {
-            {"Monitoramento", "Monitore internações."},
-            {"Validação", "Validações das enfermeiras."},
-            {"Sair", "Deseja sair do aplicativo?"}
+    int[][] dados = {
+            {R.string.tit_monitoramento, R.string.desc_monitoramento},
+            {R.string.tit_validacao, R.string.desc_validacao_enfermeira},
+            {R.string.tit_sair, R.string.desc_sair}
+
     };
 
     int[] dadosImg = {R.drawable.monitora, R.drawable.validar,R.drawable.arrow};

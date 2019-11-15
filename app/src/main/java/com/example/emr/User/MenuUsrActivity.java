@@ -14,8 +14,9 @@ import android.widget.Toast;
 import com.example.emr.Adapter.Adaptador;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
-import com.example.emr.R;
-import com.example.emr.User.Slide.SlideInitial;
+import com.example.emr.User.Scheduling.Slide01Activity;
+
+import static com.example.emr.R.*;
 
 public class MenuUsrActivity extends AppCompatActivity {
 
@@ -23,24 +24,27 @@ public class MenuUsrActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
-    String[][] dados = {
-            {"Agendar", "Escolha o melhor dia para você!"},
-            {"Avisos", "Mural de avisos do aplicativo."},
-            {"Histórico", "Consulte seus agendamentos."},
-            {"Sair", "Deseja sair do aplicativo?"}
+
+    int[][] dados = {
+            {string.tit_agendar, string.desc_agendar},
+            {string.tit_avisos, string.desc_avisos},
+            {string.tit_historico, string.desc_historico},
+            {string.tit_sair, string.desc_sair}
+
     };
 
-    int[] dadosImg = {R.drawable.nurse, R.drawable.report, R.drawable.avisos, R.drawable.arrow};
+    int[] dadosImg = {drawable.nurse, drawable.report, drawable.avisos, drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_menu_usr);
+        setContentView(layout.act_menu_usr);
+
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        lista = findViewById(R.id.listUser);
+        lista = findViewById(id.listUser);
         lista.setAdapter(new Adaptador(this, dados, dadosImg));
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,7 +72,7 @@ public class MenuUsrActivity extends AppCompatActivity {
     }
 
     private void abrirAgendar() {
-        Intent intent = new Intent(MenuUsrActivity.this, SlideInitial.class);
+        Intent intent = new Intent(getApplicationContext(), Slide01Activity.class);
         startActivity(intent);
     }
 
@@ -79,10 +83,10 @@ public class MenuUsrActivity extends AppCompatActivity {
 
     private void fechar() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle(R.string.sair_titulo);
-        dialog.setIcon(R.drawable.ic_remove_circle_black_24dp);
+        dialog.setTitle(string.sair_titulo);
+        dialog.setIcon(drawable.ic_remove_circle_black_24dp);
 
-        dialog.setPositiveButton(R.string.sair_sim, new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton(string.sair_sim, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 User user = new User();
@@ -95,7 +99,7 @@ public class MenuUsrActivity extends AppCompatActivity {
             }
         });
 
-        dialog.setNegativeButton(R.string.sair_nao, new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton(string.sair_nao, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

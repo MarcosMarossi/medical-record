@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RefactorActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
@@ -71,7 +70,7 @@ public class RefactorActivity extends AppCompatActivity {
                     public void onResponse(Call<User> call, Response<User> response) {
                         User register = response.body();
                         tk = register.getToken();
-                        Toast.makeText(RefactorActivity.this, tk, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, tk, Toast.LENGTH_SHORT).show();
                         login();
                     }
 
@@ -130,7 +129,7 @@ public class RefactorActivity extends AppCompatActivity {
     }
 
     public void login(){
-        Intent it = new Intent(RefactorActivity.this, LoginActivity.class);
+        Intent it = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(it);
     }
 }

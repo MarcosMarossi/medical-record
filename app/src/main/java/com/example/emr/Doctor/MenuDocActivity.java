@@ -23,12 +23,12 @@ public class MenuDocActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor  editor;
 
-    String[][] dados = {
-            {"Consultas", "Veja quem serão seus pacientes!"},
-            {"Criar Avisos", "Digite avisos aos pacientes."},
-            {"Monitoramento", "Monitore internações."},
-            {"Validação", "Validações das enfermeiras."},
-            {"Sair", "Deseja sair do aplicativo?"}
+    int[][] dados = {
+            {R.string.tit_consulta, R.string.desc_consultas},
+            {R.string.tit_criar_avisos, R.string.desc_criar_avisos},
+            {R.string.tit_monitoramento, R.string.desc_monitoramento},
+            {R.string.tit_validacao, R.string.desc_validacao},
+            {R.string.tit_sair, R.string.desc_sair}
     };
 
     int[] dadosImg = {R.drawable.consultas, R.drawable.report, R.drawable.monitora, R.drawable.validar,R.drawable.arrow};
@@ -94,6 +94,7 @@ public class MenuDocActivity extends AppCompatActivity {
     }
 
     public void fechar(){
+
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(R.string.sair_titulo);
         dialog.setIcon(R.drawable.ic_remove_circle_black_24dp);
@@ -105,6 +106,7 @@ public class MenuDocActivity extends AppCompatActivity {
                 user.setToken("");
                 editor.putString("token",user.getToken());
                 editor.commit();
+
                 Intent intent = new Intent(MenuDocActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

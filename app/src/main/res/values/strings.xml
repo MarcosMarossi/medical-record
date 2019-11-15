@@ -125,6 +125,7 @@
     <string name="tit_validacao">Validações</string>
     <string name="tit_consulta">Consultas</string>
     <string name="tit_criar_avisos">Criar Avisos</string>
+    <string name="tit_qr_code">Qr Code</string>
 
     <string name="desc_agendar">Escolha o melhor dia para você!</string>
     <string name="desc_avisos">Mural de avisos do aplicativo.</string>
@@ -135,7 +136,7 @@
     <string name="desc_consultas">Veja quem serão seus pacientes!</string>
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
-
+    <string name="desc_qr_code">Verifique o BPM do paciente.</string>
     // Agendamento
 
     <string name="erro_data">Por favor, insira uma data válida!</string>

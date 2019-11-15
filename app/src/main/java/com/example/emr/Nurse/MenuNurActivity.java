@@ -27,12 +27,11 @@ public class MenuNurActivity extends AppCompatActivity {
     int[][] dados = {
             {R.string.tit_monitoramento, R.string.desc_monitoramento},
             {R.string.tit_validacao, R.string.desc_validacao_enfermeira},
-            {R.string.titulo_qr_code,R.string.desc_qr_code},
             {R.string.tit_sair, R.string.desc_sair}
 
     };
 
-    int[] dadosImg = {R.drawable.monitora,R.drawable.validar,R.drawable.qrcode,R.drawable.arrow};
+    int[] dadosImg = {R.drawable.monitora, R.drawable.validar,R.drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +56,6 @@ public class MenuNurActivity extends AppCompatActivity {
                         verValidacao();
                         break;
                     case 2:
-                        qrCode();
-                        break;
-                    case 3:
                         fechar();
                         break;
                     default:
@@ -67,10 +63,6 @@ public class MenuNurActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void qrCode(){
-        startActivity(new Intent(MenuNurActivity.this,QrCodeActivity.class));
     }
 
     private void monitoramento() {

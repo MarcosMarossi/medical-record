@@ -54,24 +54,6 @@
         <item>IT</item>
     </string-array>
 
-<<<<<<< HEAD
-    <!--
-   /** <string name="janeiro" >Janeiro</string>
-    <string name="fevereiro" >Fevereiro</string>
-    <string name="marco" >Março</string>
-    <string name="abril" >Abril</string>
-    <string name="maio" >Maio</string>
-    <string name="junho" >Junho</string>
-    <string name="julho" >Julho</string>
-    <string name="agosto" >Agosto</string>
-    <string name="setembro" >Setembro</string>
-    <string name="outubro" >Outubro</string>
-    <string name="novembro" >Novembro</string>
-    <string name="dezembro" >Dezembro</string>-->
-
-
-=======
->>>>>>> 3e1cb1131d08064351e9f3759d375ecdafd95662
     // API Calendario Meses
     <string name="janeiro">Janeiro</string>
     <string name="fevereiro">Fevereiro</string>
@@ -116,10 +98,6 @@
     <string name="titulo_validar">Validação</string>
     <string name="titulo_avisos">Meus Avisos</string>
     <string name="titulo_consultas">Consultas</string>
-<<<<<<< HEAD
-    <string name="titulo_qr_code">QR Code</string>
-=======
->>>>>>> 3e1cb1131d08064351e9f3759d375ecdafd95662
 
 
     <string-array name="categorias">
@@ -157,10 +135,6 @@
     <string name="desc_consultas">Veja quem serão seus pacientes!</string>
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
-<<<<<<< HEAD
-    <string name="desc_qr_code">Verifique o BPM do paciente.</string>
-=======
->>>>>>> 3e1cb1131d08064351e9f3759d375ecdafd95662
 
 
 </resources>

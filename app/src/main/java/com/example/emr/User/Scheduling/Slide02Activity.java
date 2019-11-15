@@ -1,28 +1,58 @@
 package com.example.emr.User.Scheduling;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.Spinner;
 
-import com.example.emr.Models.Date;
+import com.example.emr.Models.Sheduling;
+import com.example.emr.Models.User;
 import com.example.emr.R;
+import com.example.emr.Services.DataService;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
-public class Slide02Activity extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    private ImageView iNext, iBack;
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class Slide02Activity<dia> extends AppCompatActivity {
+
+    private ImageView iValidate, iBack;
     private MaterialCalendarView calendarioAgendar;
+    int dia, mes, ano;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    private Spinner spCategory, spDoctor;
+    private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
+    private List<Sheduling> shedulings = new ArrayList<>(  );
+    private ArrayList<String> playerNames = new ArrayList<String>();
+    private Spinner spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.s_slide02 );
         getSupportActionBar().hide();
+
+        iValidate = findViewById( R.id.iShedule );
+        iBack = findViewById( R.id.iClose );
+
+        sharedPreferences = getSharedPreferences("salvarData", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         calendarioAgendar = findViewById(R.id.calAgendar);
         calendarioAgendar.state().edit()
@@ -40,42 +70,74 @@ public class Slide02Activity extends AppCompatActivity {
             @Override
             public void onMonthChanged(MaterialCalendarView widget, final CalendarDay date) {
 
-                int day = date.getDay();
-                int month = date.getMonth();
-                int year = date.getYear();
 
-                Date shedule = new Date();
-                shedule.setDay( Integer.toString( day ) );
-                shedule.setMonth( Integer.toString( month ) );
-                shedule.setYear( Integer.toString( year ) );
+                editor.putString("dia", String.valueOf( date.getDay() ));
+                editor.putString("mes",  String.valueOf(date.getMonth() ));
+                editor.putString("ano",  String.valueOf(date.getYear() ));
+                editor.commit();
+
+
             }
         });
+        /*
+        spCategory = findViewById( R.id.spCategory );
+        ArrayAdapter<CharSequence> adapterCatorgory = ArrayAdapter.createFromResource(this,
+                R.array.categorias, android.R.layout.simple_spinner_item);
+        adapterCatorgory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spCategory.setAdapter(adapterCatorgory);
 
+        spDoctor = findViewById(R.id.spDoctor);
+        ArrayAdapter<CharSequence> adapterDoctor = ArrayAdapter.createFromResource(this,
+                R.array.medicos, android.R.layout.simple_spinner_item);
+        adapterDoctor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spDoctor.setAdapter(adapterDoctor);*/
 
-
-        iBack = findViewById( R.id.iBack );
-        iNext = findViewById( R.id.iNext );
-
-        iNext.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                            Intent it = new Intent( getApplicationContext(), Slide03Activity.class );
-                            Date schedule = new Date();
-                            it.putExtra( "dia",schedule.getDay() );
-                            it.putExtra( "mes", schedule.getDay());
-                            it.putExtra( "year", schedule.getDay() );
-                            startActivity( it );
-            }
-        } );
-
-        iBack.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(Slide02Activity.this, Slide01Activity.class);
-                startActivity(it);
-            }
-        } );
+        fetchJSON();
 
     }
+
+    private void fetchJSON(){
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(stringURL)
+                .addConverterFactory( GsonConverterFactory.create())
+                .build();
+
+        DataService service = retrofit.create(DataService.class);
+
+        Call<ArrayList<Sheduling>> call = service.pegarId();
+
+        call.enqueue(new Callback<ArrayList<Sheduling>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Sheduling>> call, Response<ArrayList<Sheduling>> response) {
+
+                shedulings = response.body();
+                //System.out.println( shed.get(1).getMedic() );
+                
+try{
+
+
+                for (int i = 0; i <= shedulings.size(); i++){
+                    Sheduling s = shedulings.get( i );
+                    System.out.println( "Medicos: "+s.getMedic() );
+                }
+}catch (NullPointerException e){
+    System.out.println( e );
 }
+
+/*
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
+                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                spDoctor.setAdapter(spinnerArrayAdapter); */
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Sheduling>> call, Throwable t) {
+
+                     }
+                });
+            }
+
+
+    }

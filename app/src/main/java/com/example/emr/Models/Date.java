@@ -1,6 +1,8 @@
 package com.example.emr.Models;
 
-public class Date {
+import java.io.Serializable;
+
+public class Date implements Serializable {
 
     private String day;
     private String month;

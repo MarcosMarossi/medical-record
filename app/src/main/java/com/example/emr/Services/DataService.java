@@ -3,6 +3,9 @@ package com.example.emr.Services;
 import com.example.emr.Models.Sheduling;
 import com.example.emr.Models.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -24,6 +27,6 @@ public interface DataService {
     Call<User> registrarUsuario(@Body User register);
 
 
-    @GET("/api/schedulling/:id")
-    Call<Sheduling> pegarId(@Body User register);
+    @GET("/api/doctors")
+    Call<ArrayList<Sheduling>> pegarId();
 }

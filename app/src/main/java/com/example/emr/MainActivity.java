@@ -12,18 +12,24 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.emr.Adapter.AdapterCountry;
 import com.example.emr.Models.User;
 import com.example.emr.Services.DataService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.Nurse.MenuNurActivity;
 
+import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat;
+import ir.mirrajabi.searchdialog.core.BaseSearchDialogCompat;
+import ir.mirrajabi.searchdialog.core.SearchResultListener;
+import ir.mirrajabi.searchdialog.core.Searchable;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
     String Token, getToken, Profile;
     SharedPreferences sharedPreferences;
-
+    private Button btnTeste;
+    private ArrayList<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +116,40 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        btnTeste = (Button) findViewById(R.id.btnTeste);
+
+
+        users = new ArrayList<>();
+
+        Call<List<User>> fillDialog = service.getAllPatients(users);
+        fillDialog.enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                users.addAll(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Ocorreu um erro na requisição", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        initDataDialog(users);
+
+        btnTeste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               new SimpleSearchDialogCompat<>(MainActivity.this, "Search...",
+                       "What are you looking for", null, initDataDialog(users), new SearchResultListener<User>() {
+                   @Override
+                   public void onSelected(BaseSearchDialogCompat dialog, User item, int position) {
+                       Toast.makeText(MainActivity.this, item.getEmail(),
+                               Toast.LENGTH_SHORT).show();
+                       dialog.dismiss();
+                   }
+               }).show();
+            }
+        });
 
 
     }
@@ -218,6 +259,17 @@ public class MainActivity extends AppCompatActivity {
     public void menuEnfermeira() {
         Intent intent = new Intent(this, MenuNurActivity.class);
         startActivity(intent);
+    }
+
+
+    private ArrayList<User> initDataDialog(ArrayList<User> items){
+       /** ArrayList<User> items = new ArrayList<>();
+        items.add(new User("jfpjfp@jgjgoi.com","49449"));
+        items.add(new User("jfpjfp@rrrr.com","88888"));
+        items.add(new User("jfpjfp@333.com","6666556"));
+        items.add(new User("jfpjfp@222222.com","12133"));**/
+        return items;
+
     }
 
 }

@@ -3,6 +3,8 @@ package com.example.emr.Services;
 import com.example.emr.Models.Sheduling;
 import com.example.emr.Models.User;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -26,4 +28,7 @@ public interface DataService {
 
     @GET("/api/schedulling/:id")
     Call<Sheduling> pegarId(@Body User register);
+
+    @GET("api/patients")
+    Call<List<User>> getAllPatients(@Body List user);
 }

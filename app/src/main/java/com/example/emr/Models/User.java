@@ -1,6 +1,8 @@
 package com.example.emr.Models;
 
-public class User {
+import ir.mirrajabi.searchdialog.core.Searchable;
+
+public class User implements Searchable {
 
     private String name;
     private String password;
@@ -82,4 +84,8 @@ public class User {
         this.password = password;
     }
 
+    @Override
+    public String getTitle() {
+        return email;
+    }
 }

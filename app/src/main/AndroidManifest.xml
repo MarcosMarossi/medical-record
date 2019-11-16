@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
+        android:usesCleartextTraffic="true"
         <activity android:name=".User.Scheduling.Slide02Activity" />
         <activity android:name=".User.Scheduling.Slide01Activity" />
         <activity

@@ -27,6 +27,6 @@ public interface DataService {
     Call<User> registrarUsuario(@Body User register);
 
 
-    @GET("/api/doctors")
-    Call<ArrayList<Sheduling>> pegarId();
+    @GET("api/doctors")
+    Call<List<Sheduling>> pegarId();
 }

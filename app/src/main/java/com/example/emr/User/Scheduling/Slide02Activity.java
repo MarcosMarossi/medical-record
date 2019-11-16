@@ -32,7 +32,6 @@ public class Slide02Activity<dia> extends AppCompatActivity {
 
     private ImageView iValidate, iBack;
     private MaterialCalendarView calendarioAgendar;
-    int dia, mes, ano;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     private Spinner spCategory, spDoctor;
@@ -92,12 +91,6 @@ public class Slide02Activity<dia> extends AppCompatActivity {
         adapterDoctor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spDoctor.setAdapter(adapterDoctor);*/
 
-        fetchJSON();
-
-    }
-
-    private void fetchJSON(){
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(stringURL)
                 .addConverterFactory( GsonConverterFactory.create())
@@ -105,39 +98,44 @@ public class Slide02Activity<dia> extends AppCompatActivity {
 
         DataService service = retrofit.create(DataService.class);
 
-        Call<ArrayList<Sheduling>> call = service.pegarId();
+        Call<List<Sheduling>> call = service.pegarId();
 
-        call.enqueue(new Callback<ArrayList<Sheduling>>() {
+        call.enqueue(new Callback<List<Sheduling>>() {
             @Override
-            public void onResponse(Call<ArrayList<Sheduling>> call, Response<ArrayList<Sheduling>> response) {
+            public void onResponse(Call<List<Sheduling>> call, Response<List<Sheduling>> response) {
+                //System.out.println( shedulings.get(0).getEmail() );
 
-                shedulings = response.body();
-                //System.out.println( shed.get(1).getMedic() );
-                
-try{
+                if(response.isSuccessful()){
 
+                    shedulings = response.body();
 
-                for (int i = 0; i <= shedulings.size(); i++){
-                    Sheduling s = shedulings.get( i );
-                    System.out.println( "Medicos: "+s.getMedic() );
+                    for (int i = 0; i < shedulings.size(); i++){
+                        Sheduling s = shedulings.get( i );
+                        playerNames.add(s.getName());
+                        System.out.println( "Medicos: " +s.getName() + s.getProfile());
+                    }
+
                 }
-}catch (NullPointerException e){
-    System.out.println( e );
+
+                spDoctor=findViewById( R.id.spDoctor );
+
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
+                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                spDoctor.setAdapter(spinnerArrayAdapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Sheduling>> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 }
 
-/*
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
-                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                spDoctor.setAdapter(spinnerArrayAdapter); */
-
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<Sheduling>> call, Throwable t) {
-
-                     }
-                });
-            }
 
 
-    }
+
+

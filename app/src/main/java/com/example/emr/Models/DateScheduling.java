@@ -2,7 +2,7 @@ package com.example.emr.Models;
 
 import java.io.Serializable;
 
-public class Date implements Serializable {
+public class DateScheduling implements Serializable {
 
     private String day;
     private String month;
@@ -32,7 +32,7 @@ public class Date implements Serializable {
         this.year = year;
     }
 
-    public Date(){
+    public DateScheduling(){
 
     }
 }

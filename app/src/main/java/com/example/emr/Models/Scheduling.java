@@ -1,6 +1,6 @@
 package com.example.emr.Models;
 
-public class Sheduling {
+public class Scheduling {
 
     private String patient;
     private  String specialty;

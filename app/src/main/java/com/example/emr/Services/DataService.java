@@ -1,15 +1,13 @@
 package com.example.emr.Services;
 
-import com.example.emr.Models.Sheduling;
+import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
 
@@ -28,5 +26,8 @@ public interface DataService {
 
 
     @GET("api/doctors")
-    Call<List<Sheduling>> pegarId();
+    Call<List<Scheduling>> pegarId();
+
+    @POST("api/schedulling")
+    Call<Scheduling> agendar(@Body Scheduling scheduling);
 }

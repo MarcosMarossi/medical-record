@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".Nurse.QrCodeActivity"></activity>
+        <activity android:name=".Nurse.ActivityListPatient"></activity>
+        <activity android:name=".Nurse.QrCodeActivity" />
         <activity android:name=".User.Scheduling.Slide03Activity" />
         <activity android:name=".User.Scheduling.Slide02Activity" />
         <activity android:name=".User.Scheduling.Slide01Activity" />

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.emr.Adapter.AdapterCountry;
 import com.example.emr.Models.User;
+import com.example.emr.Nurse.ActivityListPatient;
 import com.example.emr.Services.DataService;
 
 import java.util.ArrayList;
@@ -121,15 +122,16 @@ public class MainActivity extends AppCompatActivity {
 
         users = new ArrayList<>();
 
-        Call<List<User>> fillDialog = service.getAllPatients(users);
-        fillDialog.enqueue(new Callback<List<User>>() {
+        Call<ArrayList<User>> fillDialog = service.getAllPatients();
+        fillDialog.enqueue(new Callback<ArrayList<User>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                users.addAll(response.body());
+            public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
+                users = response.body();
+
             }
 
             @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<User>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Ocorreu um erro na requisição", Toast.LENGTH_SHORT).show();
             }
         });
@@ -139,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         btnTeste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               new SimpleSearchDialogCompat<>(MainActivity.this, "Search...",
+               /**new SimpleSearchDialogCompat<>(MainActivity.this, "Search...",
                        "What are you looking for", null, initDataDialog(users), new SearchResultListener<User>() {
                    @Override
                    public void onSelected(BaseSearchDialogCompat dialog, User item, int position) {
@@ -147,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
                                Toast.LENGTH_SHORT).show();
                        dialog.dismiss();
                    }
-               }).show();
+               }).show();**/
+
+               startActivity(new Intent(MainActivity.this, ActivityListPatient.class));
             }
         });
 

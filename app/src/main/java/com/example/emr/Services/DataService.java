@@ -1,8 +1,10 @@
 package com.example.emr.Services;
 
+import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Sheduling;
 import com.example.emr.Models.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -11,6 +13,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
+import retrofit2.http.Path;
 
 public interface DataService {
 
@@ -30,5 +33,8 @@ public interface DataService {
     Call<Sheduling> pegarId(@Body User register);
 
     @GET("api/patients")
-    Call<List<User>> getAllPatients(@Body List user);
+    Call<ArrayList<User>> getAllPatients();
+
+    @GET("{mac}")
+    Call<List<Heartbeat>> getBPM(@Path("mac") String mac);
 }

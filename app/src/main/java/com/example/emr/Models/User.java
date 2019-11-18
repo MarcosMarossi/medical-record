@@ -85,6 +85,11 @@ public class User implements Searchable {
     }
 
     @Override
+    public String toString() {
+        return email;
+    }
+
+    @Override
     public String getTitle() {
         return email;
     }

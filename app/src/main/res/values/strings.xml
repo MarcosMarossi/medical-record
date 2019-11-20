@@ -55,8 +55,6 @@
     </string-array>
 
 
-
-
     // Histórico
 
     <string name="historico">Histórico</string>
@@ -67,7 +65,6 @@
 
 
     // API Calendario Semanas
-
 
 
     // Menu Sair Usuário
@@ -152,7 +149,6 @@
     <string name="tit_add_agendamento">Informe os dados da consulta.</string>
     <string name="des_add_agendamento">Precisamos do horário, e depois a data.</string>
     <string name="hint_horario">Horário da consulta</string>
-
 
 
 </resources>

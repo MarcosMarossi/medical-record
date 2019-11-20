@@ -36,5 +36,8 @@ public interface DataService {
     Call<ArrayList<User>> getAllPatients();
 
     @GET("{mac}")
-    Call<List<Heartbeat>> getBPM(@Path("mac") String mac);
+    Call<Heartbeat> getBPM(@Path("mac") String mac);
+
+    @POST("misc/heartbeat")
+    Call<User> setBPMUser(@Body User user);
 }

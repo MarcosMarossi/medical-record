@@ -1,6 +1,8 @@
 package com.example.emr.Nurse;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
@@ -28,20 +31,26 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ActivityListPatient extends AppCompatActivity {
 
     private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
+    private String stringURL2 = "https://ltc7q76qp5.execute-api.us-east-1.amazonaws.com/dev/heartbeat/";
     private ArrayList<User> users;
-    private Retrofit retrofit;
-    private String token,mac;
+    private Retrofit retrofitPaciente,retrofitHeartbeat;
     private EditText edtPaciente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_list_patient);
-        retrofit = new Retrofit.Builder()
+
+
+        final String mac = getIntent().getExtras().getString("mac");
+        //Toast.makeText(ActivityListPatient.this,mac,Toast.LENGTH_SHORT).show();
+
+        //Retrofit Paciente
+        retrofitPaciente = new Retrofit.Builder()
                 .baseUrl(stringURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        final DataService service = retrofit.create(DataService.class);
+        final DataService service = retrofitPaciente.create(DataService.class);
         users = new ArrayList<>();
 
         final ListView listaPacientes = (ListView)findViewById(R.id.listPatient);
@@ -66,8 +75,42 @@ public class ActivityListPatient extends AppCompatActivity {
             }
         });
 
-
         listaPacientes.setAdapter(adapter);
+        ////////////////////////////////////////////////////////////////////////
+        ///////Retrofit BPM/////////////
+        retrofitHeartbeat = new Retrofit.Builder()
+                .baseUrl(stringURL2)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        DataService serviceHeartbeat = retrofitHeartbeat.create(DataService.class);
+        Call <Heartbeat> call = serviceHeartbeat.getBPM(mac);
+        call.enqueue(new Callback<Heartbeat>() {
+            @Override
+            public void onResponse(Call<Heartbeat> call, Response<Heartbeat> response) {
+                final Heartbeat heartbeat = response.body();
+                Toast.makeText(ActivityListPatient.this,heartbeat.getResult(),Toast.LENGTH_SHORT).show();
+
+                listaPacientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        User u = (User)listaPacientes.getItemAtPosition(i);
+                        u.setUrl(stringURL2+mac);
+
+                        Toast.makeText(ActivityListPatient.this,u.getUrl(),Toast.LENGTH_LONG).show();
+                        confirmarBPM(u,heartbeat.getResult(),u.getName(),u.getUrl(),service,u.getId());
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(Call<Heartbeat> call, Throwable t) {
+                Toast.makeText(ActivityListPatient.this, "Ocorreu um erro na requisição", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
 
         edtPaciente.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,18 +130,48 @@ public class ActivityListPatient extends AppCompatActivity {
             }
         });
 
-        listaPacientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+
+    }
+
+    public void confirmarBPM(final User u,String bpm, String nome, final String url, final DataService dataService, final String id){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Confirmação");
+        dialog.setMessage("Deseja gravar o valor "+bpm+" no paciente "+nome);
+        dialog.setPositiveButton(R.string.sair_sim, new DialogInterface.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                User u = (User)listaPacientes.getItemAtPosition(i);
+            public void onClick(DialogInterface dialog, int which) {
+                Call<User> call = dataService.setBPMUser(u);
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(ActivityListPatient.this,"Registrado com Sucesso",Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+                        Toast.makeText(ActivityListPatient.this,"Deu ruim",Toast.LENGTH_LONG).show();
 
 
-
-                //Toast.makeText(ActivityListPatient.this,u.getPassword(),Toast.LENGTH_LONG).show();
-
+                    }
+                });
             }
         });
 
+        dialog.setNegativeButton(R.string.sair_nao, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ActivityListPatient.this,"OK",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        dialog.create();
+        dialog.show();
 
     }
 }

@@ -1,8 +1,7 @@
 package com.example.emr.Models;
 
-import ir.mirrajabi.searchdialog.core.Searchable;
 
-public class User implements Searchable {
+public class User {
 
     private String name;
     private String password;
@@ -11,6 +10,8 @@ public class User implements Searchable {
     private String cpf;
     private String message;
     private String profile;
+    private String id;
+    private String url;
 
     public String getName() {
         return name;
@@ -92,5 +93,21 @@ public class User implements Searchable {
     @Override
     public String getTitle() {
         return email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

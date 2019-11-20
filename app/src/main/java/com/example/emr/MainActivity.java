@@ -27,10 +27,7 @@ import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.Nurse.MenuNurActivity;
 
-import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat;
-import ir.mirrajabi.searchdialog.core.BaseSearchDialogCompat;
-import ir.mirrajabi.searchdialog.core.SearchResultListener;
-import ir.mirrajabi.searchdialog.core.Searchable;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -117,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        btnTeste = (Button) findViewById(R.id.btnTeste);
+
 
 
         users = new ArrayList<>();
@@ -135,26 +132,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Ocorreu um erro na requisição", Toast.LENGTH_SHORT).show();
             }
         });
-
-        initDataDialog(users);
-
-        btnTeste.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               /**new SimpleSearchDialogCompat<>(MainActivity.this, "Search...",
-                       "What are you looking for", null, initDataDialog(users), new SearchResultListener<User>() {
-                   @Override
-                   public void onSelected(BaseSearchDialogCompat dialog, User item, int position) {
-                       Toast.makeText(MainActivity.this, item.getEmail(),
-                               Toast.LENGTH_SHORT).show();
-                       dialog.dismiss();
-                   }
-               }).show();**/
-
-               startActivity(new Intent(MainActivity.this, ActivityListPatient.class));
-            }
-        });
-
 
     }
 
@@ -265,15 +242,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    private ArrayList<User> initDataDialog(ArrayList<User> items){
-       /** ArrayList<User> items = new ArrayList<>();
-        items.add(new User("jfpjfp@jgjgoi.com","49449"));
-        items.add(new User("jfpjfp@rrrr.com","88888"));
-        items.add(new User("jfpjfp@333.com","6666556"));
-        items.add(new User("jfpjfp@222222.com","12133"));**/
-        return items;
-
-    }
 
 }

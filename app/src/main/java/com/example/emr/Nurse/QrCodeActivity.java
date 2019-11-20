@@ -29,22 +29,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QrCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
-    Retrofit retrofit;
-    private String stringURL = "https://ltc7q76qp5.execute-api.us-east-1.amazonaws.com/dev/heartbeat/";
+
     private ZXingScannerView scannerView;
     private TextView txtResult;
-    private Call<List<Heartbeat>> call;
-    private  DataService service;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
 
-        retrofit = new Retrofit.Builder()
-                .baseUrl(stringURL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-         service = retrofit.create(DataService.class);
 
 
         scannerView = (ZXingScannerView)findViewById(R.id.zxscan);
@@ -83,27 +76,10 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
     public void handleResult(Result rawResult) {
 
         //txtResult.setText(rawResult.toString());
-        String mac = rawResult.toString();
-        mac = mac.substring(mac.lastIndexOf("/")+1);
-        txtResult.setText(mac);
-        startActivity(new Intent(QrCodeActivity.this,ActivityListPatient.class).putExtra("mac",mac));
-        //call = service.getBPM(mac);
-
-
-        /**call = service.getBPM();
-        call.enqueue(new Callback<Heartbeat>() {
-            @Override
-            public void onResponse(Call<Heartbeat> call, Response<Heartbeat> response) {
-                Heartbeat heartbeat = response.body();
-                txtResult.setText(heartbeat.getHeartBeat());
-            }
-
-            @Override
-            public void onFailure(Call<Heartbeat> call, Throwable t) {
-                Toast.makeText(QrCodeActivity.this,"Deu ruim",Toast.LENGTH_LONG).show();
-            }
-        });**/
-
+         String mac = rawResult.toString();
+         String aux = mac.substring(mac.lastIndexOf("/")+1);
+        txtResult.setText(aux);
+        startActivity(new Intent(QrCodeActivity.this,ActivityListPatient.class).putExtra("mac",aux));
 
     }
 }

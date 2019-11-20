@@ -2,13 +2,13 @@ package com.example.emr.Models;
 
 public class Heartbeat {
 
-    private String heartBeat;
+    private String result;
 
-    public String getHeartBeat() {
-        return heartBeat;
+    public String getResult() {
+        return result;
     }
 
-    public void setHeartBeat(String heartBeat) {
-        this.heartBeat = heartBeat;
+    public void setResult(String result) {
+        this.result = result;
     }
 }

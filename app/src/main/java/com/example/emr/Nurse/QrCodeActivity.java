@@ -1,6 +1,7 @@
 package com.example.emr.Nurse;
 
 import android.Manifest;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -61,6 +62,9 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result rawResult) {
-        txtResult.setText(rawResult.getText());
+        String mac = rawResult.toString();
+        String aux = mac.substring(mac.lastIndexOf("/")+1);
+        txtResult.setText(aux);
+        startActivity(new Intent(QrCodeActivity.this,ActivityListPatient.class).putExtra("mac",aux));
     }
 }

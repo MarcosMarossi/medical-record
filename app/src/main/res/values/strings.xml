@@ -55,8 +55,6 @@
     </string-array>
 
 
-
-
     // Histórico
 
     <string name="historico">Histórico</string>
@@ -67,7 +65,6 @@
 
 
     // API Calendario Semanas
-
 
 
     // Menu Sair Usuário
@@ -160,7 +157,6 @@
     <string name="cpf_padrao">CPF (Cadastro de Pessoa Física)</string>
 
     <string name="categoria">Selecione uma categoria</string>
-
 
 
 

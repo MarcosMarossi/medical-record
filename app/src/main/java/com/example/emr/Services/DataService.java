@@ -1,5 +1,6 @@
 package com.example.emr.Services;
 
+import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.User;
 
@@ -36,12 +37,12 @@ public interface DataService {
     @GET("api/screcord/schedullingsByDate/{date}")
     Call<ArrayList<Scheduling>> historico(@Path( "date" ) String date);
 
+    @GET("api/patients")
+    Call<ArrayList<User>> getAllPatients();
 
-    /*
-    @GET("nutricao/")
-    Call<ArrayList<ArrayList<Pratos>>> getListPratos(
-            @Query("acao") String acao,
-            @Query("tipo_refeicao") int tipo,
-            @Query("data") String data
-    );*/
+    @GET("{mac}")
+    Call<Heartbeat> getBPM(@Path("mac") String mac);
+
+    @POST("misc/heartbeat")
+    Call<User> setBPMUser(@Body User user);
 }

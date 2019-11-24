@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" >Vida Saudável</string>
+    <string name="app_title" >Vida Saudável</string>
     <string name="titulo_login" >Acessar minha conta</string>
     <string name="titulo_cadastrar" >Cadastrar uma conta</string>
 
@@ -8,7 +9,7 @@
     <string name="nome" >Vida Saudável</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app" >Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
+    <string name="explicacao_app" >Bem-vindo(a) ao Vida Saudável, o seu novo aplicativo de acompanhamento médico.</string>
     <string name="btnEntrar" >Entrar</string>
     <string name="btnCadastrar" >Cadastrar</string>
     <string name="Idioma" >Idioma</string>
@@ -134,6 +135,8 @@
         <item>Selecione um médico(a)</item>
         <item>Medico</item>
     </string-array>
+
+    <string name="categoria">Selecione uma categoria</string>
 
 
 

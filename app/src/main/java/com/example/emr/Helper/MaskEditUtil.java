@@ -1,4 +1,4 @@
-package com.example.emr.Models;
+package com.example.emr.Helper;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,7 +10,7 @@ public abstract class MaskEditUtil {
     public static final String FORMAT_FONE = "(###)####-#####";
     public static final String FORMAT_CEP = "#####-###";
     public static final String FORMAT_DATE = "##/##/####";
-    public static final String FORMAT_HOUR = "##:##";
+    public static final String FORMAT_HOUR = "##/##";
 
     public static TextWatcher mask(final EditText ediTxt, final String mask) {
         return new TextWatcher() {

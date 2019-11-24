@@ -8,7 +8,7 @@
     <string name="nome">Egészséges Élet</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Üdvözöljük a Control Health, az új orvosi nyomkövető alkalmazásban. Hatékony ütemezési rendszerünk is van!</string>
+    <string name="explicacao_app">Üdvözöljük a Vida Saudável, az új orvosi nyomkövető alkalmazásban.</string>
     <string name="btnEntrar">Bejelentkezés</string>
     <string name="btnCadastrar">Registrácio</string>
     <string name="Idioma">Nyelv</string>

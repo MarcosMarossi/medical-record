@@ -8,7 +8,7 @@
     <string name="nome">Gesundes Leben</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Willkommen bei Control Health, Ihrer neuen medizinischen Tracking-App. Wir haben auch ein effizientes planungssystem!</string>
+    <string name="explicacao_app">Willkommen bei Vida Saudável, Ihrer neuen medizinischen Tracking-App.</string>
     <string name="btnEntrar">Einloggen</string>
     <string name="btnCadastrar">Registrieren</string>
     <string name="Idioma">sprache</string>

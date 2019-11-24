@@ -7,7 +7,7 @@
     <string name="nome">Vida Saudável</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Bem-vindo(a) ao Control Health, o seu novo aplicativo de acompanhamento médico. Contamos também com um sistema eficiente sistema de agendamento!</string>
+    <string name="explicacao_app">Bem-vindo(a) ao Vida Saudável, o seu novo aplicativo de acompanhamento médico.</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnCadastrar">Cadastrar</string>
     <string name="Idioma">Idioma</string>
@@ -16,7 +16,7 @@
     <string name="informardados">Informe seus dados</string>
     <string name="verificarinfo">Verificaremos suas informações!</string>
     <string name="nome_completo">Nome completo</string>
-    <string name="cpf_padrao">CPF</string>
+
     <string name="email">E-mail</string>
     <string name="senha">Senha</string>
     <string name="btnLimpar">Limpar Dados</string>
@@ -152,6 +152,15 @@
     <string name="tit_add_agendamento">Informe os dados da consulta.</string>
     <string name="des_add_agendamento">Precisamos do horário, e depois a data.</string>
     <string name="hint_horario">Horário da consulta</string>
+
+    <string name="validacao_senha">A senha deve conter pelo menos 8 caracteres.</string>
+    <string name="validacao_email">Digite um e-mail válido.</string>
+    <string name="validacao_documento">Número de CPF (Cadastro de Pessoa Física) inválido ou vazio!</string>
+    <string name="validacao_nome">Nome inválido. Por favor, digite o seu nome completo.</string>
+    <string name="cpf_padrao">CPF (Cadastro de Pessoa Física)</string>
+
+    <string name="categoria">Selecione uma categoria</string>
+
 
 
 

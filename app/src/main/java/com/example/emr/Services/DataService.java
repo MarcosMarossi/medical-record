@@ -3,6 +3,7 @@ package com.example.emr.Services;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -10,6 +11,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
+import retrofit2.http.Path;
 
 public interface DataService {
 
@@ -30,4 +32,16 @@ public interface DataService {
 
     @POST("api/schedulling")
     Call<Scheduling> agendar(@Body Scheduling scheduling);
+
+    @GET("api/screcord/schedullingsByDate/{date}")
+    Call<ArrayList<Scheduling>> historico(@Path( "date" ) String date);
+
+
+    /*
+    @GET("nutricao/")
+    Call<ArrayList<ArrayList<Pratos>>> getListPratos(
+            @Query("acao") String acao,
+            @Query("tipo_refeicao") int tipo,
+            @Query("data") String data
+    );*/
 }

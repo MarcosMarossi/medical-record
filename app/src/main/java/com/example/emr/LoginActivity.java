@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.User;
 import com.example.emr.Services.DataService;
 import com.example.emr.User.MenuUsrActivity;
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText campoNome, campoSenha;
     private Button btEnviar;
-    private String email, senha, stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
+    private String email, senha;
     String getToken, Profile;
     Retrofit retrofit;
     SharedPreferences sharedPreferences;
@@ -48,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
         campoNome = findViewById(R.id.edtNome);
         campoSenha = findViewById(R.id.edtSenha);
         btEnviar = findViewById(R.id.btnEntrar);
-        chboxSalvar = findViewById(R.id.chboxSalvar);
         getSupportActionBar().hide();
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
@@ -60,10 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 email = campoNome.getText().toString();
                 senha = campoSenha.getText().toString();
 
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(stringURL)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+                retrofit = RetrofitConfig.retrofitConfig();
 
                 User token = new User(email, senha);
 
@@ -76,16 +73,12 @@ public class LoginActivity extends AppCompatActivity {
 
                         User user = response.body();
                         getToken = response.body().getToken();
-                        Toast.makeText(LoginActivity.this, getToken, Toast.LENGTH_SHORT).show();
 
+                        editor.putString("email",email);
+                        editor.putString("pass",senha);
+                        editor.putString("token",getToken);
+                        editor.commit();
 
-
-                        if(chboxSalvar.isChecked()){
-                            editor.putString("email",email);
-                            editor.putString("pass",senha);
-                            editor.putString("token",getToken);
-                            editor.commit();
-                        }
 
                         if (user.getToken() != null) {
 
@@ -113,12 +106,11 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
                         }
-
                     }
 
                     @Override
                     public void onFailure(Call<User> call, Throwable t) {
-
+                        Log.e("ERROR", "Seu erro ocorreu aqui: " + t + " " + call);
                     }
                 });
             }
@@ -133,27 +125,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void fechar(View v) {
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(LoginActivity.this,MainActivity.class));
     }
 
     public void menuPaciente() {
-        Intent intent = new Intent(this, MenuUsrActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, MenuUsrActivity.class));
     }
 
     public void menuMedico() {
-        Intent intent = new Intent(this, MenuDocActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, MenuDocActivity.class));
     }
 
     public void menuEnfermeira() {
-        Intent intent = new Intent(this, MenuNurActivity.class);
-        startActivity(intent);
-    }
-
-    public void abrirRecuperar(View view) {
-        Intent intent = new Intent(this, RecoverActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, MenuNurActivity.class));
     }
 }

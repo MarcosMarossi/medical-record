@@ -8,7 +8,7 @@
     <string name="nome">Vita Sana</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Benvenuto in Control Health, la tua nuova app di monitoraggio medico. Abbiamo anche un efficiente sistema di programmazione!</string>
+    <string name="explicacao_app">Benvenuto in Vida Saudável, la tua nuova app di monitoraggio medico.</string>
     <string name="btnEntrar">Accedi</string>
     <string name="btnCadastrar">Registrazione</string>
     <string name="Idioma">Lingua</string>

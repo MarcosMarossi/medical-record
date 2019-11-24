@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/background_light"
         android:textColorHint="#000000"
@@ -68,39 +68,6 @@
             android:textCursorDrawable="@android:color/background_dark" />
     </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/txtEsquecerSenha"
-        android:layout_width="181dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/ubuntu"
-        android:onClick="abrirRecuperar"
-        android:text="@string/esqueceu"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/chboxSalvar"
-        app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
-
-    <CheckBox
-        android:id="@+id/chboxSalvar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="26dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="@string/lembrar"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha"
-        app:layout_constraintVertical_bias="0.0" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="350dp"
@@ -110,16 +77,16 @@
         android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEsquecerSenha">
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha">
 
         <Button
             android:id="@+id/btnEntrar"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/borda_redonda_vermelho"
+            android:background="#4CAF50"
             android:fontFamily="@font/ubuntu"
             android:text="@string/btnEntrar"
             android:textColor="@android:color/background_light"
@@ -130,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/borda_redonda_azul"
+            android:background="#F44336"
             android:fontFamily="@font/ubuntu"
             android:onClick="fechar"
             android:text="@string/btnSair"
@@ -173,7 +140,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_senha_24dp"
         android:drawablePadding="10dp"

@@ -52,11 +52,8 @@
             android:name=".User.CalendarActivity"
             android:label="@string/historico"
             android:parentActivityName=".User.MenuUsrActivity" />
-        <activity android:name=".User.MenuUsrActivity" />
-        <activity
-            android:name=".RecoverActivity"
-            android:label="@string/titulorecuperar"
-            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".User.MenuUsrActivity"
+            android:label="Vida Saudável"/>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/titulo_cadastrar"

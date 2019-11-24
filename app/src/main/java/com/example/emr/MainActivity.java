@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.emr.Adapter.AdapterCountry;
+import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.User;
 import com.example.emr.Services.DataService;
 
@@ -35,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner idioma;
     private ArrayList<CountryItem> countryList;
     private AdapterCountry adapterCountry;
-    Retrofit retrofit;
-    private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
-    String Token, getToken, Profile;
+    private Retrofit retrofit;
+    String getToken, Profile;
     SharedPreferences sharedPreferences;
 
 
@@ -46,40 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mudarIdioma();
         setContentView(R.layout.act_main);
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl(stringURL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
-        getToken = sharedPreferences.getString("token", null);
-
-        DataService service = retrofit.create(DataService.class);
-        Call<User> call = service.pegarToken(getToken);
-
-        call.enqueue(new Callback<User>() {
-
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-
-                    Profile = response.body().getProfile();
-                    if (Profile.equals("patient") && !getToken.equals("")) {
-                        menuPaciente();
-                    } else if (Profile.equals("medic") && !getToken.equals("")) {
-                        menuMedico();
-                    } else if (Profile.equals("nurse") && !getToken.equals("")) {
-                        menuEnfermeira();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.e("Error", "Ocorreu um erro: " + t);
-            }
-        });
 
 
         initList();
@@ -106,11 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
     private void initList() {
@@ -146,9 +107,6 @@ public class MainActivity extends AppCompatActivity {
 
         config.setLocale(idioma);
         res.updateConfiguration(config, res.getDisplayMetrics());
-        //finish();
-        //startActivity(new Intent(this,MainActivity.class));
-
     }
 
     public void alteraridioma(String idioma) {
@@ -220,4 +178,43 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openAutomatic(){
+        retrofit = RetrofitConfig.retrofitConfig();
+
+        sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
+        getToken = sharedPreferences.getString("token", null);
+
+        DataService service = retrofit.create(DataService.class);
+        Call<User> call = service.pegarToken(getToken);
+
+        call.enqueue(new Callback<User>() {
+
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+
+                    Profile = response.body().getProfile();
+                    if (Profile.equals("patient") && !getToken.equals("")) {
+                        menuPaciente();
+                    } else if (Profile.equals("medic") && !getToken.equals("")) {
+                        menuMedico();
+                    } else if (Profile.equals("nurse") && !getToken.equals("")) {
+                        menuEnfermeira();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.e("Error", "Ocorreu um erro: " + t);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        openAutomatic();
+    }
 }

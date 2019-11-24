@@ -8,7 +8,7 @@
     <string name="nome">Vida Saludable</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Bienvenido a Control Health, su nueva aplicación de seguimiento médico. ¡También tenemos un eficiente sistema de programación!</string>
+    <string name="explicacao_app">Bienvenido a Vida Saudável, su nueva aplicación de seguimiento médico.</string>
     <string name="btnEntrar">Iniciar sesión</string>
     <string name="btnCadastrar">Registrar</string>
     <string name="Idioma">Idioma</string>

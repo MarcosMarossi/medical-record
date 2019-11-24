@@ -19,7 +19,7 @@
             android:layout_width="350dp"
             android:layout_height="51dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/nome_completo"
@@ -42,7 +42,7 @@
             android:layout_width="350dp"
             android:layout_height="51dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/cpf_padrao"
@@ -66,7 +66,7 @@
             android:layout_width="350dp"
             android:layout_height="51dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/email"
@@ -90,7 +90,7 @@
             android:layout_width="348dp"
             android:layout_height="53dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/background_light"
             android:hint="@string/senha"
@@ -119,38 +119,26 @@
 
         <Button
             android:id="@+id/btnCadastrar"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="220dp"
-            android:background="@drawable/borda_redonda_vermelho"
+            android:layout_marginBottom="35dp"
+            android:background="#4CAF50"
             android:text="@string/btnCadastrar"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/borda_redonda_azul"
-            android:hint="@string/btnLimpar"
-            android:onClick="limparCampos"
-            android:text="@string/btnLimpar"
-            android:textColor="@android:color/background_light"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintTop_toBottomOf="@+id/inputSenha" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="@string/informardados"
             android:textColor="@color/colorAccent"
@@ -158,7 +146,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/textView3"
@@ -171,17 +159,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="A senha deve conter números e letras!"
-            android:textSize="18sp"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.304"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputSenha" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/report" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

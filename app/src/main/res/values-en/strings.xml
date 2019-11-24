@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Healthy Life</string>
+    <string name="app_name">Vida Saudável</string>
     <string name="titulo_login">Access my account</string>
     <string name="titulo_cadastrar">Register an account</string>
 
@@ -7,7 +7,7 @@
     <string name="nome">Healthy Life</string>
 
     //Textos_MainActivity
-    <string name="explicacao_app">Welcome to Control Health, your new medical tracking app. We also have an efficient scheduling system!</string>
+    <string name="explicacao_app">Welcome to Vida Saudável, your new medical tracking app.</string>
     <string name="btnEntrar">Log in</string>
     <string name="btnCadastrar">Register</string>
     <string name="Idioma">Language</string>

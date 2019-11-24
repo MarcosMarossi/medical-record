@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
-    android:backgroundTint="#CDDC39"
+    android:background="#E53935"
+    android:backgroundTint="#FFFFFF"
     tools:context=".User.SliderActivity">
 
 
@@ -30,13 +30,13 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:gravity="center"
-        android:text="Basta deslizar entre as telas e preencher as informações necessárias!"
+        android:text="Basta preencher as informações necessárias!"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#5A5A5A"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -47,30 +47,34 @@
         android:id="@+id/imageView3"
         android:layout_width="199dp"
         android:layout_height="167dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/relatorio" />
+        app:srcCompat="@drawable/calendar" />
 
-    <ImageView
-        android:id="@+id/iNext"
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="24dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:src="@drawable/ic_next"
+        app:backgroundTint="#43A047"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/next" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/iBackMenu"
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="24dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#E53935"
+        android:clickable="true"
+        android:src="@drawable/ic_skip"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/export" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

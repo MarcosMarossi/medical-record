@@ -72,11 +72,6 @@
     <string name="sair_nao">Não</string>
     <string name="sair_titulo">Tem certeza que deseja sair?</string>
 
-    // Enfermeira e Médico
-    <string name="titulo_monitorar">Monitoramento</string>
-    <string name="titulo_validar">Validação</string>
-    <string name="titulo_avisos">Meus Avisos</string>
-    <string name="titulo_consultas">Consultas</string>
 
 
     <string-array name="categorias">
@@ -116,6 +111,13 @@
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
     <string name="desc_qr_code">Verifique o BPM do paciente.</string>
+
+    // Enfermeira e Médico
+    <string name="titulo_monitorar">Monitoramento</string>
+    <string name="titulo_validar">Validação</string>
+    <string name="titulo_avisos">Meus Avisos</string>
+    <string name="titulo_consultas">Consultas</string>
+
     // Agendamento
 
     <string name="erro_data">Por favor, insira uma data válida!</string>
@@ -146,9 +148,10 @@
     </string-array>
 
     // Agendamento
-    <string name="tit_add_agendamento">Informe os dados da consulta.</string>
+    <string name="tit_add_agendamento">Dados da consulta</string>
     <string name="des_add_agendamento">Precisamos do horário, e depois a data.</string>
-    <string name="hint_horario">Horário da consulta</string>
+    <string name="hint_horario">Horário</string>
+    <string name="hint_data">Data</string>
 
     <string name="validacao_senha">A senha deve conter pelo menos 8 caracteres.</string>
     <string name="validacao_email">Digite um e-mail válido.</string>

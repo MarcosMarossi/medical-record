@@ -29,7 +29,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     private EditText campoNome, campoSenha;
     private Button btEnviar;
     private String email, senha;
@@ -38,8 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     private Boolean boolToken;
-    private CheckBox chboxSalvar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("pass",senha);
                         editor.putString("token",getToken);
                         editor.commit();
-
 
                         if (user.getToken() != null) {
 

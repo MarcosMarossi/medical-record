@@ -2,6 +2,7 @@ package com.example.emr.User.Scheduling;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,8 @@ import com.example.emr.User.MenuUsrActivity;
 
 public class Slide01Activity extends AppCompatActivity {
 
-    private ImageView iNext, iBack;
+    private FloatingActionButton iNext, iBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,8 @@ public class Slide01Activity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        iNext = findViewById( R.id.iNext );
-        iBack = findViewById( R.id.iBackMenu );
+        iNext = findViewById( R.id.fabNext );
+        iBack = findViewById( R.id.fabBack );
 
         iNext.setOnClickListener( new View.OnClickListener() {
             @Override

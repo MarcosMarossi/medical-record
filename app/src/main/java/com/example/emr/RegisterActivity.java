@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.emr.Config.RetrofitConfig;
+import com.example.emr.Helper.MaskEditUtil;
 import com.example.emr.Models.User;
 import com.example.emr.Services.DataService;
 
@@ -29,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.edtNome);
         etCPF = findViewById(R.id.edtCPF);
+        etCPF.addTextChangedListener( MaskEditUtil.mask(etCPF, MaskEditUtil.FORMAT_CPF));
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtSenha);
         btnCadastrar = findViewById(R.id.btnCadastrar);
@@ -41,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 name = etName.getText().toString();
                 cpf = etCPF.getText().toString();
+
                 email = edtEmail.getText().toString();
                 password = edtPassword.getText().toString();
 

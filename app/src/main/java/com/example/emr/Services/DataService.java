@@ -45,4 +45,8 @@ public interface DataService {
 
     @POST("misc/heartbeat")
     Call<User> setBPMUser(@Body User user);
+
+    @GET("api/heartbeatlog")
+    Call<User> getLog(@Body User user);
+
 }

@@ -11,6 +11,7 @@ public class User {
     private String profile;
     private String id;
     private String url;
+    private String heartbeat;
 
     public String getId() {
         return id;

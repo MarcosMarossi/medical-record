@@ -9,26 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.emr.Config.RetrofitConfig;
+import com.example.emr.Config.Validate;
 import com.example.emr.Helper.MaskEditUtil;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
-import com.prolificinteractive.materialcalendarview.CalendarDay;
-import com.prolificinteractive.materialcalendarview.CalendarMode;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
-import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter;
-import com.prolificinteractive.materialcalendarview.format.MonthArrayTitleFormatter;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,12 +51,15 @@ public class Slide02Activity extends AppCompatActivity {
         etHour = findViewById( R.id.etHour );
         etDate = findViewById( R.id.etDate );
 
+        callRetrofit();
+
         /**
          * Configure Hour/Date
          */
 
         etHour.addTextChangedListener(MaskEditUtil.mask(etHour, MaskEditUtil.FORMAT_HOUR));
         etDate.addTextChangedListener(MaskEditUtil.mask(etDate, MaskEditUtil.FORMAT_DATE));
+
 
 
         /**
@@ -76,32 +70,6 @@ public class Slide02Activity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCategory.setAdapter(adapter);
 
-        retrofit = RetrofitConfig.retrofitConfig();
-        DataService service = retrofit.create( DataService.class );
-
-        Call<List<Scheduling>> call = service.pegarId();
-        call.enqueue(new Callback<List<Scheduling>>() {
-            @Override
-            public void onResponse(Call<List<Scheduling>> call, Response<List<Scheduling>> response) {
-                if(response.isSuccessful()){
-
-                    shedulings = response.body();
-
-                    for (int i = 0; i < shedulings.size(); i++){
-                        Scheduling s = shedulings.get( i );
-                        playerNames.add(s.getName());
-                    }
-                }
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
-                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                spDoctor.setAdapter(spinnerArrayAdapter);
-            }
-            @Override
-            public void onFailure(Call<List<Scheduling>> call, Throwable t) {
-                Log.d("404","Ocorreu um erro: " + t);
-            }
-        });
-
         /**
          * Configure Scheduling System
          */
@@ -111,7 +79,9 @@ public class Slide02Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 hourSelected = etHour.getText().toString();
+                String sHour = Validate.validateHour( hourSelected );
                 dateSelected = etDate.getText().toString();
+                String sDate = Validate.validateDate( dateSelected );
 
                 if (hourSelected.isEmpty()){
                     Toast.makeText( Slide02Activity.this, "Nenhum horário selecionado!", Toast.LENGTH_SHORT ).show();
@@ -142,5 +112,33 @@ public class Slide02Activity extends AppCompatActivity {
                 startActivity( new Intent( getApplicationContext(), Slide01Activity.class ) );
             }
         } );
+    }
+
+    public void callRetrofit(){
+        retrofit = RetrofitConfig.retrofitConfig();
+        DataService service = retrofit.create( DataService.class );
+
+        Call<List<Scheduling>> call = service.pegarId();
+        call.enqueue(new Callback<List<Scheduling>>() {
+            @Override
+            public void onResponse(Call<List<Scheduling>> call, Response<List<Scheduling>> response) {
+                if(response.isSuccessful()){
+
+                    shedulings = response.body();
+
+                    for (int i = 0; i < shedulings.size(); i++){
+                        Scheduling s = shedulings.get( i );
+                        playerNames.add(s.getName());
+                    }
+                }
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
+                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                spDoctor.setAdapter(spinnerArrayAdapter);
+            }
+            @Override
+            public void onFailure(Call<List<Scheduling>> call, Throwable t) {
+                Log.d("404","Ocorreu um erro: " + t);
+            }
+        });
     }
 }

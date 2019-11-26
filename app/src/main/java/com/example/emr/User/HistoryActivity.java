@@ -4,15 +4,20 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import com.example.emr.Adapter.AdapterScheduling;
+import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Scheduling;
+import com.example.emr.Models.Test;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
 import com.example.emr.User.Scheduling.Slide01Activity;
-import com.google.gson.Gson;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
@@ -24,15 +29,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class CalendarActivity extends AppCompatActivity {
+public class HistoryActivity extends AppCompatActivity {
 
     private MaterialCalendarView calendario;
     private FloatingActionButton fabAgendar;
+    private Retrofit retrofit;
     private DataService service;
-    private String stringURL = "https://ey7li2szf0.execute-api.us-east-1.amazonaws.com/dev/";
-    private ArrayList<Scheduling> shedulings;
+    private RecyclerView recyclerView;
+    private List<Scheduling> fotodope = new ArrayList<>(  );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +51,6 @@ public class CalendarActivity extends AppCompatActivity {
                 .setMaximumDate(CalendarDay.from(2020,6,1))
                 .commit();
 
-
-
         calendario.setOnMonthChangedListener(new OnMonthChangedListener() {
             @Override
             public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
@@ -55,44 +58,33 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(stringURL)
-                .addConverterFactory( GsonConverterFactory.create())
-                .build();
+        retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<ArrayList<Scheduling>> call = service.historico( "11/2019" );
+        Call<Test> call = service.historico("11/2019");
 
-        call.enqueue( new Callback<ArrayList<Scheduling>>() {
+        call.enqueue( new Callback<Test>() {
             @Override
-            public void onResponse(Call<ArrayList<Scheduling>> call, Response<ArrayList<Scheduling>> response) {
-
-
-
-                shedulings = response.body();
-                System.out.println( "nhfdeefhuewuih cheguei" );
-
-
+            public void onResponse(Call<Test> call, Response<Test>response) {
 
                 try{
-                    for (int i = 0; i < shedulings.size(); i++) {
 
-                        //for(Scheduling s : shedulings){
-
-                        Scheduling s = shedulings.get( i );
-                        System.out.println( s.getDate() + ", " + s.getPatient() );
-
-                    }
                 } catch (NullPointerException e){
-                    System.out.println( "oi linda" + e );
+                    System.out.println( e + "fehfeu7rfhweh3yr79eg" );
                 }
 
+                Test scheduling;
+                scheduling = response.body();
+                fotodope = scheduling.schedules;
 
-               // Toast.makeText( CalendarActivity.this,shedulings.get(0)+"",Toast.LENGTH_LONG ).show();
+                for(int i = 0; i < fotodope.size();i++){
+                    System.out.println( fotodope.get( i ).getPatient() );
+
+                }
 
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Scheduling>> call, Throwable t) {
+            public void onFailure(Call<Test> call, Throwable t) {
 
             }
         } );
@@ -105,11 +97,21 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
+        configurarRecyclerView();
+
     }
     private void abrirAgendar(){
-        Intent intent = new Intent(CalendarActivity.this, Slide01Activity.class);
+        Intent intent = new Intent( HistoryActivity.this, Slide01Activity.class);
         startActivity(intent);
     }
 
+    public void configurarRecyclerView() {
 
+        ListView listaDeCursos = (ListView) findViewById(R.id.listHistory);
+
+        ArrayAdapter<Scheduling> adapter = new ArrayAdapter<Scheduling>(this, android.R.layout.simple_list_item_1, fotodope);
+
+        listaDeCursos.setAdapter(adapter);
+
+    }
 }

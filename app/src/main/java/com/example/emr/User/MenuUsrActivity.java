@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.emr.Adapter.Adaptador;
+import com.example.emr.Adapter.Adapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.User.Scheduling.Slide01Activity;
@@ -19,6 +19,7 @@ import com.example.emr.User.Scheduling.Slide01Activity;
 import static com.example.emr.R.*;
 
 public class MenuUsrActivity extends AppCompatActivity {
+
 
     ListView lista;
     SharedPreferences sharedPreferences;
@@ -41,11 +42,14 @@ public class MenuUsrActivity extends AppCompatActivity {
         setContentView(layout.act_menu_usr);
 
 
+        getSupportActionBar().hide();
+
+
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         lista = findViewById(id.listUser);
-        lista.setAdapter(new Adaptador(this, dados, dadosImg));
+        lista.setAdapter(new Adapter(this, dados, dadosImg));
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,7 +81,7 @@ public class MenuUsrActivity extends AppCompatActivity {
     }
 
     private void abrirHistorico() {
-        Intent intent = new Intent(MenuUsrActivity.this, CalendarActivity.class);
+        Intent intent = new Intent(MenuUsrActivity.this, HistoryActivity.class);
         startActivity(intent);
     }
 

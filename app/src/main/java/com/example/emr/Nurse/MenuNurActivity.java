@@ -6,14 +6,12 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.emr.Adapter.Adaptador;
-import com.example.emr.Doctor.MenuDocActivity;
+import com.example.emr.Adapter.Adapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.R;
@@ -43,7 +41,7 @@ public class MenuNurActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
         lista = findViewById(R.id.listNurse);
-        lista.setAdapter(new Adaptador(this, dados, dadosImg));
+        lista.setAdapter(new Adapter(this, dados, dadosImg));
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

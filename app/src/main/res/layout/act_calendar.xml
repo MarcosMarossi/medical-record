@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.CalendarActivity">
+    tools:context=".User.HistoryActivity">
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calHistorico"
@@ -32,11 +32,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_date_48dp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="503dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+    <ListView
+        android:id="@+id/listHistory"
+        android:layout_width="409dp"
+        android:layout_height="534dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calHistorico" />

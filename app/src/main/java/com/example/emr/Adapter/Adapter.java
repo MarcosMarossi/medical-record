@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.emr.R;
 
-public class Adaptador extends BaseAdapter {
+public class Adapter extends BaseAdapter {
 
     private static LayoutInflater inflater = null;
 
@@ -18,7 +18,7 @@ public class Adaptador extends BaseAdapter {
     int[][] dados;
     int[] dadosImg;
 
-    public Adaptador(Context contexto, int[][] dados, int[] dadosImg) {
+    public Adapter(Context contexto, int[][] dados, int[] dadosImg) {
         this.contexto = contexto;
         this.dados = dados;
         this.dadosImg = dadosImg;

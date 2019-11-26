@@ -1,10 +1,5 @@
 package com.example.emr.Models;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
-
 public class Scheduling {
 
     private String patient;
@@ -14,26 +9,6 @@ public class Scheduling {
     private String name;
     private String profile;
     private String email;
-
-    @SerializedName("schedule")
-    @Expose
-    private ArrayList<Scheduling> employee = null;
-
-    /*
-    public ArrayList<Employee> getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(ArrayList<Employee> employee) {
-        this.employee = employee;
-    }
-
-
-     */
-
-
-
-
 
     public Scheduling(String id, String specialty, String medic, String date) {
         this.patient = id;
@@ -96,5 +71,9 @@ public class Scheduling {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Scheduling(){
+
     }
 }

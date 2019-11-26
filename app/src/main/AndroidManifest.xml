@@ -50,7 +50,7 @@
             android:label="@string/avisos_titulo"
             android:parentActivityName=".User.MenuUsrActivity" />
         <activity
-            android:name=".User.CalendarActivity"
+            android:name=".User.HistoryActivity"
             android:label="@string/historico"
             android:parentActivityName=".User.MenuUsrActivity" />
         <activity android:name=".User.MenuUsrActivity"

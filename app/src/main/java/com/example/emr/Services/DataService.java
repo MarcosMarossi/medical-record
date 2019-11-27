@@ -10,6 +10,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
@@ -20,24 +21,27 @@ public interface DataService {
 
     // @Headers({"Content-Type = application/json","x-access-token = fooBar123" })
     @POST("auth/jwt/login")
-    Call<User> acessarLogin(@Body User token);
+    Call<User> acessApp(@Body User token);
 
 
     @GET("auth/jwt/me")
-    Call<User> pegarToken(@Header("x-access-token") String Token);
+    Call<User> getToken(@Header("x-access-token") String Token);
 
     @POST("auth/jwt/register")
-    Call<User> registrarUsuario(@Body User register);
+    Call<User> registerNewUser(@Body User register);
 
 
     @GET("api/doctors")
     Call<List<Scheduling>> pegarId();
 
     @POST("api/schedulling")
-    Call<Scheduling> agendar(@Body Scheduling scheduling);
+    Call<Scheduling> newSchedule(@Body Scheduling scheduling);
 
     @GET("api/screcord/schedullingsByDates/{month}/{year}")
-    Call<Test> historico(@Path( "month" ) String month, @Path( "year" ) String year);
+    Call<Test> historicPatient(@Path( "month" ) String month, @Path( "year" ) String year);
+
+    @DELETE("api/schedulling/:id")
+    Call<Test> deleteSchedule();
 
     @GET("api/patients")
     Call<ArrayList<User>> getAllPatients();

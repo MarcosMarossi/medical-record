@@ -1,15 +1,12 @@
 package com.example.emr;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,7 +22,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -65,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     User token = new User( email, senha );
 
                     DataService service = retrofit.create( DataService.class );
-                    Call<User> POST = service.acessarLogin( token );
+                    Call<User> POST = service.acessApp( token );
 
                     POST.enqueue( new Callback<User>() {
                         @Override
@@ -82,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (user.getToken() != null) {
 
                                 DataService service = retrofit.create( DataService.class );
-                                Call<User> GET = service.pegarToken( getToken );
+                                Call<User> GET = service.getToken( getToken );
                                 GET.enqueue( new Callback<User>() {
                                     @Override
                                     public void onResponse(Call<User> call, Response<User> response) {
@@ -115,8 +111,6 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText( LoginActivity.this, "Desculpe. Não conseguimos conectar te. E-mail ou senha inválidos.", Toast.LENGTH_SHORT ).show();
                         }
                     } );
-
-
                 }
             } );
 

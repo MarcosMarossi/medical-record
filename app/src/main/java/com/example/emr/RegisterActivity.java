@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                 User register = new User(name,cpf,email,password);
 
                 DataService service = retrofit.create(DataService.class);
-                Call<User> POST = service.registrarUsuario(register);
+                Call<User> POST = service.registerNewUser(register);
 
                 POST.enqueue(new Callback<User>() {
                     @Override

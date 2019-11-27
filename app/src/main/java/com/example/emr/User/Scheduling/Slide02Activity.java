@@ -90,7 +90,7 @@ public class Slide02Activity extends AppCompatActivity {
 
                     retrofit = RetrofitConfig.retrofitConfig();
                     DataService service1 = retrofit.create( DataService.class );
-                    Call<Scheduling> chm = service1.agendar( agendarObject );
+                    Call<Scheduling> chm = service1.newSchedule( agendarObject );
                     chm.enqueue( new Callback<Scheduling>() {
                         @Override
                         public void onResponse(Call<Scheduling> call, Response<Scheduling> response) {

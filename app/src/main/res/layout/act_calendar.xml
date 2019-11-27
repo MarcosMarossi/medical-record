@@ -10,7 +10,7 @@
         android:id="@+id/calHistorico"
         android:layout_width="399dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
         app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_date_48dp" />
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"

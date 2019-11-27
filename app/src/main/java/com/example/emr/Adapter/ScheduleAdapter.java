@@ -6,18 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.emr.Models.Scheduling;
 import com.example.emr.R;
 import java.util.List;
 
-public class AdapterScheduling extends RecyclerView.Adapter<AdapterScheduling.MyViewHolder> {
+public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyViewHolder> {
 
     private List<Scheduling> list;
     private Context context;
 
-    public AdapterScheduling(List<Scheduling> list, Context context) {
+    public ScheduleAdapter(List<Scheduling> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -29,8 +28,8 @@ public class AdapterScheduling extends RecyclerView.Adapter<AdapterScheduling.My
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter, parent, false);
-        return new AdapterScheduling.MyViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.historic_list, parent, false);
+        return new ScheduleAdapter.MyViewHolder(view);
     }
 
     @Override

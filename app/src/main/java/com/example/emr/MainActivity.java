@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.emr.Adapter.AdapterCountry;
@@ -29,7 +28,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -185,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
         getToken = sharedPreferences.getString("token", null);
 
         DataService service = retrofit.create(DataService.class);
-        Call<User> call = service.pegarToken(getToken);
+        Call<User> call = service.getToken(getToken);
 
         call.enqueue(new Callback<User>() {
 
@@ -209,7 +207,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Error", "Ocorreu um erro: " + t);
             }
         });
-
     }
 
     @Override

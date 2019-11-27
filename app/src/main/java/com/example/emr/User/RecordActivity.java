@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.emr.R;
 
-public class Prontuario extends AppCompatActivity {
+public class RecordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.act_prontuario );
+        setContentView( R.layout.act_record );
     }
 }

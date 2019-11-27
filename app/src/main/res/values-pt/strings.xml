@@ -73,7 +73,6 @@
     <string name="sair_titulo">Tem certeza que deseja sair?</string>
 
 
-
     <string-array name="categorias">
         <item>Selecione uma categoria</item>
         <item>Clinico Geral</item>
@@ -161,6 +160,7 @@
 
     <string name="categoria">Selecione uma categoria</string>
 
+    <string name="tit_medico">Médico(a)</string>
 
 
 </resources>

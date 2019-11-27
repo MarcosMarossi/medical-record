@@ -73,7 +73,6 @@ public class Scheduling {
         this.date = date;
     }
 
-    public Scheduling(){
-
+    public Scheduling() {
     }
 }

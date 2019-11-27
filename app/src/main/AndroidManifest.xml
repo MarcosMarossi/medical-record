@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".User.Prontuario"></activity>
+        <activity android:name=".User.RecordActivity" />
         <activity android:name=".Nurse.ActivityListPatient" />
         <activity android:name=".Nurse.QrCodeActivity" />
         <activity android:name=".User.Scheduling.Slide02Activity" />

@@ -1,15 +1,19 @@
 package com.example.emr.User;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
-import com.example.emr.Adapter.AdapterScheduling;
+import com.example.emr.Adapter.ScheduleAdapter;
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.Test;
@@ -38,7 +42,7 @@ public class HistoryActivity extends AppCompatActivity {
     private DataService service;
     private RecyclerView recyclerView;
     private List<Scheduling> fotodope = new ArrayList<>(  );
-    private Boolean STATS_CALL = false;
+    private ScheduleAdapter scheduleAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +81,14 @@ public class HistoryActivity extends AppCompatActivity {
         });
 
         getItems();
-
-
+        movimentSwipe();
     }
-
-
 
     public void getItems(){
 
         retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<Test> call = service.historico(mesSelecionado,anoSelecionado);
+        Call<Test> call = service.historicPatient(mesSelecionado,anoSelecionado);
 
         call.enqueue( new Callback<Test>() {
             @Override
@@ -111,12 +112,12 @@ public class HistoryActivity extends AppCompatActivity {
 
     public void configurarRecyclerView() {
 
-        AdapterScheduling adapter;
 
-        adapter = new AdapterScheduling(fotodope, this);
+
+        scheduleAdapter = new ScheduleAdapter(fotodope, this);
         recyclerView.setHasFixedSize( true );
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter( adapter );
+        recyclerView.setAdapter( scheduleAdapter );
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
@@ -129,7 +130,7 @@ public class HistoryActivity extends AppCompatActivity {
                                 Scheduling video = fotodope.get(position);
                                 String idVideo = video.getPatient();
 
-                                Intent i = new Intent(HistoryActivity.this, Prontuario.class);
+                                Intent i = new Intent(HistoryActivity.this, RecordActivity.class);
                                 i.putExtra("idVideo", idVideo );
                                 startActivity(i);
 
@@ -148,4 +149,58 @@ public class HistoryActivity extends AppCompatActivity {
                 )
         );
     }
+
+    public void movimentSwipe(){
+
+        ItemTouchHelper.Callback item = new ItemTouchHelper.Callback() {
+            @Override
+            public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                int dragFlags = ItemTouchHelper.ACTION_STATE_IDLE;
+                int swipeFlags = ItemTouchHelper.START | ItemTouchHelper.END;
+                return makeMovementFlags( dragFlags, swipeFlags );
+            }
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                excluirMovimento( viewHolder );
+            }
+        };
+
+        new ItemTouchHelper( item ).attachToRecyclerView( recyclerView );
+    }
+
+    public void excluirMovimento(final RecyclerView.ViewHolder viewHolder){
+        AlertDialog.Builder alert = new AlertDialog.Builder( this );
+        alert.setTitle( "Exlcuir movimentação" );
+        alert.setMessage( "Tem certeza que deseja exlcuir a movimentação?" );
+        alert.setCancelable( false );
+
+        alert.setPositiveButton( "Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                    // Colocar o @DELETE
+
+                int pos = viewHolder.getAdapterPosition();
+                scheduleAdapter.notifyItemRemoved(pos);
+
+            }
+        } );
+
+        alert.setNegativeButton( "Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText( getApplicationContext(), "Exclusão cancelada", Toast.LENGTH_SHORT ).show();
+                scheduleAdapter.notifyDataSetChanged();
+            }
+        } );
+
+        AlertDialog alertDialog = alert.create();
+        alertDialog.show();
+    }
+
 }

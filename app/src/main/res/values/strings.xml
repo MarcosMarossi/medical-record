@@ -73,7 +73,6 @@
     <string name="sair_titulo">Tem certeza que deseja sair?</string>
 
 
-
     <string-array name="categorias">
         <item>Selecione uma categoria</item>
         <item>Clinico Geral</item>
@@ -160,7 +159,6 @@
     <string name="cpf_padrao">CPF (Cadastro de Pessoa Física)</string>
 
     <string name="categoria">Selecione uma categoria</string>
-
 
 
 </resources>

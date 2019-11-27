@@ -5,25 +5,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.Test;
 import com.example.emr.R;
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterScheduling extends RecyclerView.Adapter<AdapterScheduling.MyViewHolder> {
 
-    private List<Scheduling> list = new ArrayList<>();
+    private List<Scheduling> list;
     private Context context;
 
     public AdapterScheduling(List<Scheduling> list, Context context) {
         this.list = list;
         this.context = context;
+    }
+
+    public void setSchedule(List<Scheduling> schedule) {
+        this.list = schedule;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -34,7 +35,8 @@ public class AdapterScheduling extends RecyclerView.Adapter<AdapterScheduling.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.titulo.setText(list.get(position).getPatient());
+            holder.titulo.setText(list.get(position).getDate());
+            holder.descricao.setText(list.get(position).getMedic());
 
     }
 
@@ -47,14 +49,12 @@ public class AdapterScheduling extends RecyclerView.Adapter<AdapterScheduling.My
 
         TextView titulo;
         TextView descricao;
-        TextView data;
-        ImageView capa;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            titulo = itemView.findViewById( R.id.txtTitulo);
-            capa = itemView.findViewById(R.id.txtDescricao);
+            titulo = itemView.findViewById( R.id.txtTitulo1 );
+            descricao = itemView.findViewById(R.id.txtDescricao1 );
 
         }
     }

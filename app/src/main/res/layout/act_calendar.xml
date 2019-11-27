@@ -16,9 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:mcv_selectionColor="#00F"
         app:mcv_showOtherDates="all"
-        tools:ignore="MissingConstraints"
         app:mcv_tileSize="50dp"
-        />
+        tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAgendar"
@@ -32,8 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_date_48dp" />
 
-    <ListView
-        android:id="@+id/listHistory"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="409dp"
         android:layout_height="534dp"
         app:layout_constraintEnd_toEndOf="parent"

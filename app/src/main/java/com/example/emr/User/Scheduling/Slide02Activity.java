@@ -13,7 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.emr.Config.RetrofitConfig;
-import com.example.emr.Config.Validate;
 import com.example.emr.Helper.MaskEditUtil;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.R;
@@ -79,9 +78,9 @@ public class Slide02Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 hourSelected = etHour.getText().toString();
-                String sHour = Validate.validateHour( hourSelected );
+                //String sHour = Validate.validateHour( hourSelected );
                 dateSelected = etDate.getText().toString();
-                String sDate = Validate.validateDate( dateSelected );
+                //String sDate = Validate.validateDate( dateSelected );
 
                 if (hourSelected.isEmpty()){
                     Toast.makeText( Slide02Activity.this, "Nenhum horário selecionado!", Toast.LENGTH_SHORT ).show();

@@ -30,8 +30,8 @@ public class Adapter extends BaseAdapter {
 
         final View view = inflater.inflate(R.layout.list_menu,null);
 
-        TextView titulo = view.findViewById(R.id.txtTitulo);
-        TextView descricao = view.findViewById(R.id.txtDescricao);
+        TextView titulo = view.findViewById(R.id.txtTitulo1 );
+        TextView descricao = view.findViewById(R.id.txtDescricao1 );
         ImageView imagem = view.findViewById(R.id.imgMenu);
 
         titulo.setText(dados[i][0]);

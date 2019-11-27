@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.AdapterView;
 
 import com.example.emr.Adapter.AdapterScheduling;
 import com.example.emr.Config.RetrofitConfig;
@@ -35,15 +33,20 @@ public class HistoryActivity extends AppCompatActivity {
     private MaterialCalendarView calendario;
     private FloatingActionButton fabAgendar;
     private Retrofit retrofit;
+    private Test test;
+    private String mesSelecionado, anoSelecionado;
     private DataService service;
     private RecyclerView recyclerView;
     private List<Scheduling> fotodope = new ArrayList<>(  );
+    private Boolean STATS_CALL = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_calendar);
 
+        recyclerView = findViewById( R.id.recycler );
+        fabAgendar = findViewById(R.id.fabAgendar);
 
         calendario = findViewById(R.id.calHistorico);
         calendario.state().edit()
@@ -51,67 +54,98 @@ public class HistoryActivity extends AppCompatActivity {
                 .setMaximumDate(CalendarDay.from(2020,6,1))
                 .commit();
 
+        CalendarDay calendarDay = calendario.getCurrentDate();
+        mesSelecionado = String.format( "%02d", (calendarDay.getMonth()+1) );
+        anoSelecionado = Integer.toString( calendarDay.getYear());
+
         calendario.setOnMonthChangedListener(new OnMonthChangedListener() {
             @Override
             public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
-                Log.i("data: ", "valor: " + (date.getMonth() + 1) + "/" + date.getYear());
+
+                mesSelecionado = String.format( "%02d", (date.getMonth()+1) );
+                anoSelecionado =  Integer.toString( date.getYear() );
+                getItems();
+
             }
         });
 
+        fabAgendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( HistoryActivity.this, Slide01Activity.class));
+            }
+        });
+
+        getItems();
+
+
+    }
+
+
+
+    public void getItems(){
+
         retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<Test> call = service.historico("11/2019");
+        Call<Test> call = service.historico(mesSelecionado,anoSelecionado);
 
         call.enqueue( new Callback<Test>() {
             @Override
             public void onResponse(Call<Test> call, Response<Test>response) {
+                test = response.body();
+                fotodope = test.schedules;
 
-                try{
-
-                } catch (NullPointerException e){
-                    System.out.println( e + "fehfeu7rfhweh3yr79eg" );
-                }
-
-                Test scheduling;
-                scheduling = response.body();
-                fotodope = scheduling.schedules;
 
                 for(int i = 0; i < fotodope.size();i++){
                     System.out.println( fotodope.get( i ).getPatient() );
-
                 }
-
+                configurarRecyclerView();
             }
 
             @Override
             public void onFailure(Call<Test> call, Throwable t) {
 
             }
-        } );
-
-        fabAgendar = findViewById(R.id.fabAgendar);
-        fabAgendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirAgendar();
-            }
         });
-
-        configurarRecyclerView();
-
-    }
-    private void abrirAgendar(){
-        Intent intent = new Intent( HistoryActivity.this, Slide01Activity.class);
-        startActivity(intent);
     }
 
     public void configurarRecyclerView() {
 
-        ListView listaDeCursos = (ListView) findViewById(R.id.listHistory);
+        AdapterScheduling adapter;
 
-        ArrayAdapter<Scheduling> adapter = new ArrayAdapter<Scheduling>(this, android.R.layout.simple_list_item_1, fotodope);
+        adapter = new AdapterScheduling(fotodope, this);
+        recyclerView.setHasFixedSize( true );
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter( adapter );
 
-        listaDeCursos.setAdapter(adapter);
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        this,
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
 
+                                Scheduling video = fotodope.get(position);
+                                String idVideo = video.getPatient();
+
+                                Intent i = new Intent(HistoryActivity.this, Prontuario.class);
+                                i.putExtra("idVideo", idVideo );
+                                startActivity(i);
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 }

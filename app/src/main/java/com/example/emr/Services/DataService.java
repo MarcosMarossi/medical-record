@@ -36,8 +36,8 @@ public interface DataService {
     @POST("api/schedulling")
     Call<Scheduling> agendar(@Body Scheduling scheduling);
 
-    @GET("api/screcord/schedullingsByDates/11/2019")
-    Call<Test> historico(@Query( "date" ) String date);
+    @GET("api/screcord/schedullingsByDates/{month}/{year}")
+    Call<Test> historico(@Path( "month" ) String month, @Path( "year" ) String year);
 
     @GET("api/patients")
     Call<ArrayList<User>> getAllPatients();

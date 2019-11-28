@@ -28,10 +28,10 @@ public class LoginActivity extends AppCompatActivity {
     private EditText campoNome, campoSenha;
     private Button btEnviar;
     private String email, senha;
-    String getToken, Profile;
-    Retrofit retrofit;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private String getToken, Profile;
+    private Retrofit retrofit;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     private Boolean boolToken;
 
     @Override
@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             editor.putString( "email", email );
                             editor.putString( "pass", senha );
+                            editor.putString( "id", user.getId() );
                             editor.putString( "token", getToken );
                             editor.commit();
 

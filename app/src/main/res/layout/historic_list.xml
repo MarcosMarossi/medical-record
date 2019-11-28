@@ -54,4 +54,14 @@
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo1" />
 
+    <TextView
+        android:id="@+id/txtIdSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="81dp" />
+
 </android.support.constraint.ConstraintLayout>

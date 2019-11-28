@@ -9,6 +9,15 @@ public class Scheduling {
     private String name;
     private String profile;
     private String email;
+    private String _id;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public Scheduling(String id, String specialty, String medic, String date) {
         this.patient = id;

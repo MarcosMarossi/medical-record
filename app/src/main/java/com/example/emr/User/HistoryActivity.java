@@ -2,6 +2,7 @@ package com.example.emr.User;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,19 +39,23 @@ public class HistoryActivity extends AppCompatActivity {
     private FloatingActionButton fabAgendar;
     private Retrofit retrofit;
     private Test test;
-    private String mesSelecionado, anoSelecionado;
+    private String mesSelecionado, anoSelecionado, idSchedule;
     private DataService service;
     private RecyclerView recyclerView;
     private List<Scheduling> fotodope = new ArrayList<>(  );
     private ScheduleAdapter scheduleAdapter;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_calendar);
 
+        sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
+
         recyclerView = findViewById( R.id.recycler );
         fabAgendar = findViewById(R.id.fabAgendar);
+        idSchedule = sharedPreferences.getString("idSchedule", null);
 
         calendario = findViewById(R.id.calHistorico);
         calendario.state().edit()
@@ -80,8 +85,8 @@ public class HistoryActivity extends AppCompatActivity {
             }
         });
 
+        swipe();
         getItems();
-        movimentSwipe();
     }
 
     public void getItems(){
@@ -95,12 +100,10 @@ public class HistoryActivity extends AppCompatActivity {
             public void onResponse(Call<Test> call, Response<Test>response) {
                 test = response.body();
                 fotodope = test.schedules;
-
-
                 for(int i = 0; i < fotodope.size();i++){
                     System.out.println( fotodope.get( i ).getPatient() );
                 }
-                configurarRecyclerView();
+                recyclerView();
             }
 
             @Override
@@ -110,9 +113,7 @@ public class HistoryActivity extends AppCompatActivity {
         });
     }
 
-    public void configurarRecyclerView() {
-
-
+    public void recyclerView() {
 
         scheduleAdapter = new ScheduleAdapter(fotodope, this);
         recyclerView.setHasFixedSize( true );
@@ -126,14 +127,11 @@ public class HistoryActivity extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
+                                scheduleAdapter.notifyDataSetChanged();
 
                                 Scheduling video = fotodope.get(position);
-                                String idVideo = video.getPatient();
-
-                                Intent i = new Intent(HistoryActivity.this, RecordActivity.class);
-                                i.putExtra("idVideo", idVideo );
-                                startActivity(i);
-
+                                idSchedule = video.get_id();
+                                Toast.makeText( HistoryActivity.this, "Valor: " + idSchedule, Toast.LENGTH_SHORT ).show();
                             }
 
                             @Override
@@ -150,7 +148,7 @@ public class HistoryActivity extends AppCompatActivity {
         );
     }
 
-    public void movimentSwipe(){
+    public void swipe(){
 
         ItemTouchHelper.Callback item = new ItemTouchHelper.Callback() {
             @Override
@@ -167,15 +165,15 @@ public class HistoryActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                excluirMovimento( viewHolder );
+                removeSchedule( viewHolder );
             }
         };
 
         new ItemTouchHelper( item ).attachToRecyclerView( recyclerView );
     }
 
-    public void excluirMovimento(final RecyclerView.ViewHolder viewHolder){
-        AlertDialog.Builder alert = new AlertDialog.Builder( this );
+    public void removeSchedule(final RecyclerView.ViewHolder viewHolder){
+        final AlertDialog.Builder alert = new AlertDialog.Builder( this );
         alert.setTitle( "Exlcuir movimentação" );
         alert.setMessage( "Tem certeza que deseja exlcuir a movimentação?" );
         alert.setCancelable( false );
@@ -183,11 +181,29 @@ public class HistoryActivity extends AppCompatActivity {
         alert.setPositiveButton( "Confirmar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                    // Colocar o @DELETE
 
                 int pos = viewHolder.getAdapterPosition();
+                Scheduling schedule = fotodope.get(pos);
+                idSchedule = schedule.get_id();
                 scheduleAdapter.notifyItemRemoved(pos);
+                Toast.makeText( HistoryActivity.this, "Valor: " + idSchedule, Toast.LENGTH_SHORT ).show();
+                retrofit = RetrofitConfig.retrofitConfig();
+                DataService service =  retrofit.create( DataService.class );
+                Call<Test> call =  service.deleteSchedule( idSchedule );
 
+                call.enqueue( new Callback<Test>() {
+                    @Override
+                    public void onResponse(Call<Test> call, Response<Test> response) {
+                        //scheduleAdapter.notifyItemRemoved(pos);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Test> call, Throwable t) {
+
+                    }
+                } );
+
+                scheduleAdapter.notifyItemRemoved(pos);
             }
         } );
 
@@ -202,5 +218,4 @@ public class HistoryActivity extends AppCompatActivity {
         AlertDialog alertDialog = alert.create();
         alertDialog.show();
     }
-
 }

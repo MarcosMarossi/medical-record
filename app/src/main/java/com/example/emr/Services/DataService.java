@@ -40,8 +40,8 @@ public interface DataService {
     @GET("api/screcord/schedullingsByDates/{month}/{year}")
     Call<Test> historicPatient(@Path( "month" ) String month, @Path( "year" ) String year);
 
-    @DELETE("api/schedulling/:id")
-    Call<Test> deleteSchedule();
+    @DELETE("api/schedulling/{id}")
+    Call<Test> deleteSchedule(@Path("id") String id);
 
     @GET("api/patients")
     Call<ArrayList<User>> getAllPatients();

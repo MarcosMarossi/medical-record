@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,6 +18,8 @@ import com.example.emr.Helper.MaskEditUtil;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
+import com.example.emr.User.HistoryActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -32,8 +35,9 @@ public class Slide02Activity extends AppCompatActivity {
     private Spinner spCategory, spDoctor;
     private Retrofit retrofit;
     private List<Scheduling> shedulings = new ArrayList<>(  );
-    private ArrayList<String> playerNames = new ArrayList<String>();
+    private ArrayList<String> names = new ArrayList<String>();
     private SharedPreferences sharedPreferences;
+    private Scheduling scheduling;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,59 +55,77 @@ public class Slide02Activity extends AppCompatActivity {
         etDate = findViewById( R.id.etDate );
 
         callRetrofit();
-
         /**
          * Configure Hour/Date
          */
-
         etHour.addTextChangedListener(MaskEditUtil.mask(etHour, MaskEditUtil.FORMAT_HOUR));
         etDate.addTextChangedListener(MaskEditUtil.mask(etDate, MaskEditUtil.FORMAT_DATE));
-
-
-
         /**
         * Configure Doctor Spinner
          */
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCategory.setAdapter(adapter);
 
+        spCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                nameCategory = spCategory.getSelectedItem().toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        spDoctor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                nameDoctor = spDoctor.getSelectedItem().toString();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         /**
          * Configure Scheduling System
          */
-
         iValidate.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 hourSelected = etHour.getText().toString();
-                //String sHour = Validate.validateHour( hourSelected );
                 dateSelected = etDate.getText().toString();
-                //String sDate = Validate.validateDate( dateSelected );
 
-                if (hourSelected.isEmpty()){
-                    Toast.makeText( Slide02Activity.this, "Nenhum horário selecionado!", Toast.LENGTH_SHORT ).show();
+                if (!hourSelected.isEmpty()){
+                    if (!dateSelected.isEmpty()){
+                        if(!nameCategory.equals( "Selecione uma categoria" )){
+                            String dataFormat = hourSelected + " " + dateSelected;
+                            Scheduling schedule = new Scheduling( id, nameCategory, nameDoctor,  dataFormat );
+
+                            retrofit = RetrofitConfig.retrofitConfig();
+                            DataService service1 = retrofit.create( DataService.class );
+                            Call<Scheduling> chm = service1.newSchedule( schedule );
+                            chm.enqueue( new Callback<Scheduling>() {
+                                @Override
+                                public void onResponse(Call<Scheduling> call, Response<Scheduling> response) {
+
+                                    finish();
+                                    startActivity( new Intent( getApplicationContext(), HistoryActivity.class ) );
+                                }
+                                @Override
+                                public void onFailure(Call<Scheduling> call, Throwable t) {
+
+                                }
+                            });
+
+                        } else{
+                            Toast.makeText( Slide02Activity.this, "Você não escolheu nenhuma categoria.", Toast.LENGTH_SHORT ).show();
+                        }
+                    } else{
+                        Toast.makeText( Slide02Activity.this, "Você não escolheu nenhuma data.", Toast.LENGTH_SHORT ).show();
+                    }
+
                 } else {
-                    String dataFormat = hourSelected + " " + dateSelected;
-                    Scheduling agendarObject = new Scheduling( id, nameCategory, nameDoctor,  dataFormat );
-
-                    retrofit = RetrofitConfig.retrofitConfig();
-                    DataService service1 = retrofit.create( DataService.class );
-                    Call<Scheduling> chm = service1.newSchedule( agendarObject );
-                    chm.enqueue( new Callback<Scheduling>() {
-                        @Override
-                        public void onResponse(Call<Scheduling> call, Response<Scheduling> response) {
-                            Toast.makeText( Slide02Activity.this, "Agendamento feito com sucesso!", Toast.LENGTH_SHORT ).show();
-                        }
-                        @Override
-                        public void onFailure(Call<Scheduling> call, Throwable t) {
-
-                        }
-                    });
+                    Toast.makeText( Slide02Activity.this, "Você não escolheu nenhum horário.", Toast.LENGTH_SHORT ).show();
                 }
             }
-        } );
+        });
 
         iBack.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -122,15 +144,14 @@ public class Slide02Activity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Scheduling>> call, Response<List<Scheduling>> response) {
                 if(response.isSuccessful()){
-
                     shedulings = response.body();
 
                     for (int i = 0; i < shedulings.size(); i++){
                         Scheduling s = shedulings.get( i );
-                        playerNames.add(s.getName());
+                        names.add(s.getName());
                     }
                 }
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, playerNames);
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, names );
                 spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                 spDoctor.setAdapter(spinnerArrayAdapter);
             }

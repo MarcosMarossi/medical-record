@@ -15,7 +15,7 @@
     //Textos_CadastroActivity
     <string name="informardados">Informe seus dados</string>
     <string name="verificarinfo">Verificaremos suas informações!</string>
-    <string name="nome_completo">Nome completo</string>
+    <string name="nome_completo">Nome</string>
 
     <string name="email">E-mail</string>
     <string name="senha">Senha</string>
@@ -156,7 +156,7 @@
     <string name="validacao_email">Digite um e-mail válido.</string>
     <string name="validacao_documento">Número de CPF (Cadastro de Pessoa Física) inválido ou vazio!</string>
     <string name="validacao_nome">Nome inválido. Por favor, digite o seu nome completo.</string>
-    <string name="cpf_padrao">CPF (Cadastro de Pessoa Física)</string>
+    <string name="cpf_padrao">CPF</string>
 
     <string name="categoria">Selecione uma categoria</string>
 

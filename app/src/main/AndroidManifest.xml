@@ -14,8 +14,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.AppCompat.Light">
+
+
+        <activity
+            android:name=".User.Password.PasswordActivity"
+            android:label="@string/alterar_senha"
+            android:parentActivityName=".User.DetailsAcount"/>
+
+        <activity
+                    android:name=".User.DetailsAcount"
+                    android:label="@string/configuracoes"
+                    android:parentActivityName=".User.MenuUsrActivity"/>
+
+        <activity android:name=".User.MenuUsrActivity" />
         <activity android:name=".User.RecordActivity" />
         <activity android:name=".Nurse.ActivityListPatient" />
         <activity android:name=".Nurse.QrCodeActivity" />
@@ -23,7 +35,6 @@
             android:name=".User.Scheduling.Slide02Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateHidden" />
-
         <activity android:name=".User.Scheduling.Slide01Activity" />
         <activity
             android:name=".Nurse.ValidationActivity"
@@ -59,9 +70,6 @@
             android:name=".User.HistoryActivity"
             android:label="@string/historico"
             android:parentActivityName=".User.MenuUsrActivity" />
-        <activity
-            android:name=".User.MenuUsrActivity"
-            android:label="Vida Saudável" />
         <activity
             android:name=".RegisterActivity"
             android:label="@string/titulo_cadastrar"

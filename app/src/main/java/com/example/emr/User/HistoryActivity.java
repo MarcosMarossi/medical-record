@@ -194,7 +194,7 @@ public class HistoryActivity extends AppCompatActivity {
                 call.enqueue( new Callback<Test>() {
                     @Override
                     public void onResponse(Call<Test> call, Response<Test> response) {
-                        //scheduleAdapter.notifyItemRemoved(pos);
+
                     }
 
                     @Override
@@ -204,6 +204,8 @@ public class HistoryActivity extends AppCompatActivity {
                 } );
 
                 scheduleAdapter.notifyItemRemoved(pos);
+                getItems();
+
             }
         } );
 

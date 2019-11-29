@@ -6,12 +6,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Slide;
 import android.view.View;
-import android.widget.ImageView;
 
-import com.example.emr.LoginActivity;
-import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.User.MenuUsrActivity;
 

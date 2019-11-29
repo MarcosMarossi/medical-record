@@ -13,9 +13,9 @@ import android.widget.Toast;
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.User;
 import com.example.emr.Services.DataService;
-import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.Nurse.MenuNurActivity;
+import com.example.emr.User.MenuUsrActivity;
 
 
 import retrofit2.Call;
@@ -86,6 +86,11 @@ public class LoginActivity extends AppCompatActivity {
                                         if (response.isSuccessful()) {
 
                                             Profile = response.body().getProfile();
+                                            String name = response.body().getName();
+                                            editor.putString( "name", name);
+                                            editor.commit();
+
+
                                             if (Profile.equals( "medic" )) {
                                                 menuMedico();
                                             } else if (Profile.equals( "patient" )) {
@@ -129,6 +134,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void fechar(View v) {
         startActivity(new Intent(LoginActivity.this,MainActivity.class));
+        finish();
     }
 
     public void menuPaciente() {

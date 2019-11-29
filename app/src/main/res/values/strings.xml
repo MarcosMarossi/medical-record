@@ -161,6 +161,20 @@
     <string name="categoria">Selecione uma categoria</string>
 
     <string name="tit_medico">Médico(a)</string>
+    <string name="title_activity_menu_usr2">MenuUsrActivity2</string>
+    <string name="title_activity_main_user">MainUserActivity</string>
+    <string name="tit_account">Conta</string>
+
+    <string name="tit_perfil">Perfil do Usuário</string>
+    <string name="desc_perfil">Altere algumas de suas configurações</string>
+    <string name="alterar_senha">Alterar Senha</string>
+    <string name="alterar_dados">Atualizar Dados</string>
+    <string name="antiga_senha">Antiga senha</string>
+    <string name="nova_senha">Nova senha</string>
+    <string name="alterar">Alterar</string>
+
+    <string name="configuracoes">Configurações</string>
+    <string name="desc_account">Altere suas informações.</string>
 
 
 </resources>

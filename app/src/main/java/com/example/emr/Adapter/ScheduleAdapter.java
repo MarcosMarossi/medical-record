@@ -21,14 +21,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         this.context = context;
     }
 
-    public void setSchedule(List<Scheduling> schedule) {
-        this.list = schedule;
-        notifyDataSetChanged();
-    }
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.historic_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_historic, parent, false);
         return new ScheduleAdapter.MyViewHolder(view);
     }
 

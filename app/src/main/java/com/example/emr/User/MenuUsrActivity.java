@@ -6,14 +6,20 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emr.Adapter.Adapter;
+import com.example.emr.Adapter.MenuAdapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
+import com.example.emr.R;
 import com.example.emr.User.Scheduling.Slide01Activity;
 
 import static com.example.emr.R.*;
@@ -21,68 +27,84 @@ import static com.example.emr.R.*;
 public class MenuUsrActivity extends AppCompatActivity {
 
 
-    ListView lista;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private ListView lista;
+    private RecyclerView recyclerView;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String name;
+    private TextView txtWelcome;
+    private MenuAdapter menuAdapter;
 
 
-    int[][] dados = {
-            {string.tit_agendar, string.desc_agendar},
-            {string.tit_avisos, string.desc_avisos},
-            {string.tit_historico, string.desc_historico},
-            {string.tit_sair, string.desc_sair}
 
-    };
-
-    int[] dadosImg = {drawable.nurse, drawable.report, drawable.avisos, drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.act_menu_usr);
-
-
-        getSupportActionBar().hide();
-
+        setContentView(layout.act_menu_usr );
+        //getSupportActionBar().hide();
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        lista = findViewById(id.listUser);
-        lista.setAdapter(new Adapter(this, dados, dadosImg));
+        //name = sharedPreferences.getString("name", null);
+        //txtWelcome = findViewById( id.txtWelcome );
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        int[][] dados = {
+                {string.tit_agendar, string.desc_agendar},
+                {string.tit_account, string.desc_account},
+                {string.tit_avisos, string.desc_avisos},
+                {string.tit_historico, string.desc_historico},
+                {string.tit_sair, string.desc_sair}};
 
-                switch (position) {
-                    case 0:
-                        abrirAgendar();
-                        break;
-                    case 1:
-                        abrirAvisos();
-                        break;
-                    case 2:
-                        abrirHistorico();
-                        break;
-                    case 3:
-                        fechar();
-                        break;
-                    default:
-                        Toast.makeText(MenuUsrActivity.this, "dfsf", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
+        int[] dadosImg = {drawable.nurse, R.drawable.user ,drawable.report, drawable.avisos, drawable.arrow};
 
-    private void abrirAgendar() {
-        Intent intent = new Intent(getApplicationContext(), Slide01Activity.class);
-        startActivity(intent);
-    }
+        recyclerView = findViewById( id.recyclerView );
+        menuAdapter = new MenuAdapter(getApplication(),dados,dadosImg);
+        recyclerView.setHasFixedSize( true );
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter( menuAdapter );
 
-    private void abrirHistorico() {
-        Intent intent = new Intent(MenuUsrActivity.this, HistoryActivity.class);
-        startActivity(intent);
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        this,
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                switch (position) {
+                                    case 0:
+                                        startActivity(new Intent(getApplicationContext(), Slide01Activity.class));
+                                        break;
+                                    case 1:
+                                        startActivity(new Intent(getApplicationContext(), DetailsAcount.class));
+                                        break;
+                                    case 2:
+                                        startActivity(new Intent(getApplicationContext(), WarningsActivity.class));
+                                        break;
+                                    case 3:
+                                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
+                                        break;
+                                    case 4:
+                                        fechar();
+                                        break;
+                                    default:
+                                        Toast.makeText(MenuUsrActivity.this, "Não foi possível", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 
     private void fechar() {
@@ -99,7 +121,6 @@ public class MenuUsrActivity extends AppCompatActivity {
                 editor.commit();
                 Intent intent = new Intent(MenuUsrActivity.this, LoginActivity.class);
                 startActivity(intent);
-
             }
         });
 
@@ -115,8 +136,19 @@ public class MenuUsrActivity extends AppCompatActivity {
 
     }
 
-    public void abrirAvisos(){
-        Intent intent = new Intent(MenuUsrActivity.this, WarningsActivity.class);
-        startActivity(intent);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate( R.menu.toolbar,menu );
+        return super.onCreateOptionsMenu( menu );
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case id.MenuSair:
+                fechar();
+                break;
+        }
+        return super.onOptionsItemSelected( item );
     }
 }

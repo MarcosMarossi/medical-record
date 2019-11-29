@@ -20,9 +20,9 @@ import com.example.emr.Services.DataService;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.Doctor.MenuDocActivity;
 import com.example.emr.Nurse.MenuNurActivity;
+import com.example.emr.User.MenuUsrActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CountryItem> countryList;
     private AdapterCountry adapterCountry;
     private Retrofit retrofit;
-    String getToken, Profile;
-    SharedPreferences sharedPreferences;
+    private String getToken, Profile;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
 
     @Override
@@ -181,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         getToken = sharedPreferences.getString("token", null);
+        editor = sharedPreferences.edit();
 
         DataService service = retrofit.create(DataService.class);
         Call<User> call = service.getToken(getToken);
@@ -192,6 +194,10 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Profile = response.body().getProfile();
+                    String name = response.body().getName();
+                    editor.putString( "name", name);
+                    editor.commit();
+
                     if (Profile.equals("patient") && !getToken.equals("")) {
                         menuPaciente();
                     } else if (Profile.equals("medic") && !getToken.equals("")) {

@@ -162,5 +162,8 @@
 
     <string name="tit_medico">Médico(a)</string>
 
+    <string name="tit_account">Conta</string>
+    <string name="desc_account">Altere suas informações.</string>
+
 
 </resources>

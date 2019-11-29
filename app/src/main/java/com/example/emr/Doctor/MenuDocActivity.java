@@ -6,21 +6,26 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.emr.Adapter.Adapter;
+import com.example.emr.Adapter.MenuAdapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.R;
+import com.example.emr.User.MenuUsrActivity;
+import com.example.emr.User.RecyclerItemClickListener;
 
 public class MenuDocActivity extends AppCompatActivity {
 
-    ListView lista;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor  editor;
+    private RecyclerView recyclerView;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor  editor;
+    private MenuAdapter menuAdapter;
 
     int[][] dados = {
             {R.string.tit_consulta, R.string.desc_consultas},
@@ -34,43 +39,61 @@ public class MenuDocActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_menu_doc);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.act_menu_doc );
 
-        sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences( "salvarToken", MODE_PRIVATE );
         editor = sharedPreferences.edit();
 
-        lista = findViewById(R.id.listDoctor);
-        lista.setAdapter(new Adapter(this, dados, dadosImg));
+        recyclerView = findViewById( R.id.recyclerView );
+        menuAdapter = new MenuAdapter( getApplication(), dados, dadosImg );
+        recyclerView.setHasFixedSize( true );
+        recyclerView.setLayoutManager( new LinearLayoutManager( this ) );
+        recyclerView.setAdapter( menuAdapter );
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        this,
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                switch (position) {
+                                    case 0:
+                                        abrirConsultas();
+                                        break;
+                                    case 1:
+                                        criarAvisos();
+                                        break;
+                                    case 2:
+                                        monitoramento();
+                                        break;
+                                    case 3:
+                                        verValidacao();
+                                        break;
+                                    case 4:
+                                        fechar();
+                                        break;
+                                    default:
+                                        Toast.makeText( MenuDocActivity.this, "Não conseguimos encontrar a melhor opção", Toast.LENGTH_SHORT ).show();
+                                }
+                            }
 
-                switch (position) {
-                    case 0:
-                        abrirConsultas();
-                        break;
-                    case 1:
-                        criarAvisos();
-                        break;
-                    case 2:
-                        monitoramento();
-                        break;
-                    case 3:
-                        verValidacao();
-                        break;
-                    case 4:
-                        fechar();
-                        break;
-                    default:
-                        Toast.makeText(MenuDocActivity.this, "Não conseguimos encontrar a melhor opção", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 
-    private void abrirConsultas() {
+        private void abrirConsultas(){
         Intent intent = new Intent(MenuDocActivity.this, QueryActivity.class);
         startActivity(intent);
     }

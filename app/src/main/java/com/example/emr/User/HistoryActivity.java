@@ -85,6 +85,7 @@ public class HistoryActivity extends AppCompatActivity {
             }
         });
 
+
         swipe();
         getItems();
     }

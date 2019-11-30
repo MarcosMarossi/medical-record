@@ -1,6 +1,7 @@
 package com.example.emr.Services;
 
 import com.example.emr.Models.Heartbeat;
+import com.example.emr.Models.Result;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.Test;
 import com.example.emr.Models.User;
@@ -39,6 +40,9 @@ public interface DataService {
 
     @GET("api/screcord/schedullingsByDates/{month}/{year}")
     Call<Test> historicPatient(@Path( "month" ) String month, @Path( "year" ) String year);
+
+    @GET("api/doctors/showBySpecialty/{speciality}")
+    Call<Result> getDoctors(@Path( "speciality") String speciality);
 
     @DELETE("api/schedulling/{id}")
     Call<Test> deleteSchedule(@Path("id") String id);

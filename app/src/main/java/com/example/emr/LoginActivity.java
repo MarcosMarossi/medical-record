@@ -73,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString( "email", email );
                             editor.putString( "pass", senha );
                             editor.putString( "id", user.getId() );
+
                             editor.putString( "token", getToken );
                             editor.commit();
 

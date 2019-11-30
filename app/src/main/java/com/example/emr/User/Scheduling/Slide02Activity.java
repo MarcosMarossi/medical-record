@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Helper.MaskEditUtil;
+import com.example.emr.Models.Result;
 import com.example.emr.Models.Scheduling;
+import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
 import com.example.emr.User.HistoryActivity;
@@ -54,7 +56,7 @@ public class Slide02Activity extends AppCompatActivity {
         etHour = findViewById( R.id.etHour );
         etDate = findViewById( R.id.etDate );
 
-        callRetrofit();
+
         /**
          * Configure Hour/Date
          */
@@ -70,6 +72,9 @@ public class Slide02Activity extends AppCompatActivity {
         spCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 nameCategory = spCategory.getSelectedItem().toString();
+                callRetrofit();
+
+
             }
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -139,16 +144,23 @@ public class Slide02Activity extends AppCompatActivity {
         retrofit = RetrofitConfig.retrofitConfig();
         DataService service = retrofit.create( DataService.class );
 
-        Call<List<Scheduling>> call = service.pegarId();
-        call.enqueue(new Callback<List<Scheduling>>() {
+        Call<Result> call = service.getDoctors( nameCategory );
+        call.enqueue(new Callback<Result>() {
             @Override
-            public void onResponse(Call<List<Scheduling>> call, Response<List<Scheduling>> response) {
+            public void onResponse(Call<Result> call, Response<Result> response) {
                 if(response.isSuccessful()){
-                    shedulings = response.body();
+                    Result test = response.body();
+                    List<User> shedulings = new ArrayList<>(  );
+                    shedulings = test.result;
+                    System.out.println( "Cheguei" );
+
+                    names.clear();
 
                     for (int i = 0; i < shedulings.size(); i++){
-                        Scheduling s = shedulings.get( i );
-                        names.add(s.getName());
+                       User s = shedulings.get( i );
+                       System.out.println(s.getName());
+                       names.add(s.getName());
+
                     }
                 }
                 ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Slide02Activity.this, android.R.layout.simple_spinner_item, names );
@@ -156,7 +168,7 @@ public class Slide02Activity extends AppCompatActivity {
                 spDoctor.setAdapter(spinnerArrayAdapter);
             }
             @Override
-            public void onFailure(Call<List<Scheduling>> call, Throwable t) {
+            public void onFailure(Call<Result> call, Throwable t) {
                 Log.d("404","Ocorreu um erro: " + t);
             }
         });

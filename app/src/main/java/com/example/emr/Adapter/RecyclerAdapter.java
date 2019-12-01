@@ -1,6 +1,7 @@
 package com.example.emr.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +37,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int i) {
         holder.bpmLog.setText(users.get(i).getHeartbeat());
+        if(Integer.parseInt(holder.bpmLog.getText().toString())>100){
+            holder.bpmLog.setTextColor(Color.parseColor("#ff1303"));
+        }
+
         holder.dateLog.setText(users.get(i).getBrdate());
     }
 

@@ -5,21 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emr.Adapter.RecyclerAdapter;
 import com.example.emr.Models.User;
-import com.example.emr.Models.UserLog;
-import com.example.emr.Models.UserLogAux;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,17 +47,9 @@ public class LogActivity extends AppCompatActivity {
         rvLog.setLayoutManager(new LinearLayoutManager(this));
 
 
-
-
-
-
-
-
-
         sharedPreferences = getSharedPreferences("salvarToken",MODE_PRIVATE);
         String id = sharedPreferences.getString("id", null);
         //String idAux = "5dc4a53207307b0007ef2109";
-        Toast.makeText(LogActivity.this,id,Toast.LENGTH_LONG).show();
         retrofit = new Retrofit.Builder()
                 .baseUrl(stringURL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -75,7 +64,7 @@ public class LogActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
                 users = response.body();
 
-
+                Collections.reverse(users);
                 recyclerAdapter = new RecyclerAdapter(LogActivity.this,users);
 
                 recyclerAdapter.notifyDataSetChanged();

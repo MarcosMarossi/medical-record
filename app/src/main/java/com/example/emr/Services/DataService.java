@@ -3,8 +3,6 @@ package com.example.emr.Services;
 import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.User;
-import com.example.emr.Models.UserLog;
-import com.example.emr.Models.UserLogAux;
 
 import java.util.ArrayList;
 import java.util.List;

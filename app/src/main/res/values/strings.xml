@@ -159,6 +159,7 @@
     <string name="cpf_padrao">CPF (Cadastro de Pessoa Física)</string>
 
     <string name="categoria">Selecione uma categoria</string>
+    <string name="historico_bpm">Consulte seu historico de BPM</string>
 
 
 </resources>

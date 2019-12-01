@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText campoNome, campoSenha;
     private Button btEnviar;
     private String email, senha;
-    String getToken, Profile;
+    String getToken, Profile,getId;
     Retrofit retrofit;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -70,10 +70,13 @@ public class LoginActivity extends AppCompatActivity {
 
                         User user = response.body();
                         getToken = response.body().getToken();
+                        //getId = response.body().getId();
 
+                        System.out.println(getId);
                         editor.putString("email",email);
                         editor.putString("pass",senha);
                         editor.putString("token",getToken);
+                       // editor.putString("id",getId);
                         editor.commit();
 
                         if (user.getToken() != null) {
@@ -86,6 +89,11 @@ public class LoginActivity extends AppCompatActivity {
                                     if (response.isSuccessful()) {
 
                                         Profile = response.body().getProfile();
+                                        String id = response.body().getId();
+
+                                        System.out.println(id);
+                                        editor.putString("id",id);
+                                        editor.commit();
                                         if (Profile.equals("medic")) {
                                             menuMedico();
                                         } else if (Profile.equals("patient")) {

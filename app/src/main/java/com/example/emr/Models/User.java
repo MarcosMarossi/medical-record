@@ -12,6 +12,15 @@ public class User {
     private String id;
     private String url;
     private String heartbeat;
+    private String brdate;
+
+    public String getBrdate() {
+        return brdate;
+    }
+
+    public void setBrdate(String brdate) {
+        this.brdate = brdate;
+    }
 
     public String getId() {
         return id;
@@ -104,5 +113,13 @@ public class User {
     @Override
     public String toString() {
         return email;
+    }
+
+    public String getHeartbeat() {
+        return heartbeat;
+    }
+
+    public void setHeartbeat(String heartbeat) {
+        this.heartbeat = heartbeat;
     }
 }

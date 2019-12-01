@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.emr.Adapter.Adaptador;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
+import com.example.emr.Nurse.MenuNurActivity;
+import com.example.emr.R;
 import com.example.emr.User.Scheduling.Slide01Activity;
 
 import static com.example.emr.R.*;
@@ -29,11 +31,12 @@ public class MenuUsrActivity extends AppCompatActivity {
             {string.tit_agendar, string.desc_agendar},
             {string.tit_avisos, string.desc_avisos},
             {string.tit_historico, string.desc_historico},
+            {string.historico,string.historico_bpm},
             {string.tit_sair, string.desc_sair}
 
     };
 
-    int[] dadosImg = {drawable.nurse, drawable.report, drawable.avisos, drawable.arrow};
+    int[] dadosImg = {drawable.nurse, drawable.report, drawable.avisos,drawable.log_user,drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,9 @@ public class MenuUsrActivity extends AppCompatActivity {
                         abrirHistorico();
                         break;
                     case 3:
+                        abrirHistoricoBPM();
+                        break;
+                    case 4:
                         fechar();
                         break;
                     default:
@@ -69,6 +75,10 @@ public class MenuUsrActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void abrirHistoricoBPM() {
+        startActivity(new Intent(MenuUsrActivity.this,LogActivity.class));
     }
 
     private void abrirAgendar() {

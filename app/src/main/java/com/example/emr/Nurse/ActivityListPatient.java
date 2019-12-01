@@ -130,7 +130,7 @@ public class ActivityListPatient extends AppCompatActivity {
     public void confirmarBPM(final User u,String bpm, String nome, final String url, final DataService dataService, final String id){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Confirmação");
-        dialog.setMessage("Deseja gravar o valor "+bpm+" no paciente "+nome);
+        dialog.setMessage("Deseja associar o equipamento ao paciente");
         dialog.setPositiveButton(R.string.sair_sim, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

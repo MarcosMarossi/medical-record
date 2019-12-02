@@ -15,10 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
+
         <activity
             android:name=".User.Scheduling.RecordUserActivity"
             android:label="@string/prontuario"
             android:parentActivityName=".User.MenuUsrActivity"/>
+
+        <activity android:name=".User.LogActivity"></activity>
+
         <activity
             android:name=".User.Password.PasswordActivity"
             android:label="@string/alterar_senha"

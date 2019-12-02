@@ -89,13 +89,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                             Profile = response.body().getProfile();
                                             String name = response.body().getName();
+                                            String id = response.body().getId();
                                             editor.putString( "name", name);
-                                            String email = response.body().getEmail();
-                                            editor.putString( "name", name);
+
                                             String cpf = response.body().getCpf();
                                             editor.putString( "user_name", name);
                                             editor.putString( "user_email", email);
                                             editor.putString( "document", cpf);
+                                            editor.putString("id",id);
                                             editor.commit();
 
                                             if (Profile.equals( "medic" )) {

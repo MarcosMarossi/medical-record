@@ -55,9 +55,10 @@ public class MenuUsrActivity extends AppCompatActivity {
                 {string.tit_account, string.desc_account},
                 {string.tit_avisos, string.desc_avisos},
                 {string.tit_historico, string.desc_historico},
+                {string.historico,string.historico_bpm},
                 {string.tit_sair, string.desc_sair}};
 
-        int[] dadosImg = {drawable.nurse, R.drawable.user ,drawable.report, drawable.avisos, drawable.arrow};
+        int[] dadosImg = {drawable.nurse, R.drawable.user ,drawable.report, drawable.avisos,drawable.log_user ,drawable.arrow};
 
         recyclerView = findViewById( id.recyclerView );
         menuAdapter = new MenuAdapter(getApplication(),dados,dadosImg);
@@ -86,6 +87,9 @@ public class MenuUsrActivity extends AppCompatActivity {
                                         startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                                         break;
                                     case 4:
+                                        startActivity(new Intent(getApplicationContext(),LogActivity.class));
+                                        break;
+                                    case 5:
                                         fechar();
                                         break;
                                     default:

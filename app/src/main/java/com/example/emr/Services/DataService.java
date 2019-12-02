@@ -56,6 +56,6 @@ public interface DataService {
     @POST("misc/heartbeat")
     Call<User> setBPMUser(@Body User user);
 
-    @GET("api/hearbeatlog/{id}")
-    Call<ArrayList<User>> getLog(@Path("id")String id);
+    @GET("api/heartbeatlog/{id}")
+    Call<ArrayList<User>> getLog(@Path("id") String id);
 }

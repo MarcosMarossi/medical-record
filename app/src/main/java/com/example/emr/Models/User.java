@@ -11,6 +11,7 @@ public class User {
     private String profile;
     private String id;
     private String url;
+    private String heartbeat;
     private String brdate;
 
     public String getBrdate() {
@@ -19,6 +20,14 @@ public class User {
 
     public void setBrdate(String brdate) {
         this.brdate = brdate;
+    }
+
+    public String getHeartbeat() {
+        return heartbeat;
+    }
+
+    public void setHeartbeat(String heartbeat) {
+        this.heartbeat = heartbeat;
     }
 
     public String getId() {

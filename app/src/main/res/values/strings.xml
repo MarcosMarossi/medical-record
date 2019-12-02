@@ -176,5 +176,7 @@
     <string name="configuracoes">Configurações</string>
     <string name="desc_account">Altere suas informações.</string>
 
+    <string name="historico_bpm">Consulte seu historico de BPM</string>
+
 
 </resources>

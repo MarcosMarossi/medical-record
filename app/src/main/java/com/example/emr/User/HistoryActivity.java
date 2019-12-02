@@ -20,6 +20,7 @@ import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.Test;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
+import com.example.emr.User.Scheduling.RecordUserActivity;
 import com.example.emr.User.Scheduling.Slide01Activity;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -132,7 +133,7 @@ public class HistoryActivity extends AppCompatActivity {
 
                                 Scheduling video = fotodope.get(position);
                                 idSchedule = video.get_id();
-                                Toast.makeText( HistoryActivity.this, "Valor: " + idSchedule, Toast.LENGTH_SHORT ).show();
+                                startActivity( new Intent( getApplicationContext(), RecordUserActivity.class ) );
                             }
 
                             @Override

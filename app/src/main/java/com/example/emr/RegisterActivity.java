@@ -1,6 +1,7 @@
 package com.example.emr;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_register);
+
+        getWindow().setStatusBarColor( Color.parseColor( "#4CAF50" ));
 
         etName = findViewById(R.id.edtNome);
         etCPF = findViewById(R.id.edtCPF);

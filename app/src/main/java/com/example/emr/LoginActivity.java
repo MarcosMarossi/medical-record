@@ -2,6 +2,7 @@ package com.example.emr;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,11 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_login);
 
+        getWindow().setStatusBarColor( Color.parseColor( "#304FFE" ));
+
         campoNome = findViewById(R.id.edtNome);
         campoSenha = findViewById(R.id.edtSenha);
         btEnviar = findViewById(R.id.btnEntrar);
-        getSupportActionBar().hide();
-
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
@@ -89,8 +90,13 @@ public class LoginActivity extends AppCompatActivity {
                                             Profile = response.body().getProfile();
                                             String name = response.body().getName();
                                             editor.putString( "name", name);
+                                            String email = response.body().getEmail();
+                                            editor.putString( "name", name);
+                                            String cpf = response.body().getCpf();
+                                            editor.putString( "user_name", name);
+                                            editor.putString( "user_email", email);
+                                            editor.putString( "document", cpf);
                                             editor.commit();
-
 
                                             if (Profile.equals( "medic" )) {
                                                 menuMedico();
@@ -131,11 +137,6 @@ public class LoginActivity extends AppCompatActivity {
             campoNome.setText(sharedPreferences.getString("email", null));
             campoSenha.setText(sharedPreferences.getString("pass", null));
         }
-    }
-
-    public void fechar(View v) {
-        startActivity(new Intent(LoginActivity.this,MainActivity.class));
-        finish();
     }
 
     public void menuPaciente() {

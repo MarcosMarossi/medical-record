@@ -15,18 +15,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-
-
+        <activity
+            android:name=".User.Scheduling.RecordUserActivity"
+            android:label="@string/prontuario"
+            android:parentActivityName=".User.MenuUsrActivity"/>
         <activity
             android:name=".User.Password.PasswordActivity"
             android:label="@string/alterar_senha"
-            android:parentActivityName=".User.DetailsAcount"/>
-
+            android:parentActivityName=".User.DetailsAcount" />
         <activity
-                    android:name=".User.DetailsAcount"
-                    android:label="@string/configuracoes"
-                    android:parentActivityName=".User.MenuUsrActivity"/>
-
+            android:name=".User.DetailsAcount"
+            android:label="@string/configuracoes"
+            android:parentActivityName=".User.MenuUsrActivity" />
         <activity android:name=".User.MenuUsrActivity" />
         <activity android:name=".User.RecordActivity" />
         <activity android:name=".Nurse.ActivityListPatient" />

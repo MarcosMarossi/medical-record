@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Vida Saudável</string>
-    <string name="titulo_login">Acessar minha conta</string>
-    <string name="titulo_cadastrar">Cadastrar uma conta</string>
+    <string name="titulo_login">Acessar conta</string>
+    <string name="titulo_cadastrar">Cadastrar conta</string>
 
     //Nome_Título
     <string name="nome">Vida Saudável</string>
@@ -156,7 +156,7 @@
     <string name="validacao_email">Digite um e-mail válido.</string>
     <string name="validacao_documento">Número de CPF (Cadastro de Pessoa Física) inválido ou vazio!</string>
     <string name="validacao_nome">Nome inválido. Por favor, digite o seu nome completo.</string>
-    <string name="cpf_padrao">CPF</string>
+    <string name="cpf_padrao">Documento</string>
 
     <string name="categoria">Selecione uma categoria</string>
 
@@ -175,6 +175,8 @@
 
     <string name="configuracoes">Configurações</string>
     <string name="desc_account">Altere suas informações.</string>
+
+    <string name="prontuario">Resumo do Prontuário</string>
 
 
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/img_heart"
+            android:src="@drawable/heart"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_BPM"
+            android:text="BPM: "
+            android:textSize="22sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/img_heart"
+            android:layout_toEndOf="@id/img_heart"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_data"
+            android:text="Data: "
+            android:textSize="18sp"
+            android:textColor="#a9a9a9"
+            android:layout_toRightOf="@id/img_heart"
+            android:layout_toEndOf="@id/img_heart"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/desc_BPM"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BPM_Log"
+            android:text="-------"
+            android:textSize="22sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img_heart"
+            android:layout_toEndOf="@id/img_heart"
+            android:layout_marginStart="60dp"
+            android:layout_alignLeft="@id/desc_BPM"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Date_Log"
+            android:text="-------"
+            android:textSize="18sp"
+            android:textColor="#a9a9a9"
+            android:layout_toRightOf="@id/img_heart"
+            android:layout_toEndOf="@id/img_heart"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/BPM_Log"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

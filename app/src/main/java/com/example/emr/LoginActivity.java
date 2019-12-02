@@ -88,7 +88,9 @@ public class LoginActivity extends AppCompatActivity {
 
                                             Profile = response.body().getProfile();
                                             String name = response.body().getName();
+                                            String id = response.body().getId();
                                             editor.putString( "name", name);
+                                            editor.putString("id",id);
                                             editor.commit();
 
 

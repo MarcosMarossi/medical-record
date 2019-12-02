@@ -11,6 +11,15 @@ public class User {
     private String profile;
     private String id;
     private String url;
+    private String brdate;
+
+    public String getBrdate() {
+        return brdate;
+    }
+
+    public void setBrdate(String brdate) {
+        this.brdate = brdate;
+    }
 
     public String getId() {
         return id;

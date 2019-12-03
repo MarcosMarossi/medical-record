@@ -17,8 +17,13 @@ import com.example.emr.Adapter.MenuAdapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.R;
+import com.example.emr.User.DetailsAcount;
+import com.example.emr.User.HistoryActivity;
+import com.example.emr.User.LogActivity;
 import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.User.RecyclerItemClickListener;
+import com.example.emr.User.Scheduling.Slide01Activity;
+import com.example.emr.User.WarningsActivity;
 
 public class MenuNurActivity extends AppCompatActivity {
 
@@ -56,39 +61,44 @@ public class MenuNurActivity extends AppCompatActivity {
                         this,
                         recyclerView,
                         new RecyclerItemClickListener.OnItemClickListener() {
-
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                            public void onItemClick(View view, int position) {
                                 switch (position) {
                                     case 0:
-                                        monitoramento();
+                                        startActivity(new Intent(MenuNurActivity.this,MonitoringActivity.class));
                                         break;
                                     case 1:
-                                        verValidacao();
+                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
                                         break;
                                     case 2:
-                                        qrCode();
+                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
                                         break;
                                     case 3:
+                                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
+                                        break;
+                                    case 4:
+                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
+                                        break;
+                                    case 5:
                                         fechar();
                                         break;
                                     default:
-                                        Toast.makeText(MenuNurActivity.this, "Não conseguimos encontrar a melhor opção", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
                                 }
-
-                            }
-
-                            @Override
-                            public void onItemClick(View view, int position) {
-
                             }
 
                             @Override
                             public void onLongItemClick(View view, int position) {
 
                             }
-                        }));
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 
     public void qrCode(){

@@ -13,6 +13,26 @@ public class User {
     private String url;
     private String heartbeat;
     private String brdate;
+    private String newpassword;
+    private String renewpassword;
+
+
+
+    public String getNewpassword() {
+        return newpassword;
+    }
+
+    public void setNewpassword(String newpassword) {
+        this.newpassword = newpassword;
+    }
+
+    public String getRenewpassword() {
+        return renewpassword;
+    }
+
+    public void setRenewpassword(String renewpassword) {
+        this.renewpassword = renewpassword;
+    }
 
     public String getBrdate() {
         return brdate;
@@ -117,6 +137,13 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+  public User(String email, String password, String newpassword, String renewpassword, int a){
+      this.email = email;
+      this.password = password;
+      this.newpassword = newpassword;
+      this.renewpassword = renewpassword;
+  }
 
     @Override
     public String toString() {

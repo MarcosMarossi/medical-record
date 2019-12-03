@@ -58,4 +58,7 @@ public interface DataService {
 
     @GET("api/heartbeatlog/{id}")
     Call<ArrayList<User>> getLog(@Path("id") String id);
+
+    @POST("auth/jwt/reset")
+    Call<User> resetPassword(@Body User user);
 }

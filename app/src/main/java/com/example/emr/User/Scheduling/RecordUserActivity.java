@@ -5,22 +5,15 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.emr.Adapter.ScheduleAdapter;
 import com.example.emr.Config.RetrofitConfig;
-import com.example.emr.Models.Schedule;
-import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.Test;
+import com.example.emr.Models.ObjectSchedule;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
 import com.example.emr.User.MenuUsrActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,13 +53,13 @@ public class RecordUserActivity extends AppCompatActivity {
         retrofit = RetrofitConfig.retrofitConfig();
 
         DataService service = retrofit.create( DataService.class );
-        Call<Schedule> call = service.scheduleById( idSchedule );
+        Call<ObjectSchedule> call = service.scheduleById( idSchedule );
 
-        call.enqueue( new Callback<Schedule>() {
+        call.enqueue( new Callback<ObjectSchedule>() {
             @Override
-            public void onResponse(Call<Schedule> call, Response<Schedule> response) {
+            public void onResponse(Call<ObjectSchedule> call, Response<ObjectSchedule> response) {
 
-                Schedule s = response.body();
+                ObjectSchedule s = response.body();
                 txtDoctor.setText( s.schedules.getMedic() );
                 txtSpeciality.setText( s.schedules.getSpecialty() );
                 txtData.setText( s.schedules.getDate() );
@@ -78,7 +71,7 @@ public class RecordUserActivity extends AppCompatActivity {
 
             }
             @Override
-            public void onFailure(Call<Schedule> call, Throwable t) {
+            public void onFailure(Call<ObjectSchedule> call, Throwable t) {
 
             }
         } );

@@ -2,13 +2,12 @@ package com.example.emr.Services;
 
 import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Result;
-import com.example.emr.Models.Schedule;
+import com.example.emr.Models.ObjectSchedule;
 import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.Test;
+import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -17,7 +16,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface DataService {
 
@@ -42,13 +40,13 @@ public interface DataService {
     Call<Scheduling> newSchedule(@Body Scheduling scheduling);
 
     @GET("api/screcord/schedullingsByDates/{month}/{year}")
-    Call<Test> historicPatient(@Path( "month" ) String month, @Path( "year" ) String year);
+    Call<ArraySchedule> historicPatient(@Path( "month" ) String month, @Path( "year" ) String year);
 
     @GET("api/doctors/showBySpecialty/{speciality}")
     Call<Result> getDoctors(@Path( "speciality") String speciality);
 
     @DELETE("api/screcord/{id}")
-    Call<Test> deleteSchedule(@Path("id") String id);
+    Call<ArraySchedule> deleteSchedule(@Path("id") String id);
 
     @GET("api/patients")
     Call<ArrayList<User>> getAllPatients();
@@ -67,5 +65,8 @@ public interface DataService {
 
 
     @GET("api/screcord/{id}")
-    Call<Schedule> scheduleById(@Path( "id" ) String id);
+    Call<ObjectSchedule> scheduleById(@Path( "id" ) String id);
+
+    @GET("api/screcord/{name}")
+    Call<ObjectSchedule> scheduleByName(@Path( "medic" ) String medic);
 }

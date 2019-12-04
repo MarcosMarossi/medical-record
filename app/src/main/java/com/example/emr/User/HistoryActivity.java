@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.emr.Adapter.ScheduleAdapter;
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.Test;
+import com.example.emr.Models.ArraySchedule;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
 import com.example.emr.User.Scheduling.RecordUserActivity;
@@ -39,7 +39,7 @@ public class HistoryActivity extends AppCompatActivity {
     private MaterialCalendarView calendario;
     private FloatingActionButton fabAgendar;
     private Retrofit retrofit;
-    private Test test;
+    private ArraySchedule arraySchedule;
     private String mesSelecionado, anoSelecionado, idSchedule;
     private DataService service;
     private RecyclerView recyclerView;
@@ -97,13 +97,13 @@ public class HistoryActivity extends AppCompatActivity {
 
         retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<Test> call = service.historicPatient(mesSelecionado,anoSelecionado);
+        Call<ArraySchedule> call = service.historicPatient(mesSelecionado,anoSelecionado);
 
-        call.enqueue( new Callback<Test>() {
+        call.enqueue( new Callback<ArraySchedule>() {
             @Override
-            public void onResponse(Call<Test> call, Response<Test>response) {
-                test = response.body();
-                fotodope = test.schedules;
+            public void onResponse(Call<ArraySchedule> call, Response<ArraySchedule>response) {
+                arraySchedule = response.body();
+                fotodope = arraySchedule.schedules;
                 for(int i = 0; i < fotodope.size();i++){
                     System.out.println( fotodope.get( i ).getPatient() );
                 }
@@ -111,7 +111,7 @@ public class HistoryActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Test> call, Throwable t) {
+            public void onFailure(Call<ArraySchedule> call, Throwable t) {
 
             }
         });
@@ -196,16 +196,16 @@ public class HistoryActivity extends AppCompatActivity {
                 Toast.makeText( HistoryActivity.this, "Valor: " + idSchedule, Toast.LENGTH_SHORT ).show();
                 retrofit = RetrofitConfig.retrofitConfig();
                 DataService service =  retrofit.create( DataService.class );
-                Call<Test> call =  service.deleteSchedule( idSchedule );
+                Call<ArraySchedule> call =  service.deleteSchedule( idSchedule );
 
-                call.enqueue( new Callback<Test>() {
+                call.enqueue( new Callback<ArraySchedule>() {
                     @Override
-                    public void onResponse(Call<Test> call, Response<Test> response) {
+                    public void onResponse(Call<ArraySchedule> call, Response<ArraySchedule> response) {
 
                     }
 
                     @Override
-                    public void onFailure(Call<Test> call, Throwable t) {
+                    public void onFailure(Call<ArraySchedule> call, Throwable t) {
 
                     }
                 } );

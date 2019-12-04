@@ -17,10 +17,9 @@ import android.widget.Toast;
 import com.example.emr.Adapter.ScheduleAdapter;
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.Test;
+import com.example.emr.Models.ArraySchedule;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
-import com.example.emr.User.HistoryActivity;
 import com.example.emr.User.RecyclerItemClickListener;
 import com.example.emr.User.Scheduling.RecordUserActivity;
 import com.example.emr.User.Scheduling.Slide01Activity;
@@ -41,7 +40,7 @@ public class QueryActivity extends AppCompatActivity {
     private MaterialCalendarView calendario;
     private FloatingActionButton fabAgendar;
     private Retrofit retrofit;
-    private Test test;
+    private ArraySchedule arraySchedule;
     private String mesSelecionado, anoSelecionado, idSchedule;
     private DataService service;
     private RecyclerView recyclerView;
@@ -53,13 +52,12 @@ public class QueryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.docact_consultas);
-
+        setContentView(R.layout.act_calendar);
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        recyclerView = findViewById( R.id.recyclerView );
+        recyclerView = findViewById( R.id.recycler );
         fabAgendar = findViewById(R.id.fabAgendar);
         idSchedule = sharedPreferences.getString("idSchedule", null);
 
@@ -70,13 +68,13 @@ public class QueryActivity extends AppCompatActivity {
 
         retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<Test> call = service.historicPatient(mesSelecionado,anoSelecionado);
+        Call<ArraySchedule> call = service.historicPatient(mesSelecionado,anoSelecionado);
 
-        call.enqueue( new Callback<Test>() {
+        call.enqueue( new Callback<ArraySchedule>() {
             @Override
-            public void onResponse(Call<Test> call, Response<Test> response) {
-                test = response.body();
-                fotodope = test.schedules;
+            public void onResponse(Call<ArraySchedule> call, Response<ArraySchedule>response) {
+                arraySchedule = response.body();
+                fotodope = arraySchedule.schedules;
                 for(int i = 0; i < fotodope.size();i++){
                     System.out.println( fotodope.get( i ).getPatient() );
                 }
@@ -84,7 +82,7 @@ public class QueryActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Test> call, Throwable t) {
+            public void onFailure(Call<ArraySchedule> call, Throwable t) {
 
             }
         });
@@ -127,6 +125,4 @@ public class QueryActivity extends AppCompatActivity {
                 )
         );
     }
-
-
 }

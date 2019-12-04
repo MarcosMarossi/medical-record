@@ -2,12 +2,13 @@ package com.example.emr.Services;
 
 import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Result;
-import com.example.emr.Models.ObjectSchedule;
+import com.example.emr.Models.Schedule;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -65,8 +66,8 @@ public interface DataService {
 
 
     @GET("api/screcord/{id}")
-    Call<ObjectSchedule> scheduleById(@Path( "id" ) String id);
+    Call<Schedule> scheduleById(@Path( "id" ) String id);
 
-    @GET("api/screcord/{name}")
-    Call<ObjectSchedule> scheduleByName(@Path( "medic" ) String medic);
+    @GET("api/screcord/showRecordScheduleAndPatient/{id}")
+    Call<Schedule> scheduleByName(@Path( "id" ) String id);
 }

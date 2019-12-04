@@ -2,6 +2,7 @@ package com.example.emr.User;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,7 @@ import com.example.emr.User.Password.PasswordActivity;
 
 public class DetailsAcount extends AppCompatActivity {
 
-    private Button btnAlterarSenha, btnAlterarDados;
+    private Button btnAlterarSenha, btnSair;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private String nome, email, documento;
@@ -24,8 +25,11 @@ public class DetailsAcount extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.act_details );
 
+        getWindow().setStatusBarColor( Color.parseColor( "#3949AB" ));
+        getSupportActionBar().hide();
+
         btnAlterarSenha = findViewById( R.id.btnAlterarSenha );
-        btnAlterarDados = findViewById( R.id.btnAlterarDados );
+
 
         btnAlterarSenha.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -37,6 +41,8 @@ public class DetailsAcount extends AppCompatActivity {
         etName = findViewById( R.id.etName );
         etEmail = findViewById( R.id.etEmail );
         etDocument = findViewById( R.id.etDocument );
+        btnSair = findViewById( R.id.btnSair );
+
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         nome = sharedPreferences.getString("user_name", null);
@@ -46,5 +52,13 @@ public class DetailsAcount extends AppCompatActivity {
         etName.setText( nome );
         etEmail.setText( email );
         etDocument.setText( documento );
+
+        btnSair.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( getApplicationContext(), MenuUsrActivity.class ) );
+                finish();
+            }
+        } );
     }
 }

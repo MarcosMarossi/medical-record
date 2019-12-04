@@ -8,17 +8,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.emr.Models.Scheduling;
+import com.example.emr.Models.User;
 import com.example.emr.R;
 
 import java.util.List;
 
-public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.MyViewHolder>{
+public class DoctorAdapter  extends RecyclerView.Adapter<DoctorAdapter.MyViewHolder> {
 
-    private List<Scheduling> list;
+    private List<Scheduling> schedule;
+    private List<User> user;
     private Context context;
 
-    public DoctorAdapter(List<Scheduling> list, Context context) {
-        this.list = list;
+    public DoctorAdapter(List<Scheduling> schedule, List<User> user, Context context) {
+        this.schedule = schedule;
+        this.user = user;
         this.context = context;
     }
 
@@ -30,15 +33,15 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(DoctorAdapter.MyViewHolder holder, int position) {
-        holder.titulo.setText(list.get(position).getDate());
-        holder.descricao.setText(list.get(position).getMedic());
-        holder.schedule.setText( list.get( position ).get_id() );
+        holder.titulo.setText(user.get(position).getName());
+        holder.descricao.setText(schedule.get(position).getDate());
+        holder.schedule.setText( schedule.get( position ).get_id() );
 
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return schedule.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

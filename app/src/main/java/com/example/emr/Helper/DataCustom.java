@@ -2,22 +2,36 @@ package com.example.emr.Helper;
 
 import android.content.Intent;
 
+import java.text.SimpleDateFormat;
+
 public class DataCustom {
 
-    public static String horaMinuto(String horario){
-        String returnoData[] = horario.split( ":" );
-        String hora = returnoData[0]; // dia 17
-        String minuto = returnoData[1]; // mes 11
 
-        int hr = Integer.parseInt(hora);
-        System.out.println( "oi?" + hr );
+    public static String dataCorreta(String d, String m, String a){
 
-            if (hr >= 7 && hr < 17){
-                System.out.println( "oi?" );
-                return "0";
-            } else {
-                String horaMinuto = hora + ":" + minuto;
-                return horaMinuto;
-            }
+        long data = System.currentTimeMillis();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat( "dd/MM/yyyy" );
+        String hoje = simpleDateFormat.format( data );
+
+        String returnoData[] = hoje.split( "/" );
+        String sday = returnoData[0]; // dia 17
+        String smonth = returnoData[1]; // mes 11
+        String syear = returnoData[2];
+
+        int dia = Integer.parseInt( d );
+        int mes = Integer.parseInt( m );
+        int ano = Integer.parseInt( a );
+
+        int diahoje = Integer.parseInt( sday );
+        int meshoje = Integer.parseInt( smonth );
+        int anohoje = Integer.parseInt( syear );
+
+        if(dia > diahoje && mes >= meshoje && ano >= anohoje){
+            return dia + "/" + mes + "/" + ano;
+        } else {
+            return "0";
+        }
+
+
     }
 }

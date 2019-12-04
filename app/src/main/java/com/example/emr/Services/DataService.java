@@ -2,6 +2,7 @@ package com.example.emr.Services;
 
 import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Result;
+import com.example.emr.Models.Schedule;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.Test;
 import com.example.emr.Models.User;
@@ -28,14 +29,16 @@ public interface DataService {
     @GET("auth/jwt/me")
     Call<User> getToken(@Header("x-access-token") String Token);
 
+    @POST("auth/jwt/resetpassword")
+    Call<User> resetEmail(@Body User email);
+
+
     @POST("auth/jwt/register")
     Call<User> registerNewUser(@Body User register);
 
+    // Records
 
-    @GET("api/doctors")
-    Call<List<Scheduling>> pegarId();
-
-    @POST("api/schedulling")
+    @POST("api/screcord/")
     Call<Scheduling> newSchedule(@Body Scheduling scheduling);
 
     @GET("api/screcord/schedullingsByDates/{month}/{year}")
@@ -44,7 +47,7 @@ public interface DataService {
     @GET("api/doctors/showBySpecialty/{speciality}")
     Call<Result> getDoctors(@Path( "speciality") String speciality);
 
-    @DELETE("api/schedulling/{id}")
+    @DELETE("api/screcord/{id}")
     Call<Test> deleteSchedule(@Path("id") String id);
 
     @GET("api/patients")
@@ -61,4 +64,8 @@ public interface DataService {
 
     @POST("auth/jwt/reset")
     Call<User> resetPassword(@Body User user);
+
+
+    @GET("api/screcord/{id}")
+    Call<Schedule> scheduleById(@Path( "id" ) String id);
 }

@@ -1,5 +1,7 @@
 package com.example.emr.Models;
 
+import java.util.List;
+
 public class Scheduling {
 
     private String patient;
@@ -10,6 +12,52 @@ public class Scheduling {
     private String profile;
     private String email;
     private String _id;
+    public List<String> symptoms;
+    public List<String> cids;
+    public String medicNotes;
+    public String diagnosis;
+    public String status;
+
+
+    public List<String> getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(List<String> symptoms) {
+        this.symptoms = symptoms;
+    }
+
+    public List<String> getCids() {
+        return cids;
+    }
+
+    public void setCids(List<String> cids) {
+        this.cids = cids;
+    }
+
+    public String getMedicNotes() {
+        return medicNotes;
+    }
+
+    public void setMedicNotes(String medicNotes) {
+        this.medicNotes = medicNotes;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String get_id() {
         return _id;

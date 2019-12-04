@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emr.Config.RetrofitConfig;
@@ -27,7 +28,8 @@ import retrofit2.Retrofit;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText campoNome, campoSenha;
-    private Button btEnviar;
+    private Button btEnviar, btSair;
+    private TextView txtRecuperar;
     private String email, senha;
     private String getToken, Profile;
     private Retrofit retrofit;
@@ -41,104 +43,123 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.act_login);
 
         getWindow().setStatusBarColor( Color.parseColor( "#304FFE" ));
+        getSupportActionBar().hide();
 
+        txtRecuperar = findViewById( R.id.txtRecuperar );
         campoNome = findViewById(R.id.edtNome);
         campoSenha = findViewById(R.id.edtSenha);
         btEnviar = findViewById(R.id.btnEntrar);
+        btSair = findViewById(R.id.btSair);
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        try {
-            btEnviar.setOnClickListener( new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        txtRecuperar.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( getApplicationContext(), RepareActivity.class ) );
+            }
+        } );
+
+        btSair.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent(getApplicationContext(), MainActivity.class ) );
+                finish();
+            }
+        } );
+
+        btEnviar.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-                    email = campoNome.getText().toString();
-                    senha = campoSenha.getText().toString();
+                email = campoNome.getText().toString();
+                senha = campoSenha.getText().toString();
 
-                    retrofit = RetrofitConfig.retrofitConfig();
+                retrofit = RetrofitConfig.retrofitConfig();
 
-                    User token = new User( email, senha );
+                User token = new User( email, senha );
 
-                    DataService service = retrofit.create( DataService.class );
-                    Call<User> POST = service.acessApp( token );
+                DataService service = retrofit.create( DataService.class );
+                Call<User> POST = service.acessApp( token );
 
-                    POST.enqueue( new Callback<User>() {
-                        @Override
-                        public void onResponse(Call<User> call, Response<User> response) {
+                POST.enqueue( new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
 
-                            User user = response.body();
-                            getToken = response.body().getToken();
+                        if(response.isSuccessful()){
 
-                            editor.putString( "email", email );
-                            editor.putString( "pass", senha );
-                            editor.putString( "id", user.getId() );
+                        User user = response.body();
+                        getToken = response.body().getToken();
 
-                            editor.putString( "token", getToken );
-                            editor.commit();
+                        editor.putString( "email", email );
+                        editor.putString( "pass", senha );
+                        editor.putString( "id", user.getId() );
 
-                            if (user.getToken() != null) {
+                        editor.putString( "token", getToken );
+                        editor.commit();
 
-                                DataService service = retrofit.create( DataService.class );
-                                Call<User> GET = service.getToken( getToken );
-                                GET.enqueue( new Callback<User>() {
-                                    @Override
-                                    public void onResponse(Call<User> call, Response<User> response) {
-                                        if (response.isSuccessful()) {
+                        if (user.getToken() != null) {
 
-                                            Profile = response.body().getProfile();
-                                            String name = response.body().getName();
-                                            String id = response.body().getId();
-                                            editor.putString( "name", name);
+                            DataService service = retrofit.create( DataService.class );
+                            Call<User> GET = service.getToken( getToken );
+                            GET.enqueue( new Callback<User>() {
+                                @Override
+                                public void onResponse(Call<User> call, Response<User> response) {
+                                    if (response.isSuccessful()) {
 
-                                            String cpf = response.body().getCpf();
-                                            editor.putString( "user_name", name);
-                                            editor.putString( "user_email", email);
-                                            editor.putString( "document", cpf);
-                                            editor.putString("id",id);
-                                            editor.commit();
+                                        Profile = response.body().getProfile();
+                                        String name = response.body().getName();
+                                        String id = response.body().getId();
+                                        editor.putString( "name", name);
 
-                                            if (Profile.equals( "medic" )) {
-                                                menuMedico();
-                                            } else if (Profile.equals( "patient" )) {
-                                                menuPaciente();
-                                            } else if (Profile.equals( "nurse" )) {
-                                                menuEnfermeira();
-                                            }
+                                        String cpf = response.body().getCpf();
+                                        editor.putString( "user_name", name);
+                                        editor.putString( "user_email", email);
+                                        editor.putString( "document", cpf);
+                                        editor.putString("id",id);
+                                        editor.commit();
+
+                                        if (Profile.equals( "medic" )) {
+                                            menuMedico();
+                                        } else if (Profile.equals( "patient" )) {
+                                            menuPaciente();
+                                        } else if (Profile.equals( "nurse" )) {
+                                            menuEnfermeira();
                                         }
                                     }
+                                }
 
-                                    @Override
-                                    public void onFailure(Call<User> call, Throwable t) {
-                                        Log.e( "ERROR", "Seu erro ocorreu aqui: " + t + " " + call );
-                                    }
-                                } );
-                            } else {
-                                Toast.makeText( LoginActivity.this, "Login ou senha incorretos!", Toast.LENGTH_SHORT ).show();
+                                @Override
+                                public void onFailure(Call<User> call, Throwable t) {
+                                    Log.e( "ERROR", "Seu erro ocorreu aqui: " + t + " " + call );
+                                }
+                            } );
+                        } else {
+                            Toast.makeText( LoginActivity.this, "Login ou senha incorretos!", Toast.LENGTH_SHORT ).show();
+
                             }
+                        } else {
+                            Toast.makeText( LoginActivity.this, "Senha ou email inválidos! Verifique suas informações", Toast.LENGTH_SHORT ).show();
                         }
+                    }
 
-                        @Override
-                        public void onFailure(Call<User> call, Throwable t) {
-                            Log.e( "ERROR", "Seu erro ocorreu aqui: " + t + " " + call );
-                            Toast.makeText( LoginActivity.this, "Desculpe. Não conseguimos conectar te. E-mail ou senha inválidos.", Toast.LENGTH_SHORT ).show();
-                        }
-                    } );
-                }
-            } );
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+                        Log.e( "ERROR", "Seu erro ocorreu aqui: " + t + " " + call );
+                        Toast.makeText( LoginActivity.this, "Desculpe. Não conseguimos conectar te. E-mail ou senha inválidos.", Toast.LENGTH_SHORT ).show();
+                    }
+                } );
+            }
+        } );
 
-        }   catch (NullPointerException e){
-            System.out.println( "Erro:" + e );
-        }
-
-        boolToken = sharedPreferences.getBoolean("salvarToken", true);
-        getToken = sharedPreferences.getString("token", null);
+    boolToken = sharedPreferences.getBoolean("salvarToken", true);
+    getToken = sharedPreferences.getString("token", null);
         if (boolToken == true && getToken != null) {
-            campoNome.setText(sharedPreferences.getString("email", null));
-            campoSenha.setText(sharedPreferences.getString("pass", null));
-        }
+        campoNome.setText(sharedPreferences.getString("email", null));
+        campoSenha.setText(sharedPreferences.getString("pass", null));
     }
+}
 
     public void menuPaciente() {
         startActivity(new Intent(this, MenuUsrActivity.class));

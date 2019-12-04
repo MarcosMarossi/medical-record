@@ -29,13 +29,12 @@ public class MenuDocActivity extends AppCompatActivity {
 
     int[][] dados = {
             {R.string.tit_consulta, R.string.desc_consultas},
-            {R.string.tit_criar_avisos, R.string.desc_criar_avisos},
+            {R.string.tit_listar_prontuario, R.string.desc_listar_prontuario},
             {R.string.tit_monitoramento, R.string.desc_monitoramento},
-            {R.string.tit_validacao, R.string.desc_validacao},
             {R.string.tit_sair, R.string.desc_sair}
     };
 
-    int[] dadosImg = {R.drawable.consultas, R.drawable.report, R.drawable.monitora, R.drawable.validar,R.drawable.arrow};
+    int[] dadosImg = {R.drawable.consultas, R.drawable.relatorio, R.drawable.monitora, R.drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +68,6 @@ public class MenuDocActivity extends AppCompatActivity {
                                         monitoramento();
                                         break;
                                     case 3:
-                                        verValidacao();
-                                        break;
-                                    case 4:
                                         fechar();
                                         break;
                                     default:

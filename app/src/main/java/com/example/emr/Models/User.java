@@ -145,6 +145,10 @@ public class User {
       this.renewpassword = renewpassword;
   }
 
+    public User(String email){
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return email;

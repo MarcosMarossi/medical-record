@@ -179,5 +179,9 @@
     <string name="prontuario">Resumo do Prontuário</string>
 
     <string name="historico_bpm">Consulte seu historico de BPM</string>
+    <string name="tit_bpm">Histórico de BPM</string>
+
+    <string name="tit_listar_prontuario">Prontuários</string>
+    <string name="desc_listar_prontuario">Verificar todos os prontuários.</string>
 
 </resources>

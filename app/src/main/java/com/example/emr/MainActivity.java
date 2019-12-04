@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setStatusBarColor( Color.parseColor( "#E53935" ));
 
 
+
         initList();
         idioma = findViewById(R.id.spinIdioma);
 

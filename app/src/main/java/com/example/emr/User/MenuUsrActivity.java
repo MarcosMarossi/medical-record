@@ -53,12 +53,11 @@ public class MenuUsrActivity extends AppCompatActivity {
         int[][] dados = {
                 {string.tit_agendar, string.desc_agendar},
                 {string.tit_account, string.desc_account},
-                {string.tit_avisos, string.desc_avisos},
                 {string.tit_historico, string.desc_historico},
-                {string.historico,string.historico_bpm},
+                {string.tit_bpm,string.historico_bpm},
                 {string.tit_sair, string.desc_sair}};
 
-        int[] dadosImg = {drawable.nurse, R.drawable.user ,drawable.report, drawable.avisos,drawable.log_user ,drawable.arrow};
+        int[] dadosImg = {drawable.nurse, R.drawable.boy ,drawable.report,drawable.monitoring ,drawable.arrow};
 
         recyclerView = findViewById( id.recyclerView );
         menuAdapter = new MenuAdapter(getApplication(),dados,dadosImg);
@@ -81,15 +80,12 @@ public class MenuUsrActivity extends AppCompatActivity {
                                         startActivity(new Intent(getApplicationContext(), DetailsAcount.class));
                                         break;
                                     case 2:
-                                        startActivity(new Intent(getApplicationContext(), WarningsActivity.class));
-                                        break;
-                                    case 3:
                                         startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                                         break;
-                                    case 4:
+                                    case 3:
                                         startActivity(new Intent(getApplicationContext(),LogActivity.class));
                                         break;
-                                    case 5:
+                                    case 4:
                                         fechar();
                                         break;
                                     default:

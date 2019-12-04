@@ -21,7 +21,7 @@ import retrofit2.Retrofit;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText etName,etCPF,edtEmail,edtPassword;
-    private Button btnCadastrar;
+    private Button btnCadastrar, btSair;
     private String token, email, password, cpf, name;
     Retrofit retrofit;
     
@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_register);
 
+        getSupportActionBar().hide();
         getWindow().setStatusBarColor( Color.parseColor( "#4CAF50" ));
 
         etName = findViewById(R.id.edtNome);
@@ -37,6 +38,15 @@ public class RegisterActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtSenha);
         btnCadastrar = findViewById(R.id.btnCadastrar);
+        btSair = findViewById(R.id.btSair2);
+
+        btSair.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent(getApplicationContext(), MainActivity.class ) );
+                finish();
+            }
+        } );
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override

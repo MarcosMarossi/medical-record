@@ -46,6 +46,7 @@ public class HistoryActivity extends AppCompatActivity {
     private List<Scheduling> fotodope = new ArrayList<>(  );
     private ScheduleAdapter scheduleAdapter;
     private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.act_calendar);
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         recyclerView = findViewById( R.id.recycler );
         fabAgendar = findViewById(R.id.fabAgendar);
@@ -133,6 +135,9 @@ public class HistoryActivity extends AppCompatActivity {
 
                                 Scheduling video = fotodope.get(position);
                                 idSchedule = video.get_id();
+                                editor.putString( "idRecord", idSchedule );
+                                editor.commit();
+                                Toast.makeText( HistoryActivity.this, idSchedule, Toast.LENGTH_SHORT ).show();
                                 startActivity( new Intent( getApplicationContext(), RecordUserActivity.class ) );
                             }
 

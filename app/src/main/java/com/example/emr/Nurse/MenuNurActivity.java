@@ -74,7 +74,7 @@ public class MenuNurActivity extends AppCompatActivity {
                                         Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
                                         break;
                                     case 3:
-                                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
+                                        fechar();
                                         break;
                                     case 4:
                                         Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();

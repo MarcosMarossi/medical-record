@@ -59,7 +59,7 @@
             android:label="@string/titulo_monitorar"
             android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity
-            android:name=".Doctor.WarningsActivity"
+            android:name=".Doctor.RecordsActivity"
             android:label="@string/titulo_avisos"
             android:parentActivityName=".Doctor.MenuDocActivity" />
         <activity

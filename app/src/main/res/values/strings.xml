@@ -184,4 +184,7 @@
     <string name="tit_listar_prontuario">Prontuários</string>
     <string name="desc_listar_prontuario">Verificar todos os prontuários.</string>
 
+    <string name="tit_data">Data</string>
+    <string name="tit_status">Status</string>
+
 </resources>

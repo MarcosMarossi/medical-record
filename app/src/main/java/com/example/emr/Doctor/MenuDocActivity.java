@@ -10,14 +10,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.emr.Adapter.MenuAdapter;
 import com.example.emr.LoginActivity;
 import com.example.emr.Models.User;
 import com.example.emr.R;
-import com.example.emr.User.MenuUsrActivity;
 import com.example.emr.User.RecyclerItemClickListener;
 
 public class MenuDocActivity extends AppCompatActivity {
@@ -29,12 +27,11 @@ public class MenuDocActivity extends AppCompatActivity {
 
     int[][] dados = {
             {R.string.tit_consulta, R.string.desc_consultas},
-            {R.string.tit_listar_prontuario, R.string.desc_listar_prontuario},
             {R.string.tit_monitoramento, R.string.desc_monitoramento},
             {R.string.tit_sair, R.string.desc_sair}
     };
 
-    int[] dadosImg = {R.drawable.consultas, R.drawable.relatorio, R.drawable.monitora, R.drawable.arrow};
+    int[] dadosImg = {R.drawable.consultas, R.drawable.monitora, R.drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +59,6 @@ public class MenuDocActivity extends AppCompatActivity {
                                         abrirConsultas();
                                         break;
                                     case 1:
-                                        criarAvisos();
-                                        break;
-                                    case 2:
                                         monitoramento();
                                         break;
                                     case 3:
@@ -94,22 +88,12 @@ public class MenuDocActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void criarAvisos() {
-        Intent intent = new Intent(MenuDocActivity.this,WarningsActivity.class);
-        startActivity(intent);
-    }
-
     private void monitoramento() {
         Intent intent = new Intent(MenuDocActivity.this,MonitoringActivity.class);
         startActivity(intent);
 
     }
 
-    public void verValidacao(){
-        Intent intent = new Intent(MenuDocActivity.this,ValidationActivity.class);
-        startActivity(intent);
-
-    }
 
     public void fechar(){
 

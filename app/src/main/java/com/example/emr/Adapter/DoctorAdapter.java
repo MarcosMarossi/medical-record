@@ -27,15 +27,16 @@ public class DoctorAdapter  extends RecyclerView.Adapter<DoctorAdapter.MyViewHol
 
     @Override
     public DoctorAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate( R.layout.list_historic, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate( R.layout.list_doctor, parent, false);
         return new DoctorAdapter.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(DoctorAdapter.MyViewHolder holder, int position) {
         holder.titulo.setText(user.get(position).getName());
-        holder.descricao.setText(schedule.get(position).getDate());
-        holder.schedule.setText( schedule.get( position ).get_id() );
+        holder.descricao1.setText(schedule.get(position).getDate());
+        holder.descricao2.setText( schedule.get( position ).getStatus());
+        holder.descricao3.setText( user.get( position ).getEmail() );
 
     }
 
@@ -47,15 +48,17 @@ public class DoctorAdapter  extends RecyclerView.Adapter<DoctorAdapter.MyViewHol
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView titulo;
-        TextView descricao;
-        TextView schedule;
+        TextView descricao1;
+        TextView descricao2;
+        TextView descricao3;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             titulo = itemView.findViewById( R.id.txtTitulo1 );
-            descricao = itemView.findViewById(R.id.txtDescricao1 );
-            schedule = itemView.findViewById( R.id.txtIdSchedule );
+            descricao1 = itemView.findViewById(R.id.txtDescricao1 );
+            descricao2 = itemView.findViewById( R.id.txtDescricao2 );
+            descricao3 = itemView.findViewById( R.id.txtDescricao3 );
 
         }
     }

@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import com.example.emr.Adapter.DoctorAdapter;
 import com.example.emr.Config.RetrofitConfig;
+import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.Schedule;
 import com.example.emr.Models.Scheduling;
-import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
@@ -27,7 +27,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class QueryActivity extends AppCompatActivity {
+public class RecordsActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
     private ArraySchedule arraySchedule;
@@ -39,11 +39,10 @@ public class QueryActivity extends AppCompatActivity {
     private DoctorAdapter doctorAdapter;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.docact_consultas);
+        setContentView(R.layout.docact_warnings);
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -66,7 +65,7 @@ public class QueryActivity extends AppCompatActivity {
 
         call.enqueue( new Callback<Schedule>() {
             @Override
-            public void onResponse(Call<Schedule> call, Response<Schedule>response) {
+            public void onResponse(Call<Schedule> call, Response<Schedule> response) {
 
                 System.out.println( "Cheguei" );
 
@@ -83,7 +82,7 @@ public class QueryActivity extends AppCompatActivity {
                     System.out.println( fotodamao.get( i ).getName() );
                 }
 
-               recyclerView();
+                recyclerView();
             }
 
             @Override

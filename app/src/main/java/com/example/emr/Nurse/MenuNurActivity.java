@@ -33,14 +33,12 @@ public class MenuNurActivity extends AppCompatActivity {
     private MenuAdapter menuAdapter;
 
     int[][] dados = {
-            {R.string.tit_monitoramento, R.string.desc_monitoramento},
-            {R.string.tit_validacao, R.string.desc_validacao_enfermeira},
             {R.string.tit_qr_code,R.string.desc_qr_code},
             {R.string.tit_sair, R.string.desc_sair}
 
     };
 
-    int[] dadosImg = {R.drawable.monitora, R.drawable.validar,R.drawable.qrcode,R.drawable.arrow};
+    int[] dadosImg = {R.drawable.qr_code2,R.drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +63,9 @@ public class MenuNurActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 switch (position) {
                                     case 0:
-                                        startActivity(new Intent(MenuNurActivity.this,MonitoringActivity.class));
+                                        startActivity(new Intent(MenuNurActivity.this,QrCodeActivity.class));
                                         break;
                                     case 1:
-                                        startActivity(new Intent(MenuNurActivity.this,QrCodeActivity.class));
-                                        // Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
-                                        break;
-                                    case 2:
-                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
-                                        break;
-                                    case 3:
-                                        fechar();
-                                        break;
-                                    case 4:
-                                        Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
-                                        break;
-                                    case 5:
                                         fechar();
                                         break;
                                     default:

@@ -130,6 +130,13 @@
     <string name="desc_validacao_enfermeira">Patients de Validations.</string>
     <string name="desc_qr_code">             Vérifiez le BPM du patient.</string>
 
+    <string name="titulo_monitorar">Surveillance</string>
+    <string name="titulo_validar">Validation</string>
+    <string name="titulo_avisos"> Mes Avis</string>
+    <string name="titulo_consultas">Consultations</string>
+
+
+
 
 
 </resources>

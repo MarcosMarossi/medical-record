@@ -127,6 +127,11 @@
     <string name="desc_qr_code">                Check the BPM of the patient.</string>
 
 
+    <string name="titulo_monitorar">Monitoring</string>
+    <string name="titulo_validar">  Validation</string>
+    <string name="titulo_avisos">   My Notices</string>
+    <string name="titulo_consultas">Consultations</string>
+
 
 </resources>
 

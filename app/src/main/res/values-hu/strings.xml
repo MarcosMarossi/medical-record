@@ -128,7 +128,10 @@
     <string name="desc_qr_code">Ellenőrizze a BPM a beteg.</string>
 
 
-
+    <string name="titulo_monitorar">Megfigyelés</string>
+    <string name="titulo_validar">  Érvényesítés</string>
+    <string name="titulo_avisos">   Én közlemények</string>
+    <string name="titulo_consultas">Konzultáció</string>
 
 
 

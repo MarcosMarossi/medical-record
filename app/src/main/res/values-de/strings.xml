@@ -130,5 +130,10 @@
     <string name="desc_qr_code">Überprüfen Sie die BPM des Patienten.</string>
 
 
+    <string name="titulo_monitorar">Überwachung</string>
+    <string name="titulo_validar">  Bestätigung</string>
+    <string name="titulo_avisos">   Meine Hinweise</string>
+    <string name="titulo_consultas">Beratungen</string>
+
 
 </resources>

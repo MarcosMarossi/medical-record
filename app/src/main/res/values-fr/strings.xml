@@ -135,6 +135,12 @@
     <string name="titulo_avisos"> Mes Avis</string>
     <string name="titulo_consultas">Consultations</string>
 
+    <string name="erro_data">S\'il vous plaît entrer une date valide!   </string>
+
+    <string name="tit_add_agendamento">Données de requête</string>
+    <string name="des_add_agendamento">Nous avons besoin de temps, et la date.</string>
+    <string name="hint_horario">Calendrier</string>
+    <string name="hint_data">   Date</string>
 
 
 

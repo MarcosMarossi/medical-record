@@ -134,5 +134,14 @@
     <string name="titulo_avisos">   Mis Avisos</string>
     <string name="titulo_consultas">Consultas</string>
 
+    <string name="erro_data">Por favor, introduzca una fecha válida!   </string>
+
+
+    <string name="tit_add_agendamento">Datos de la consulta</string>
+    <string name="des_add_agendamento">Necesitamos tiempo, y después de la fecha.</string>
+    <string name="hint_horario">Horario</string>
+    <string name="hint_data">   Fecha</string>
+
+
 
 </resources>

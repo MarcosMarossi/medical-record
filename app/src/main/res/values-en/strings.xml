@@ -132,6 +132,13 @@
     <string name="titulo_avisos">   My Notices</string>
     <string name="titulo_consultas">Consultations</string>
 
+    <string name="erro_data">Please enter a valid date!   </string>
+
+    <string name="tit_add_agendamento"> Query data</string>
+    <string name="des_add_agendamento"> We need time, and then the date.</string>
+    <string name="hint_horario">        Schedule</string>
+    <string name="hint_data">           Date</string>
+
 
 </resources>
 

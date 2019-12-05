@@ -136,6 +136,17 @@
     <string name="desc_validacao_enfermeira"> Validazioni pazienti. </string>
     <string name="desc_qr_code">Controllare il BPM del paziente. </string>
 
+    <string name="erro_data">Si prega di inserire una data valida!   </string>
+
+
+
+    <string name="tit_add_agendamento">Dati di query </string>
+    <string name="des_add_agendamento">Abbiamo bisogno di tempo, e quindi la data. </string>
+    <string name="hint_horario">Orario </string>
+    <string name="hint_data">   Data </string>
+
+
+
 
 
 

@@ -133,6 +133,13 @@
     <string name="titulo_avisos">   Én közlemények</string>
     <string name="titulo_consultas">Konzultáció</string>
 
+    <string name="erro_data">Adjon meg egy érvényes dátumot!   </string>
+
+    <string name="tit_add_agendamento">Lekérdezés adatai </string>
+    <string name="des_add_agendamento">Időre van szükségünk, majd a dátumot. </string>
+    <string name="hint_horario">Ütemterv </string>
+    <string name="hint_data">   Dátum </string>
+
 
 
 </resources>

@@ -135,5 +135,12 @@
     <string name="titulo_avisos">   Meine Hinweise</string>
     <string name="titulo_consultas">Beratungen</string>
 
+    <string name="erro_data">Bitte geben Sie ein gültiges Datum!   </string>
+
+    <string name="tit_add_agendamento">Abfragedaten</string>
+    <string name="des_add_agendamento">Wir brauchen Zeit, und dann das Datum an.</string>
+    <string name="hint_horario">Zeitplan</string>
+    <string name="hint_data">   Datum</string>
+
 
 </resources>

@@ -68,7 +68,7 @@ public class MenuNurActivity extends AppCompatActivity {
                                         startActivity(new Intent(MenuNurActivity.this,MonitoringActivity.class));
                                         break;
                                     case 1:
-                                        startActivity(new Intent(MenuNurActivity.this,ActPatientList.class));
+                                        startActivity(new Intent(MenuNurActivity.this,QrCodeActivity.class));
                                         // Toast.makeText( MenuNurActivity.this, "fvfv", Toast.LENGTH_SHORT ).show();
                                         break;
                                     case 2:

@@ -61,7 +61,7 @@ public class MenuDocActivity extends AppCompatActivity {
                                     case 1:
                                         monitoramento();
                                         break;
-                                    case 3:
+                                    case 2:
                                         fechar();
                                         break;
                                     default:

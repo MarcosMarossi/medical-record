@@ -186,5 +186,6 @@
 
     <string name="tit_data">Data</string>
     <string name="tit_status">Status</string>
+    <string name="status_agendamento">Agendado</string>
 
 </resources>

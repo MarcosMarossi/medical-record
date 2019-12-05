@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.emr.Adapter.DoctorAdapter;
 import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Schedule;
+import com.example.emr.Models.Schedules;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.User;
@@ -53,41 +54,31 @@ public class QueryActivity extends AppCompatActivity {
         System.out.println("nome medico:" + nameMedic );
 
         getItems();
-        Toast.makeText( this, "Olá mundo.", Toast.LENGTH_SHORT ).show();
     }
 
     public void getItems(){
 
-        System.out.println( "oi" );
+        Toast.makeText( this, "efeewfewfwre", Toast.LENGTH_SHORT ).show();
 
         retrofit = RetrofitConfig.retrofitConfig();
         service = retrofit.create( DataService.class);
-        Call<Schedule> call = service.scheduleByName("Roberto Raul Oliveira");
+        Call<Schedules> call = service.scheduleByName("Roberto Raul Oliveira");
 
-        call.enqueue( new Callback<Schedule>() {
+        call.enqueue( new Callback<Schedules>() {
             @Override
-            public void onResponse(Call<Schedule> call, Response<Schedule>response) {
+            public void onResponse(Call<Schedules> call, Response<Schedules>response) {
 
-                System.out.println( "Cheguei" );
+                Schedules ls = response.body();
+                fotodope = ls.schedules;
+                recyclerView();
 
-                Schedule ls = response.body();
 
-                fotodope = ls.schedule;
-                fotodamao = ls.patient;
 
-                for(int i = 0 ; i < fotodope.size(); i++){
-                    System.out.println( fotodope.get( i ).getDate() );
-                }
 
-                for(int i = 0 ; i < fotodamao.size(); i++){
-                    System.out.println( fotodamao.get( i ).getName() );
-                }
-
-               recyclerView();
             }
 
             @Override
-            public void onFailure(Call<Schedule> call, Throwable t) {
+            public void onFailure(Call<Schedules> call, Throwable t) {
 
             }
         });
@@ -95,7 +86,7 @@ public class QueryActivity extends AppCompatActivity {
 
     public void recyclerView() {
 
-        doctorAdapter = new DoctorAdapter(fotodope, fotodamao, this);
+        doctorAdapter = new DoctorAdapter(fotodope, this);
         recyclerView.setHasFixedSize( true );
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter( doctorAdapter );

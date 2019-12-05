@@ -45,7 +45,7 @@ public class RecordUserActivity extends AppCompatActivity {
         txtNotas = findViewById( R.id.txtNotas );
         txtDiagnostico = findViewById( R.id.txtDiagnosticos );
         txtCid = findViewById( R.id.txtCid );
-        btnSair = findViewById( R.id.btSair );
+        btnSair = findViewById( R.id.btnSair );
 
         sharedPreferences = getSharedPreferences("salvarToken", MODE_PRIVATE);
         idSchedule = sharedPreferences.getString("idRecord", null);

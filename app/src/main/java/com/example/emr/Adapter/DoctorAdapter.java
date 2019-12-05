@@ -16,12 +16,10 @@ import java.util.List;
 public class DoctorAdapter  extends RecyclerView.Adapter<DoctorAdapter.MyViewHolder> {
 
     private List<Scheduling> schedule;
-    private List<User> user;
     private Context context;
 
-    public DoctorAdapter(List<Scheduling> schedule, List<User> user, Context context) {
+    public DoctorAdapter(List<Scheduling> schedule, Context context) {
         this.schedule = schedule;
-        this.user = user;
         this.context = context;
     }
 
@@ -33,10 +31,10 @@ public class DoctorAdapter  extends RecyclerView.Adapter<DoctorAdapter.MyViewHol
 
     @Override
     public void onBindViewHolder(DoctorAdapter.MyViewHolder holder, int position) {
-        holder.titulo.setText(user.get(position).getName());
-        holder.descricao1.setText(schedule.get(position).getDate());
+        holder.titulo.setText(schedule.get(position).getDate());
+        holder.descricao1.setText(schedule.get(position).getPatient());
         holder.descricao2.setText( schedule.get( position ).getStatus());
-        holder.descricao3.setText( user.get( position ).getEmail() );
+        holder.descricao3.setText( schedule.get( position ).getMedic() );
 
     }
 

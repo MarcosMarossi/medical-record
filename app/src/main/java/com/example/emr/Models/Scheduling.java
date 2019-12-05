@@ -67,11 +67,12 @@ public class Scheduling {
         this._id = _id;
     }
 
-    public Scheduling(String id, String specialty, String medic, String date) {
+    public Scheduling(String id, String specialty, String medic, String date, String status) {
         this.patient = id;
         this.specialty = specialty;
         this.medic = medic;
         this.date = date;
+        this.status = status;
     }
 
     public String getName() {

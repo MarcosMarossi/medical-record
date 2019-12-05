@@ -140,10 +140,10 @@ public class Slide02Activity extends AppCompatActivity {
                 hourSelected = etHour.getText().toString();
 
                 if (!hourSelected.isEmpty()){
-                    if (!dateSelected.isEmpty() && !dataCompleta.equals( "0" )){
+                    if (!dataCompleta.equals( "0" )){
                         if(!nameCategory.equals( "Selecione uma categoria" )){
                             String dataFormat = hourSelected + " " + dataCompleta;
-                            Scheduling schedule = new Scheduling( id, nameCategory, nameDoctor,  dataFormat );
+                            Scheduling schedule = new Scheduling( id, nameCategory, nameDoctor,  dataFormat,"Agendado" );
 
                             retrofit = RetrofitConfig.retrofitConfig();
                             DataService service1 = retrofit.create( DataService.class );

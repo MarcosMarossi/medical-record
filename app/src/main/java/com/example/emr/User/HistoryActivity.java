@@ -134,6 +134,7 @@ public class HistoryActivity extends AppCompatActivity {
                                 scheduleAdapter.notifyDataSetChanged();
 
                                 Scheduling video = fotodope.get(position);
+                                Toast.makeText( HistoryActivity.this, ""+ video.getDate(), Toast.LENGTH_SHORT ).show();
                                 idSchedule = video.get_id();
                                 editor.putString( "idRecord", idSchedule );
                                 editor.commit();

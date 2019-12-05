@@ -3,6 +3,7 @@ package com.example.emr.Services;
 import com.example.emr.Models.Heartbeat;
 import com.example.emr.Models.Result;
 import com.example.emr.Models.Schedule;
+import com.example.emr.Models.Schedules;
 import com.example.emr.Models.Scheduling;
 import com.example.emr.Models.ArraySchedule;
 import com.example.emr.Models.User;
@@ -68,6 +69,9 @@ public interface DataService {
     @GET("api/screcord/{id}")
     Call<Schedule> scheduleById(@Path( "id" ) String id);
 
-    @GET("api/screcord/showRecordScheduleAndPatient/{id}")
-    Call<Schedule> scheduleByName(@Path( "id" ) String id);
+    @GET("api/patients/{id}")
+    Call<Schedules> patientById(@Path( "id" ) String id);
+
+    @GET("api/screcord/showSchedullingsByMedicName/{medic}")
+    Call<Schedules> scheduleByName(@Path( "medic" ) String medic);
 }

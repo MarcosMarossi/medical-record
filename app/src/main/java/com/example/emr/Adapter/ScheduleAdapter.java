@@ -31,6 +31,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.titulo.setText(list.get(position).getDate());
             holder.descricao.setText(list.get(position).getMedic());
+            holder.descricao1.setText(list.get(position).getStatus());
             holder.schedule.setText( list.get( position ).get_id() );
 
     }
@@ -44,6 +45,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
 
         TextView titulo;
         TextView descricao;
+        TextView descricao1;
         TextView schedule;
 
         public MyViewHolder(View itemView) {
@@ -51,6 +53,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
 
             titulo = itemView.findViewById( R.id.txtTitulo1 );
             descricao = itemView.findViewById(R.id.txtDescricao1 );
+            descricao1 = itemView.findViewById(R.id.txtDescricao2 );
             schedule = itemView.findViewById( R.id.txtIdSchedule );
 
         }

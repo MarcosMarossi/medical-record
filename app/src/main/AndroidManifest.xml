@@ -31,9 +31,7 @@
             android:name=".User.DetailsAcount"
             android:label="@string/configuracoes"
             android:parentActivityName=".User.MenuUsrActivity" />
-        <activity
-            android:name=".User.MenuUsrActivity"
-            android:label="Vida"/>
+        <activity android:name=".User.MenuUsrActivity" />
         <activity android:name=".User.RecordActivity" />
         <activity android:name=".Nurse.ActivityListPatient" />
         <activity android:name=".Nurse.QrCodeActivity" />

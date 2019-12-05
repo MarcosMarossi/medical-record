@@ -40,7 +40,7 @@ public class HistoryActivity extends AppCompatActivity {
     private FloatingActionButton fabAgendar;
     private Retrofit retrofit;
     private ArraySchedule arraySchedule;
-    private String mesSelecionado, anoSelecionado, idSchedule;
+    private String mesSelecionado, anoSelecionado, idSchedule, status;
     private DataService service;
     private RecyclerView recyclerView;
     private List<Scheduling> fotodope = new ArrayList<>(  );
@@ -133,13 +133,18 @@ public class HistoryActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 scheduleAdapter.notifyDataSetChanged();
 
-                                Scheduling video = fotodope.get(position);
-                                Toast.makeText( HistoryActivity.this, ""+ video.getDate(), Toast.LENGTH_SHORT ).show();
-                                idSchedule = video.get_id();
+                                Scheduling scheduling = fotodope.get(position);
+                                idSchedule = scheduling.get_id();
+                                status = scheduling.getStatus();
                                 editor.putString( "idRecord", idSchedule );
                                 editor.commit();
-                                Toast.makeText( HistoryActivity.this, idSchedule, Toast.LENGTH_SHORT ).show();
-                                startActivity( new Intent( getApplicationContext(), RecordUserActivity.class ) );
+
+                                if (status.equals( "Agendado" )){
+                                    Toast.makeText( HistoryActivity.this, "Não é possível consultar. Status definido como agendado.", Toast.LENGTH_SHORT ).show();
+                                } else {
+                                    startActivity( new Intent( getApplicationContext(), RecordUserActivity.class ) );
+                                }
+
                             }
 
                             @Override
@@ -192,27 +197,39 @@ public class HistoryActivity extends AppCompatActivity {
 
                 int pos = viewHolder.getAdapterPosition();
                 Scheduling schedule = fotodope.get(pos);
-                idSchedule = schedule.get_id();
-                scheduleAdapter.notifyItemRemoved(pos);
-                Toast.makeText( HistoryActivity.this, "Valor: " + idSchedule, Toast.LENGTH_SHORT ).show();
-                retrofit = RetrofitConfig.retrofitConfig();
-                DataService service =  retrofit.create( DataService.class );
-                Call<ArraySchedule> call =  service.deleteSchedule( idSchedule );
 
-                call.enqueue( new Callback<ArraySchedule>() {
-                    @Override
-                    public void onResponse(Call<ArraySchedule> call, Response<ArraySchedule> response) {
+                status = schedule.getStatus();
 
-                    }
+                if (status.equals( "Medicado" )){
 
-                    @Override
-                    public void onFailure(Call<ArraySchedule> call, Throwable t) {
+                    Toast.makeText( HistoryActivity.this, "Não é possível excluir. Prontuário já cadastrado pelo médico.", Toast.LENGTH_SHORT ).show();
+                    scheduleAdapter.notifyDataSetChanged();
+                } else {
 
-                    }
-                } );
+                    idSchedule = schedule.get_id();
+                    scheduleAdapter.notifyItemRemoved(pos);
 
-                scheduleAdapter.notifyItemRemoved(pos);
-                getItems();
+                    retrofit = RetrofitConfig.retrofitConfig();
+                    DataService service =  retrofit.create( DataService.class );
+                    Call<ArraySchedule> call =  service.deleteSchedule( idSchedule );
+
+                    call.enqueue( new Callback<ArraySchedule>() {
+                        @Override
+                        public void onResponse(Call<ArraySchedule> call, Response<ArraySchedule> response) {
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ArraySchedule> call, Throwable t) {
+
+                        }
+                    } );
+
+                    scheduleAdapter.notifyItemRemoved(pos);
+                    getItems();
+
+                }
+
 
             }
         } );

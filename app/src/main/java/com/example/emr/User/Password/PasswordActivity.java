@@ -1,5 +1,6 @@
 package com.example.emr.User.Password;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.User;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
+import com.example.emr.User.HistoryActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,7 +24,7 @@ import retrofit2.Retrofit;
 public class PasswordActivity extends AppCompatActivity {
 
     private EditText etOldPassword, etNewPassword;
-    private Button btAlterar;
+    private Button btAlterar, btnSair;
     private Retrofit retrofit;
     private SharedPreferences sharedPreferences;
     private String email, senha;
@@ -42,6 +44,13 @@ public class PasswordActivity extends AppCompatActivity {
         etOldPassword = findViewById( R.id.etOldPassword );
         etNewPassword = findViewById( R.id.etNewPassword );
         btAlterar = findViewById( R.id.btnAlterarSenha );
+
+        btnSair.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( getApplicationContext(), HistoryActivity.class ) );
+            }
+        } );
 
 
     }

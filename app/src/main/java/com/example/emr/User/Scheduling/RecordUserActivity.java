@@ -13,6 +13,7 @@ import com.example.emr.Config.RetrofitConfig;
 import com.example.emr.Models.Schedule;
 import com.example.emr.R;
 import com.example.emr.Services.DataService;
+import com.example.emr.User.HistoryActivity;
 import com.example.emr.User.MenuUsrActivity;
 
 import retrofit2.Call;
@@ -79,7 +80,7 @@ public class RecordUserActivity extends AppCompatActivity {
         btnSair.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity( new Intent( getApplicationContext(), MenuUsrActivity.class ) );
+                startActivity( new Intent( getApplicationContext(), HistoryActivity.class ) );
                 finish();
             }
         } );

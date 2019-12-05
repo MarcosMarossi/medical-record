@@ -104,5 +104,16 @@
     <string name="sair_titulo">Are you sure you want to quit?</string>
 
 
+    <string name="tit_agendar">         Schedule</string>
+    <string name="tit_avisos">          Warnings</string>
+    <string name="tit_historico">       Historic</string>
+    <string name="tit_sair">            Get out</string>
+    <string name="tit_monitoramento">   Monitoring</string>
+    <string name="tit_validacao">       Validations</string>
+    <string name="tit_consulta">        Consultations</string>
+    <string name="tit_criar_avisos">    Create Notices</string>
+    <string name="tit_qr_code">         QR Code</string>
+
+
 </resources>
 

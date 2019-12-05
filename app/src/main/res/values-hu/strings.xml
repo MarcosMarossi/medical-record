@@ -105,4 +105,15 @@
     <string name="sair_titulo">Biztos benne, hogy ki akar menni?</string>
 
 
+    <string name="tit_agendar">         Ütemterv</string>
+    <string name="tit_avisos">          Figyelmeztetések</string>
+    <string name="tit_historico">       Történelem</string>
+    <string name="tit_sair">            Szabadság</string>
+    <string name="tit_monitoramento">   Megfigyelés</string>
+    <string name="tit_validacao">       Érvényesítés</string>
+    <string name="tit_consulta">        Konzultáció</string>
+    <string name="tit_criar_avisos">    Készítsen Közlemények</string>
+    <string name="tit_qr_code">         QR Code</string>
+
+
 </resources>

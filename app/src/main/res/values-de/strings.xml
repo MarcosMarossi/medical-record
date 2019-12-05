@@ -106,4 +106,15 @@
     <string name="sair_titulo">Bist du sicher, dass du gehen willst?</string>
 
 
+    <string name="tit_agendar">        Zeitplan </string>
+    <string name="tit_avisos">         Warnungen </string>
+    <string name="tit_historico">      Geschichte </string>
+    <string name="tit_sair">           Leave </string>
+    <string name="tit_monitoramento">  Überwachung </string>
+    <string name="tit_validacao">      Validierungen </string>
+    <string name="tit_consulta">       Beratungen </string>
+    <string name="tit_criar_avisos">   Erstellen Hinweise </string>
+    <string name="tit_qr_code">        QR Code </string>
+
+
 </resources>

@@ -105,4 +105,16 @@
     <string name="sair_titulo">¿Estás seguro de que quieres irte?</string>
 
 
+
+    <string name="tit_agendar">         Horario</string>
+    <string name="tit_avisos">          Advertencias</string>
+    <string name="tit_historico">       Historia</string>
+    <string name="tit_sair">            Licencia</string>
+    <string name="tit_monitoramento">   Monitoreo</string>
+    <string name="tit_validacao">       Validaciones</string>
+    <string name="tit_consulta">        Consultas</string>
+    <string name="tit_criar_avisos">    Crear Avisos</string>
+    <string name="tit_qr_code">         QR Code</string>
+
+
 </resources>

@@ -113,4 +113,16 @@
     <string name="titulo_consultas">Consultazioni</string>
 
 
+
+    <string name="tit_agendar">         Orario</string>
+    <string name="tit_avisos">          Avvertenze</string>
+    <string name="tit_historico">       Storia</string>
+    <string name="tit_sair">            Congedo</string>
+    <string name="tit_monitoramento">   Monitoraggio</string>
+    <string name="tit_validacao">       Convalide</string>
+    <string name="tit_consulta">        Consultazioni</string>
+    <string name="tit_criar_avisos">    Creare Annunci</string>
+    <string name="tit_qr_code">         QR Code</string>
+
+
 </resources>

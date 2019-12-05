@@ -153,6 +153,24 @@
     <string name="tit_medico">Medico </string>
     <string name="tit_account">Fattura </string>
 
+    <string name="tit_perfil">            Profilo utente  </string>
+    <string name="desc_perfil">           Modificare alcune delle impostazioni  </string>
+    <string name="alterar_senha">         Modifica della password  </string>
+    <string name="alterar_dados">         Aggiorna dati  </string>
+    <string name="antiga_senha">          Vecchia password  </string>
+    <string name="nova_senha">            Nuova password  </string>
+    <string name="alterar">               Cambiamento  </string>
+    <string name="configuracoes">         Impostazioni  </string>
+    <string name="desc_account">          Modificare le informazioni.  </string>
+    <string name="prontuario">            Sommario Cartella clinica  </string>
+    <string name="historico_bpm">         Storia BPM  </string>
+    <string name="tit_bpm">               Storia BPM  </string>
+    <string name="tit_listar_prontuario"> Record  </string>
+    <string name="desc_listar_prontuario">Controllare tutti i record.  </string>
+    <string name="tit_data">              Data  </string>
+    <string name="tit_status">            Stato  </string>
+    <string name="status_agendamento">    In programma  </string>
+    <string name="desc_bpm">              Vedere la storia BPM dei pazienti  </string>
 
 
 

@@ -147,6 +147,24 @@
     <string name="tit_medico">  Doctor </string>
     <string name="tit_account"> Account </string>
 
+    <string name="tit_perfil">   User Profile  </string>
+    <string name="desc_perfil">  Change some of your settings  </string>
+    <string name="alterar_senha">Change Password  </string>
+    <string name="alterar_dados">Update data  </string>
+    <string name="antiga_senha"> Old password  </string>
+    <string name="nova_senha">   New password  </string>
+    <string name="alterar">      Change  </string>
+    <string name="configuracoes">Settings  </string>
+    <string name="desc_account"> Change your information.  </string>
+    <string name="prontuario">   Summary Medical Record  </string>
+    <string name="historico_bpm">BPM History  </string>
+    <string name="tit_bpm">      BPM History  </string>
+    <string name="tit_listar_prontuario">Eecords  </string>
+    <string name="desc_listar_prontuario">Check all records.  </string>
+    <string name="tit_data">          Date  </string>
+    <string name="tit_status">        Status  </string>
+    <string name="status_agendamento">Scheduled  </string>
+    <string name="desc_bpm">          See BPM history of patients  </string>
 
 
 </resources>

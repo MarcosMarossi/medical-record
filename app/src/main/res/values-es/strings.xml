@@ -151,6 +151,25 @@
     <string name="tit_medico"> Médico </string>
     <string name="tit_account">Proyecto de ley </string>
 
+    <string name="tit_perfil">            Perfil de usuario  </string>
+    <string name="desc_perfil">           Cambiar algunos de sus ajustes  </string>
+    <string name="alterar_senha">         Cambiar contraseña  </string>
+    <string name="alterar_dados">         Actualización de datos  </string>
+    <string name="antiga_senha">          Contraseña antigua  </string>
+    <string name="nova_senha">            Nueva contraseña  </string>
+    <string name="alterar">               cambio  </string>
+    <string name="configuracoes">         Ajustes  </string>
+    <string name="desc_account">          Cambiar su información.  </string>
+    <string name="prontuario">            Resumen de registro médico  </string>
+    <string name="historico_bpm">         Historia BPM  </string>
+    <string name="tit_bpm">               Historia BPM  </string>
+    <string name="tit_listar_prontuario"> Archivos  </string>
+    <string name="desc_listar_prontuario">Compruebe todos los registros.  </string>
+    <string name="tit_data">              Fecha  </string>
+    <string name="tit_status">            Estatus  </string>
+    <string name="status_agendamento">    Programado  </string>
+    <string name="desc_bpm">              Ver la historia de BPM de los pacientes  </string>
+
 
 
 </resources>

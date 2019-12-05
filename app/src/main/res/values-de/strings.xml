@@ -150,5 +150,24 @@
     <string name="tit_medico">    Arzt </string>
     <string name="tit_account">   Rechnung </string>
 
+    <string name="tit_perfil">   Benutzerprofil  </string>
+    <string name="desc_perfil">  Ändern Sie einige Ihrer Einstellungen  </string>
+    <string name="alterar_senha">Kennwort ändern  </string>
+    <string name="alterar_dados">Daten aktualisieren  </string>
+    <string name="antiga_senha"> Altes Passwort  </string>
+    <string name="nova_senha">   Neues Passwort  </string>
+    <string name="alterar">      Veränderung  </string>
+    <string name="configuracoes">Einstellungen  </string>
+    <string name="desc_account"> Ändern Sie Ihre Daten ein.  </string>
+    <string name="prontuario">   Zusammenfassung Medical Record  </string>
+    <string name="historico_bpm">BPM Geschichte  </string>
+    <string name="tit_bpm">      BPM Geschichte  </string>
+    <string name="tit_listar_prontuario"> Aufzeichnungen  </string>
+    <string name="desc_listar_prontuario">Überprüfen Sie alle Datensätze.  </string>
+    <string name="tit_data">          Datum  </string>
+    <string name="tit_status">        Status  </string>
+    <string name="status_agendamento">Geplant  </string>
+    <string name="desc_bpm">          Siehe BPM Geschichte der Patienten  </string>
+
 
 </resources>

@@ -149,6 +149,25 @@
     <string name="tit_account">Számla </string>
 
 
+    <string name="tit_perfil">            Felhasználó profilja  </string>
+    <string name="desc_perfil">           Változás néhány beállítás  </string>
+    <string name="alterar_senha">         változás jelszó  </string>
+    <string name="alterar_dados">         Frissítés adatai  </string>
+    <string name="antiga_senha">          A régi jelszót  </string>
+    <string name="nova_senha">            Új jelszó  </string>
+    <string name="alterar">               változás  </string>
+    <string name="configuracoes">         Beállítások  </string>
+    <string name="desc_account">          Változás az adatokat.  </string>
+    <string name="prontuario">            Összefoglaló Medical Record  </string>
+    <string name="historico_bpm">         BPM története  </string>
+    <string name="tit_bpm">               BPM története  </string>
+    <string name="tit_listar_prontuario"> Feljegyzések  </string>
+    <string name="desc_listar_prontuario">Ellenőrizze az összes rekordot.  </string>
+    <string name="tit_data">              Dátum  </string>
+    <string name="tit_status">            Állapot  </string>
+    <string name="status_agendamento">    Ütemezett  </string>
+    <string name="desc_bpm">              Lásd BPM története betegek  </string>
+
 
 
 </resources>

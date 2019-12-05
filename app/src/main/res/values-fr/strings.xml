@@ -151,5 +151,25 @@
     <string name="tit_account">Facture </string>
 
 
+    <string name="tit_perfil">            Profil utilisateur  </string>
+    <string name="desc_perfil">           Modifiez certains de vos paramètres  </string>
+    <string name="alterar_senha">         Modifier le mot  </string>
+    <string name="alterar_dados">         Actualiser les données  </string>
+    <string name="antiga_senha">          Ancien mot de passe  </string>
+    <string name="nova_senha">            Nouveau mot de passe  </string>
+    <string name="alterar">               Changement  </string>
+    <string name="configuracoes">         Paramètres  </string>
+    <string name="desc_account">          Modifiez vos informations.  </string>
+    <string name="prontuario">            Résumé du dossier médical  </string>
+    <string name="historico_bpm">         BPM Histoire  </string>
+    <string name="tit_bpm">               BPM Histoire  </string>
+    <string name="tit_listar_prontuario"> Archives  </string>
+    <string name="desc_listar_prontuario">Vérifiez tous les enregistrements.  </string>
+    <string name="tit_data">              Date  </string>
+    <string name="tit_status">            Statut  </string>
+    <string name="status_agendamento">    Prévue  </string>
+    <string name="desc_bpm">              Voir l\'historique des patients BPM  </string>
+
+
 
 </resources>

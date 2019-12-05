@@ -140,6 +140,15 @@
     <string name="hint_horario">Ütemterv </string>
     <string name="hint_data">   Dátum </string>
 
+    <string name="validacao_senha">A jelszónak tartalmaznia kell legalább 8 karakter. </string>
+    <string name="validacao_email">Adjon meg egy érvényes email. </string>
+    <string name="validacao_documento">Társadalombiztosítási szám (regisztrálására) érvénytelen vagy üres! </string>
+    <string name="validacao_nome">Érvénytelen név. Kérjük, adja meg a teljes nevét. </string>>
+    <string name="categoria"> Válasszon egy kategóriát </string>
+    <string name="tit_medico">Orvos </string>
+    <string name="tit_account">Számla </string>
+
+
 
 
 </resources>

@@ -143,5 +143,14 @@
     <string name="hint_data">   Fecha</string>
 
 
+    <string name="validacao_senha">La contraseña debe contener al menos 8 caracteres. </string>
+    <string name="validacao_email">Por favor, introduzca un correo electrónico válido. </string>
+    <string name="validacao_documento">Número de Seguridad Social (registro de las personas) no válido o está vacío! </string>
+    <string name="validacao_nome">Nombre no válido. Por favor, introduzca su nombre completo. </string>
+    <string name="categoria">  Seleccione una categoría </string>
+    <string name="tit_medico"> Médico </string>
+    <string name="tit_account">Proyecto de ley </string>
+
+
 
 </resources>

@@ -161,8 +161,6 @@
     <string name="categoria">Selecione uma categoria</string>
 
     <string name="tit_medico">Médico(a)</string>
-    <string name="title_activity_menu_usr2">MenuUsrActivity2</string>
-    <string name="title_activity_main_user">MainUserActivity</string>
     <string name="tit_account">Conta</string>
 
     <string name="tit_perfil">Perfil do Usuário</string>
@@ -190,4 +188,6 @@
 
     <string name="desc_bpm">Consulte o histórico de BPM dos pacientes</string>
 
+    <string name="title_activity_menu_usr2" translatable="false">MenuUsrActivity2</string>
+    <string name="title_activity_main_user" translatable="false">MainUserActivity</string>
 </resources>

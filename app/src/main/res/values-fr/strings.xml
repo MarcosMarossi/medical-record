@@ -142,6 +142,13 @@
     <string name="hint_horario">Calendrier</string>
     <string name="hint_data">   Date</string>
 
+    <string name="validacao_senha">Le mot de passe doit contenir au moins 8 caractères. </string>
+    <string name="validacao_email">S\'il vous plaît entrer un email valide. </string>
+    <string name="validacao_documento">Numéro de sécurité sociale (enregistrement des personnes) invalide ou vide! </string>
+    <string name="validacao_nome">Nom non valide. S\'il vous plaît entrer votre nom complet. </string>
+    <string name="categoria"> Sélectionnez une catégorie </string>
+    <string name="tit_medico">Médecin </string>
+    <string name="tit_account">Facture </string>
 
 
 

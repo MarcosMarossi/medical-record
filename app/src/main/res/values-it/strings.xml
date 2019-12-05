@@ -145,6 +145,15 @@
     <string name="hint_horario">Orario </string>
     <string name="hint_data">   Data </string>
 
+    <string name="validacao_senha">La password deve contenere almeno 8 caratteri. </string>
+    <string name="validacao_email">Si prega di inserire un indirizzo email valido. </string>
+    <string name="validacao_documento">numero di previdenza sociale (Registrazione delle persone) non valido o vuoto! </string>
+    <string name="validacao_nome"> Nome non valido. Inserisci il tuo nome completo. </string>
+    <string name="categoria">Seleziona una categoria </string>
+    <string name="tit_medico">Medico </string>
+    <string name="tit_account">Fattura </string>
+
+
 
 
 

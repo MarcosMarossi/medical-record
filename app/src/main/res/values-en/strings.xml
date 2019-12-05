@@ -139,6 +139,15 @@
     <string name="hint_horario">        Schedule</string>
     <string name="hint_data">           Date</string>
 
+    <string name="validacao_senha">The password must contain at least 8 characters. </string>
+    <string name="validacao_email">Enter a valid email address. </string>
+    <string name="validacao_documento">Social Security number (Registration of Individuals) invalid or empty! </string>
+    <string name="validacao_nome">Invalid name. Please enter your full name. </string>
+    <string name="categoria">   Select a category </string>
+    <string name="tit_medico">  Doctor </string>
+    <string name="tit_account"> Account </string>
+
+
 
 </resources>
 

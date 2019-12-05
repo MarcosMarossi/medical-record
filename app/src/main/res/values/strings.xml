@@ -178,7 +178,7 @@
 
     <string name="prontuario">Resumo do Prontuário</string>
 
-    <string name="historico_bpm">Consulte seu historico de BPM</string>
+    <string name="historico_bpm">Histórico de BPM</string>
     <string name="tit_bpm">Histórico de BPM</string>
 
     <string name="tit_listar_prontuario">Prontuários</string>
@@ -187,5 +187,7 @@
     <string name="tit_data">Data</string>
     <string name="tit_status">Status</string>
     <string name="status_agendamento">Agendado</string>
+
+    <string name="desc_bpm">Consulte o histórico de BPM dos pacientes</string>
 
 </resources>

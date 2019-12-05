@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".Nurse.ActPatientList"></activity>
+        <activity android:name=".Doctor.LogDoctor"></activity>
+        <activity android:name=".Doctor.Act_Patient_BPM" />
+        <activity android:name=".Nurse.ActPatientList" />
         <activity android:name=".RepareActivity" />
         <activity
             android:name=".User.Scheduling.RecordUserActivity"

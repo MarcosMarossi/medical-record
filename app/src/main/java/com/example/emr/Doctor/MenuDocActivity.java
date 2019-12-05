@@ -28,10 +28,11 @@ public class MenuDocActivity extends AppCompatActivity {
     int[][] dados = {
             {R.string.tit_consulta, R.string.desc_consultas},
             {R.string.tit_monitoramento, R.string.desc_monitoramento},
+            {R.string.historico_bpm,R.string.desc_bpm},
             {R.string.tit_sair, R.string.desc_sair}
     };
 
-    int[] dadosImg = {R.drawable.consultas, R.drawable.monitora, R.drawable.arrow};
+    int[] dadosImg = {R.drawable.consultas, R.drawable.monitora, R.drawable.log_user,R.drawable.arrow};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,9 @@ public class MenuDocActivity extends AppCompatActivity {
                                         monitoramento();
                                         break;
                                     case 2:
+                                        consultarBPM();
+                                        break;
+                                    case 3:
                                         fechar();
                                         break;
                                     default:
@@ -90,6 +94,12 @@ public class MenuDocActivity extends AppCompatActivity {
 
     private void monitoramento() {
         Intent intent = new Intent(MenuDocActivity.this,MonitoringActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void consultarBPM(){
+        Intent intent = new Intent(MenuDocActivity.this,Act_Patient_BPM.class);
         startActivity(intent);
 
     }

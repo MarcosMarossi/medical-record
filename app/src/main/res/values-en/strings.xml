@@ -115,5 +115,18 @@
     <string name="tit_qr_code">         QR Code</string>
 
 
+    <string name="desc_agendar">                Choose the best day for you!</string>
+    <string name="desc_avisos">                 Wall application prompts.</string>
+    <string name="desc_historico">              See their schedules.</string>
+    <string name="desc_sair">                   Do you want to exit the application?</string>
+    <string name="desc_monitoramento">          Monitor admissions.</string>
+    <string name="desc_validacao">              Validations nurses.</string>
+    <string name="desc_consultas">              See who your patients!</string>
+    <string name="desc_criar_avisos">           Type warnings to patients.</string>
+    <string name="desc_validacao_enfermeira">   Validations patients.</string>
+    <string name="desc_qr_code">                Check the BPM of the patient.</string>
+
+
+
 </resources>
 

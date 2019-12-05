@@ -117,4 +117,16 @@
     <string name="tit_qr_code">         QR Code</string>
 
 
+    <string name="desc_agendar"> Elige el mejor día para usted!</string>
+    <string name="desc_avisos">  indicaciones de aplicación de pared.</string>
+    <string name="desc_historico">Ver sus horarios.</string>
+    <string name="desc_sair">     ¿Quieres salir de la aplicación?</string>
+    <string name="desc_monitoramento">admisiones monitor.</string>
+    <string name="desc_validacao">    Validaciones enfermeras.</string>
+    <string name="desc_consultas">   Ver que sus pacientes!</string>
+    <string name="desc_criar_avisos">Tipo advertencias a los pacientes.</string>
+    <string name="desc_validacao_enfermeira">Validaciones pacientes.</string>
+    <string name="desc_qr_code">             Compruebe el BPM de la paciente.</string>
+
+
 </resources>

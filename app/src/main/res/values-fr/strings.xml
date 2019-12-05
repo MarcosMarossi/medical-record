@@ -119,4 +119,17 @@
     <string name="tit_qr_code">         QR Code</string>
 
 
+    <string name="desc_agendar">      Choisissez le meilleur jour pour vous!</string>
+    <string name="desc_avisos">       Applications murales invites.</string>
+    <string name="desc_historico">    Voir leurs horaires.</string>
+    <string name="desc_sair">         Voulez-vous quitter l\'application?</string>
+    <string name="desc_monitoramento">Admissions moniteur.</string>
+    <string name="desc_validacao">    Infirmières de Validations.</string>
+    <string name="desc_consultas">    Voir qui vos patients!</string>
+    <string name="desc_criar_avisos"> Tapez des avertissements aux patients.</string>
+    <string name="desc_validacao_enfermeira">Patients de Validations.</string>
+    <string name="desc_qr_code">             Vérifiez le BPM du patient.</string>
+
+
+
 </resources>

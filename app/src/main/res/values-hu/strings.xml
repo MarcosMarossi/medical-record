@@ -116,4 +116,20 @@
     <string name="tit_qr_code">         QR Code</string>
 
 
+    <string name="desc_agendar">      Válassza ki a legjobb nap az Ön számára!</string>
+    <string name="desc_avisos">       Fali alkalmazás utasításokat.</string>
+    <string name="desc_historico">    Lásd a menetrend.</string>
+    <string name="desc_sair">         Szeretné, hogy kilépjen az alkalmazásból?</string>
+    <string name="desc_monitoramento">Monitor bevezetésre.</string>
+    <string name="desc_validacao">    Érvényesítés ápolók.</string>
+    <string name="desc_consultas">    Lásd, aki a betegek!</string>
+    <string name="desc_criar_avisos"> Írja figyelmeztetések a betegek számára.</string>
+    <string name="desc_validacao_enfermeira">Érvényesítés betegeknél.</string>
+    <string name="desc_qr_code">Ellenőrizze a BPM a beteg.</string>
+
+
+
+
+
+
 </resources>

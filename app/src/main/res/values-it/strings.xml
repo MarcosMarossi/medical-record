@@ -114,15 +114,27 @@
 
 
 
-    <string name="tit_agendar">         Orario</string>
     <string name="tit_avisos">          Avvertenze</string>
     <string name="tit_historico">       Storia</string>
+    <string name="tit_agendar">         Orario</string>
     <string name="tit_sair">            Congedo</string>
     <string name="tit_monitoramento">   Monitoraggio</string>
     <string name="tit_validacao">       Convalide</string>
     <string name="tit_consulta">        Consultazioni</string>
     <string name="tit_criar_avisos">    Creare Annunci</string>
     <string name="tit_qr_code">         QR Code</string>
+
+
+    <string name="desc_agendar">      Scegli il giorno migliore per voi! </string>
+    <string name="desc_avisos">       Istruzioni applicazione a parete. </string>
+    <string name="desc_historico">    Vedere i loro programmi. </string>
+    <string name="desc_sair">         Vuoi uscire dall\'applicazione? </string>
+    <string name="desc_monitoramento">Ricoveri monitor. </string>
+    <string name="desc_validacao">    Validazioni infermieri. </string>
+    <string name="desc_consultas">    Vedere chi i vostri pazienti! </string>
+    <string name="desc_criar_avisos"> Digitare le avvertenze per i pazienti. </string>
+    <string name="desc_validacao_enfermeira"> Validazioni pazienti. </string>
+    <string name="desc_qr_code">Controllare il BPM del paziente. </string>
 
 
 </resources>

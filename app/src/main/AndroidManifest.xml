@@ -15,14 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".RepareActivity"></activity>
+        <activity android:name=".Nurse.ActPatientList"></activity>
+        <activity android:name=".RepareActivity" />
         <activity
             android:name=".User.Scheduling.RecordUserActivity"
             android:label="@string/prontuario"
             android:parentActivityName=".User.MenuUsrActivity" />
-        <activity android:name=".User.LogActivity"
-                    android:label="Histórico de BPM"
-                  android:parentActivityName=".User.MenuUsrActivity"/>
+        <activity
+            android:name=".User.LogActivity"
+            android:label="Histórico de BPM"
+            android:parentActivityName=".User.MenuUsrActivity" />
         <activity
             android:name=".User.Password.PasswordActivity"
             android:label="@string/alterar_senha"

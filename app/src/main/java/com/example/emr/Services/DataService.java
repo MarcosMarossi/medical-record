@@ -61,4 +61,13 @@ public interface DataService {
 
     @POST("auth/jwt/reset")
     Call<User> resetPassword(@Body User user);
+
+    @GET("api/patients/showByCPF/{cpf}")
+    Call<ArrayList<User>> getPatientCPF(@Path("cpf") String cpf);
+
+
+
+
+
+
 }

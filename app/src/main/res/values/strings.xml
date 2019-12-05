@@ -110,6 +110,7 @@
     <string name="desc_criar_avisos">Digite avisos aos pacientes.</string>
     <string name="desc_validacao_enfermeira">Validações de pacientes.</string>
     <string name="desc_qr_code">Verifique o BPM do paciente.</string>
+    <string name="desc_bpm">Consulte o histórico de BPM dos pacientes</string>
 
     // Enfermeira e Médico
     <string name="titulo_monitorar">Monitoramento</string>
@@ -178,6 +179,7 @@
 
     <string name="prontuario">Resumo do Prontuário</string>
 
-    <string name="historico_bpm">Consulte seu historico de BPM</string>
+    <string name="historico_bpm">Historico de BPM</string>
+
 
 </resources>

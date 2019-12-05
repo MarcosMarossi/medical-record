@@ -65,6 +65,6 @@ public class QrCodeActivity extends AppCompatActivity implements ZXingScannerVie
         String mac = rawResult.toString();
         String aux = mac.substring(mac.lastIndexOf("/")+1);
         txtResult.setText(aux);
-        startActivity(new Intent(QrCodeActivity.this,ActivityListPatient.class).putExtra("mac",aux));
+        startActivity(new Intent(QrCodeActivity.this,ActivityPatientList.class).putExtra("mac",aux));
     }
 }

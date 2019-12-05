@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vida Saudável</string>
+    <string name="app_name" translatable="false">Vida Saudável</string>
     <string name="titulo_login">Acessar conta</string>
     <string name="titulo_cadastrar">Cadastrar conta</string>
 

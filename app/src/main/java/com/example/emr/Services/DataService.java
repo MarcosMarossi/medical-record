@@ -74,4 +74,7 @@ public interface DataService {
 
     @GET("api/screcord/showSchedullingsByMedicName/{medic}")
     Call<Schedules> scheduleByName(@Path( "medic" ) String medic);
+
+    @GET("api/patients/showByCPF/{cpf}")
+    Call<ArrayList<User>> getPatientCPF(@Path("cpf") String cpf);
 }

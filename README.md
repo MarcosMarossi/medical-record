@@ -3,6 +3,8 @@
 
 Aplicativo para o projeto interdisciplinar 5º Semestre - Fatec Indaiatuba 
 
+![WhatsApp Image 2020-01-18 at 18 33 26](https://user-images.githubusercontent.com/45125372/72670138-c3fd3980-3a18-11ea-9af6-53449103912c.jpeg)
+
 ## Funcionalidades
 
 * [ ] QRCODE para validação de leitura dos batimentos cardíacos.
@@ -12,7 +14,7 @@ Aplicativo para o projeto interdisciplinar 5º Semestre - Fatec Indaiatuba
 * [ ] Histórico de todos os prontuários do paciente.
 * [ ] Diferentes tipos de perfis, tais como: paciente, médico e enfermeira.
 
-## Tecnologias Usadas no Desenvolvimento
+## Tecnologias Utilizadas no Desenvolvimento
 
 * [ ] Android.
 * [ ] API Retrofit.

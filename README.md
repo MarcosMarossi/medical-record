@@ -3,7 +3,19 @@
 
 Aplicativo para o projeto interdisciplinar 5º Semestre - Fatec Indaiatuba 
 
-## TO-DO
-* [ ] QRCODE
-* [ ] Google Calendar
-* [ ] Idioma na tela de configuração
+## Funcionalidades
+
+* [ ] QRCODE para validação de leitura dos batimentos cardíacos.
+* [ ] Múltiplos idiomas na tela principal do aplicativo.
+* [ ] Idioma na tela de configuração.
+* [ ] Agendamento fácil e rápido ao alcance do usuário.
+* [ ] Histórico de todos os prontuários do paciente.
+* [ ] Diferentes tipos de perfis, tais como: paciente, médico e enfermeira.
+
+## Tecnologias Usadas no Desenvolvimento
+
+* [ ] Android.
+* [ ] API Retrofit.
+* [ ] Nodejs.
+* [ ] MongoDB.
+* [ ] Amazon AWS.
